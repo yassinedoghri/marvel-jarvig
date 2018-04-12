@@ -12,6 +12,11 @@ const Paragraph = styled.p`
         if (props.light) return props.theme.colors.dark.primary;
         return props.theme.colors.light.primary;
     }};
+    text-align: ${props => {
+        if (props.center) return 'center';
+        if (props.right) return 'right';
+        return 'left'
+    }}
 `;
 
 export default Paragraph;

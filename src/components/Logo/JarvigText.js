@@ -6,6 +6,8 @@ export const JarvigText = styled.h1`
     margin: 0;
     text-align: center;
     letter-spacing: .4em;
+    font-size: ${props => props.sm ? '1rem' : '2rem'};
+    margin-left: ${props => props.spaceLeft ? '.5em' : '0'};
 `;
 
 export default JarvigText;

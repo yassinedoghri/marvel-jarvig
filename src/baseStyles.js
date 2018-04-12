@@ -1,4 +1,4 @@
-// ----- styles/index.js
+// ----- styles/FlexGrid.js
 import {injectGlobal} from 'styled-components';
 import {normalize} from 'polished';
 

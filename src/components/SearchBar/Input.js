@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { rgba } from 'polished';
+import {media} from '../../media';
 
 const Input = styled.input`
     padding: 0.6em 1em;
@@ -9,16 +9,17 @@ const Input = styled.input`
     border: none;
     width: 200px;
     transition: all 300ms ease-in-out;
-  
-    &:focus {
-        width: 300px;
-    }
     
     ::placeholder {
         color: ${props => props.theme.colors.dark.secondary};
         opacity: 1;
     }
-
+    
+    ${media.tablet`
+        &:focus {
+            width: 18.75em;
+        }
+    `}
 `;
 
 export default Input;

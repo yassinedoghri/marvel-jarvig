@@ -1,43 +1,59 @@
-import { rgba } from 'polished';
+import { rgba, lighten, darken } from 'polished';
+
+const primary = "#ED1D24";
+const accent = "#fbca03";
+const accent2 = "#67c7eb";
+const def = "#ccc";
+const foreground = "#222";
+const background = "#f8f8f8";
+
+const darkContrast = "#fff";
+const lightContrast = "#222";
+
 
 const theme = {
     colors: {
         primary: {
-            base: "#ED1D24",
-            light: "#ED1D24",
-            dark: "#ED1D24"
+            base: primary,
+            light: lighten(0.2, primary),
+            dark: darken(0.2, primary),
         },
         accent: {
-            base: "#fbca03",
-            light: "#fde480",
-            dark: "#7d6501"
+            base: accent,
+            light: lighten(0.2, accent),
+            dark: darken(0.2, accent),
         },
         accent2: {
-            base: "#67c7eb",
-            light: "#b2e3f5",
-            dark: "#137195"
+            base: accent2,
+            light: lighten(0.2, accent2),
+            dark: darken(0.2, accent2),
+        },
+        def: {
+            base: def,
+            light: lighten(0.2, def),
+            dark: darken(0.2, def),
         },
         foreground: {
-            base: "#222",
-            light: "#909090",
-            dark: "#111"
+            base: foreground,
+            light: lighten(0.2, foreground),
+            dark: darken(0.2, foreground),
         },
         background: {
-            base: "#f8f8f8",
-            light: "#fff",
-            dark: "#7c7c7c"
+            base: background,
+            light: lighten(0.2, background),
+            dark: darken(0.2, background),
         },
         dark: {
-            primary: rgba("#fff", 1),
-            secondary: rgba("#fff", .70),
-            disabled: rgba("#fff", .5),
-            hint: rgba("#fff", .12),
+            primary: rgba(darkContrast, 1),
+            secondary: rgba(darkContrast, .70),
+            disabled: rgba(darkContrast, .5),
+            hint: rgba(darkContrast, .12),
         },
         light: {
-            primary: rgba("#000", .87),
-            secondary: rgba("#000", .54),
-            disabled: rgba("#000", .38),
-            hint: rgba("#000", .12)
+            primary: rgba(lightContrast, .87),
+            secondary: rgba(lightContrast, .54),
+            disabled: rgba(lightContrast, .38),
+            hint: rgba(lightContrast, .12)
         }
     },
     fontSize: {
