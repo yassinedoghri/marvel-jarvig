@@ -1,30 +1,51 @@
 import React, {Component} from 'react';
-import {Sidebar, Paragraph, HR} from '../components';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {toggleSidebar} from "../actions/UIActions";
 
+import {Sidebar, Paragraph, HR} from '../components';
 import TiTimesOutline from 'react-icons/lib/ti/times-outline';
 
 class SidebarHelp extends Component {
     render() {
+        const {isHelpOpen, toggleSidebar} = this.props;
+
         return (
-            <Sidebar hidden>
+            <Sidebar open={isHelpOpen}>
                 <Sidebar.Title>What is it about?</Sidebar.Title>
-                <Sidebar.CloseButton><TiTimesOutline /></Sidebar.CloseButton>
+                <Sidebar.CloseButton
+                    onClick={() => toggleSidebar('help')}
+                ><TiTimesOutline /></Sidebar.CloseButton>
                 <Sidebar.Content>
                     <Paragraph light>
                         J.A.R.V.I.G. (Just A Rather Very Interesting Game) lets you find and discover Marvel Comics characters based on their name, image and description!
+                    </Paragraph>
+                    <Paragraph light>
+                        You'll have to find characters based on their name and image.
                     </Paragraph>
                     <Paragraph light>
                         It's a game! So, you can tweak some settings before playing, have fun!
                     </Paragraph>
                     <HR/>
                     <Paragraph light sm>
-                        Developed by me (Yassine Doghri) during ekino's onboarding.
+                        Developed by me (Yassine Doghri) during ekino's onboarding. v0.1
                     </Paragraph>
-                    <Paragraph light sm>v0.1.0</Paragraph>
                 </Sidebar.Content>
             </Sidebar>
         );
     }
 }
 
-export default SidebarHelp;
+const mapStateToProps = (state) => {
+    return {
+        isHelpOpen: state.ui.sidebars.help,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({
+        toggleSidebar: toggleSidebar,
+    }, dispatch)
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SidebarHelp);

@@ -14,7 +14,12 @@ const Item = styled.button`
     
     &:hover {
         cursor: pointer;
-        color: ${props => props.theme.colors.text};
+        color: ${props => props.theme.colors.accent.light};
+    }
+    
+    &:active {
+        color: ${props => props.theme.colors.accent.dark};
+
     }
 `;
 

@@ -7,6 +7,14 @@ const Copyright = styled.p`
     color: ${props => props.theme.colors.dark.secondary};
     
     ${media.tablet`margin-right: 0;`}
+    
+    & a {
+        color: ${props => props.theme.colors.dark.primary};
+    }
+    
+    & a:hover {
+        text-decoration: none;
+    }
 `;
 
 export default Copyright;

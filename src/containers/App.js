@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from "react-router-dom";
 import {ThemeProvider} from 'styled-components';
 import theme from '../theme';
 
@@ -12,6 +13,8 @@ import SidebarSettings from './SidebarSettings';
 
 class App extends Component {
     render() {
+        const {location} = this.props;
+
         return (
             <ThemeProvider theme={theme}>
                 <FLexWrapper>
@@ -19,11 +22,13 @@ class App extends Component {
                     <MainContent/>
                     <FooterContent/>
                     <SidebarHelp/>
+                    {location.pathname === '/' &&
                     <SidebarSettings/>
+                    }
                 </FLexWrapper>
             </ThemeProvider>
         );
     }
 }
 
-export default App;
+export default withRouter(App);

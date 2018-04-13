@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import {transitions} from 'polished';
+import {media} from '../../media';
 
 import Title from './Title';
 import Content from './Content';
@@ -10,11 +12,24 @@ const Sidebar = styled.aside`
     color: ${props => props.theme.colors.dark.primary};
     position: absolute;
     top: 0;
-    left: ${props => props.hidden ? '-300px' : '0'};
+    left: ${props => props.open ? '0' : '-300px'};
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }};
-    min-height: calc(100% - 50px);
-    width: 300px;
+    
+    ${transitions('all 500ms ease-in-out')}
+    
+    width: 100%;
+    background: ${props=> props.theme.colors.light.primary};
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: ${props => props.open ? '0' : '-100%'};
+    
+    ${media.tablet`
+        height: calc(100% - 50px);
+        width: 20em;
+    `}
+
 `;
 
 Sidebar.Title = Title;

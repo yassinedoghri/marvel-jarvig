@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 import {FlexSection, FlexGrid, Character, QuestionCard, FlexAside, PlayDiv} from "../../components";
+import {resetSidebars} from "../../actions/UIActions";
 
 class PlayScreen extends Component {
+    componentDidMount() {
+        const {resetSidebars} = this.props;
+        resetSidebars();
+    }
+
     render() {
         return (
             <PlayDiv>
@@ -72,4 +80,10 @@ class PlayScreen extends Component {
     }
 }
 
-export default PlayScreen;
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({
+        resetSidebars: resetSidebars,
+    }, dispatch)
+);
+
+export default connect(null, mapDispatchToProps)(PlayScreen);

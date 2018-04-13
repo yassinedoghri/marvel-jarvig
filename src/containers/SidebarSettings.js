@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {toggleSidebar} from "../actions/UIActions";
 import {Sidebar, Settings} from '../components';
 
 import TiTimesOutline from 'react-icons/lib/ti/times-outline';
@@ -12,10 +15,14 @@ import 'react-select/dist/react-select.css';
 
 class SidebarSettings extends Component {
     render() {
+        const {isSettingsOpen, toggleSidebar} = this.props;
+
         return (
-            <Sidebar hidden>
+            <Sidebar open={isSettingsOpen}>
                 <Sidebar.Title>Game Parameters</Sidebar.Title>
-                <Sidebar.CloseButton><TiTimesOutline /></Sidebar.CloseButton>
+                <Sidebar.CloseButton
+                    onClick={() => toggleSidebar('settings')}
+                ><TiTimesOutline /></Sidebar.CloseButton>
                 <Sidebar.Content>
                     <Settings>
                         <Settings.Text>Tweak your parameters to better suit your level!</Settings.Text>
@@ -64,4 +71,16 @@ class SidebarSettings extends Component {
     }
 }
 
-export default SidebarSettings;
+const mapStateToProps = (state) => {
+    return {
+        isSettingsOpen: state.ui.sidebars.settings,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({
+        toggleSidebar: toggleSidebar,
+    }, dispatch)
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SidebarSettings);

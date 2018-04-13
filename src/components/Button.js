@@ -34,7 +34,7 @@ const Button = styled.button`
         box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
     }
     
-    &:focus {
+    &:active {
         ${props => {
             if (props.primary) return backgrounds('url("/image/background.jpg")', 'linear-gradient(45deg, '+ props.theme.colors.primary.dark+','+ props.theme.colors.primary.base+')', 'center no-repeat');
             if (props.accent) return backgrounds('url("/image/background.jpg")', 'linear-gradient(45deg, '+ props.theme.colors.accent.dark+','+ props.theme.colors.accent.base+')', 'center no-repeat');
