@@ -24,3 +24,6 @@ yarn-error.log*
 .DS_Store
 npm-debug.log
 .idea
+
+# jarvig config files
+/src/config/index.js

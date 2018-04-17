@@ -15,7 +15,7 @@ const Button = styled.button`
         if (props.play) return backgrounds('url("/image/background.jpg")', 'linear-gradient(45deg, '+ props.theme.colors.primary.base+','+ props.theme.colors.accent.light+')', 'center no-repeat');
         return backgrounds('url("/image/background.jpg")', 'linear-gradient(45deg, '+ props.theme.colors.def.base+','+ props.theme.colors.def.light+')', 'center no-repeat');
     }};
-    margin: ${props => props.center ? '1em auto' : '1em'};;
+    margin: ${props => props.center ? '1em auto' : '0'};;
     padding: 0.25em 1em;
     border-radius: 3px;
     width: fit-content; //not supported by all browsers

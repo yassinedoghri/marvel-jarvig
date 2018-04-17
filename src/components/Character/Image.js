@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Image = styled.img`
     width: 100%;
-    border: solid white;
+    border: solid ${props => props.theme.colors.foreground.base};
     border-width: 5px 3px 3px 5px;
     border-radius: 50%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -12,6 +12,7 @@ export const Image = styled.img`
     &:hover {
         cursor: pointer;
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        transform: scale(1.05);
     }
     
     &:active {

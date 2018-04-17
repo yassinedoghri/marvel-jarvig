@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "history": "^4.7.2",
+    "moment": "^2.22.1",
     "npm": "^5.8.0",
     "polished": "^1.9.2",
     "rc-slider": "^8.6.1",
@@ -11,9 +14,11 @@
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.1.4",
     "react-select": "^1.2.1",
     "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
     "styled-components": "^3.2.5"
   },
   "scripts": {

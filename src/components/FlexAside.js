@@ -9,6 +9,8 @@ export const FlexAside = styled.aside`
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
+    left: 0;
+    z-index: 99;
     
     ${media.tablet`
         width: 30em;

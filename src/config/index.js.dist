@@ -1,0 +1,9 @@
+// This is a sample config file for JARVIG
+// Remove the .dist extension and replace the public and private keys with your own
+// You can get your api keys at: https://developer.marvel.com/account
+
+export const marvelApi = {
+    publicKey: 'YOUR_PUBLIC_API_KEY',
+    privateKey: 'YOUR_PRIVATE_API_KEY',
+    baseUrl: `${window.location.protocol || 'http:'}//gateway.marvel.com/`,
+};

@@ -1,24 +1,25 @@
 import React, {Component} from 'react';
-import {Header, SearchBar, Logo, GameUI} from '../components';
-import logo from './MarvelLogo.svg';
+import {compose} from "redux";
 import {withRouter} from 'react-router-dom';
 
+import {Header, Logo, GameUI} from '../components';
+import logo from './MarvelLogo.svg';
 
-import FaSearch from 'react-icons/lib/fa/search';
 import FaHeart from 'react-icons/lib/fa/heart';
 import FaClock from 'react-icons/lib/fa/clock-o';
-
+import {connect} from "react-redux";
+import Countdown from "./Countdown";
 
 class HeaderContent extends Component {
     render() {
-        const {pathname} = this.props.location;
+        const {location, jarvigSettings, jarvig} = this.props;
 
-        const content = pathname === '/' ? (
+        const content = location.pathname === '/' ? (
             <Header>
-                <SearchBar>
-                    <SearchBar.Icon><FaSearch/></SearchBar.Icon>
-                    <SearchBar.Input type="search" placeholder="Search characters..."/>
-                </SearchBar>
+                {/*<SearchBar>*/}
+                    {/*<SearchBar.Icon><FaSearch/></SearchBar.Icon>*/}
+                    {/*<SearchBar.Input type="search" placeholder="Search characters..."/>*/}
+                {/*</SearchBar>*/}
             </Header>
         ) : (
             <Header>
@@ -28,12 +29,12 @@ class HeaderContent extends Component {
                 </Logo>
                 <GameUI>
                     <GameUI.Item>
-                        <GameUI.Item.Icon><FaHeart/></GameUI.Item.Icon>
-                        <GameUI.Item.Label>x3</GameUI.Item.Label>
+                        <GameUI.Item.Icon><FaClock/></GameUI.Item.Icon>
+                        <Countdown from={jarvigSettings.time * 60}/>
                     </GameUI.Item>
                     <GameUI.Item>
-                        <GameUI.Item.Icon><FaClock/></GameUI.Item.Icon>
-                        <GameUI.Item.Label>2:35</GameUI.Item.Label>
+                        <GameUI.Item.Icon><FaHeart/></GameUI.Item.Icon>
+                        <GameUI.Item.Label>{jarvig.remainingLives}</GameUI.Item.Label>
                     </GameUI.Item>
                 </GameUI>
             </Header>
@@ -42,5 +43,16 @@ class HeaderContent extends Component {
         return content;
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        jarvigSettings: state.jarvig.settings,
+        jarvig: state.jarvig.game,
+    }
+};
 
-export default withRouter(HeaderContent);
+export default compose(
+    withRouter,
+    connect(
+        mapStateToProps,
+    ),
+)(HeaderContent);

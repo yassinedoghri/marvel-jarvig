@@ -1,6 +1,7 @@
-import { combineReducers } from 'redux'
-import UIReducer from './reducer-ui'
+import UIReducer from './reducer-ui';
+import JarvigReducer from './reducer-jarvig';
 
-export default combineReducers({
+export default {
     ui: UIReducer,
-})
+    jarvig: JarvigReducer,
+}

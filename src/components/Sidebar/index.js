@@ -14,20 +14,20 @@ const Sidebar = styled.aside`
     top: 0;
     left: ${props => props.open ? '0' : '-300px'};
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-}};
-    
     ${transitions('all 500ms ease-in-out')}
-    
     width: 100%;
     background: ${props=> props.theme.colors.light.primary};
     position: fixed;
     height: 100%;
     top: 0;
     left: ${props => props.open ? '0' : '-100%'};
+    overflow-y: auto;
+    z-index: 1200;
     
     ${media.tablet`
-        height: calc(100% - 50px);
+        min-height: calc(100% - 50px);
         width: 20em;
+        z-index: 300;
     `}
 
 `;

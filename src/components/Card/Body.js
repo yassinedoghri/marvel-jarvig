@@ -1,7 +1,7 @@
 import Paragraph from '../Paragraph';
 import {media} from "../../media";
 
-export const Instruction = Paragraph.extend`
+export const Body = Paragraph.extend`
     color: ${props => props.theme.colors.light.secondary};
     display: none;
     
@@ -10,4 +10,4 @@ export const Instruction = Paragraph.extend`
     `}
 `;
 
-export default Instruction;
+export default Body;

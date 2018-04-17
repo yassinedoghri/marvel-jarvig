@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
-import Question from './Question';
-import Instruction from './Instruction';
-import Action from './Action';
+import Title from './Title';
+import Ribbon from './Ribbon';
+import Body from './Body';
+import ActionBtn from './ActionBtn';
+import ActionContainer from './ActionContainer';
 import {media} from '../../media';
 
 const QuestionCard = styled.div`
+    position: relative;
     width: 100%;
     background-color: white;
     border: solid black;
@@ -13,6 +16,7 @@ const QuestionCard = styled.div`
     border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     box-sizing: border-box;
+    padding: .8em;
     ${media.desktop`
         width: 15em;
         margin-left: auto;
@@ -24,8 +28,10 @@ const QuestionCard = styled.div`
 
 `;
 
-QuestionCard.Question = Question;
-QuestionCard.Instruction = Instruction;
-QuestionCard.Action = Action;
+QuestionCard.Title = Title;
+QuestionCard.Ribbon = Ribbon;
+QuestionCard.Body = Body;
+QuestionCard.ActionBtn = ActionBtn;
+QuestionCard.ActionContainer = ActionContainer;
 
 export default QuestionCard;

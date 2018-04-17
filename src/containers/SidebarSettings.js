@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {toggleSidebar} from "../actions/UIActions";
+import {updateSettings, setDifficulty} from "../actions/GameActions";
+
 import {Sidebar, Settings} from '../components';
 
 import TiTimesOutline from 'react-icons/lib/ti/times-outline';
@@ -15,53 +17,63 @@ import 'react-select/dist/react-select.css';
 
 class SidebarSettings extends Component {
     render() {
-        const {isSettingsOpen, toggleSidebar} = this.props;
+        const {isSettingsOpen, toggleSidebar, jarvigSettings, jarvigDifficulty, updateSettings, setDifficulty, difficulties} = this.props;
 
         return (
             <Sidebar open={isSettingsOpen}>
                 <Sidebar.Title>Game Parameters</Sidebar.Title>
                 <Sidebar.CloseButton
                     onClick={() => toggleSidebar('settings')}
-                ><TiTimesOutline /></Sidebar.CloseButton>
+                ><TiTimesOutline/></Sidebar.CloseButton>
                 <Sidebar.Content>
                     <Settings>
                         <Settings.Text>Tweak your parameters to better suit your level!</Settings.Text>
                         <Select
                             name="degree-difficulty"
-                            value="medium"
-                            onChange={e => (console.log(e))}
-                            options={[
-                                { value: 'easy', label: 'Meh' },
-                                { value: 'medium', label: 'Medium' },
-                                { value: 'hard', label: 'Master' },
-                                { value: 'custom', label: 'Custom' },
-                            ]}
+                            defaultValue={jarvigDifficulty}
+                            value={jarvigDifficulty}
+                            onChange={e => (setDifficulty(e))}
+                            options={difficulties}
+                            placeholder={"Custom..."}
                         />
                         <Settings.Item>
                             <Settings.Item.Label>Game time (min)</Settings.Item.Label>
-                            <Settings.Item.Counter>5</Settings.Item.Counter>
+                            <Settings.Item.Counter>{jarvigSettings.time}</Settings.Item.Counter>
                             <Slider
-                                defaultValue={5}
+                                value={jarvigSettings.time}
                                 min={1}
-                                max={30}
+                                max={10}
+                                onChange={value => updateSettings('time', value)}
+                            />
+                        </Settings.Item>
+                        <Settings.Item>
+                            <Settings.Item.Label>Number of Lives</Settings.Item.Label>
+                            <Settings.Item.Counter>{jarvigSettings.numberOfLives}</Settings.Item.Counter>
+                            <Slider
+                                value={jarvigSettings.numberOfLives}
+                                min={1}
+                                max={10}
+                                onChange={value => updateSettings('numberOfLives', value)}
                             />
                         </Settings.Item>
                         <Settings.Item>
                             <Settings.Item.Label>Number of Questions</Settings.Item.Label>
-                            <Settings.Item.Counter>10</Settings.Item.Counter>
+                            <Settings.Item.Counter>{jarvigSettings.numberOfQuestions}</Settings.Item.Counter>
                             <Slider
-                                defaultValue={10}
+                                value={jarvigSettings.numberOfQuestions}
                                 min={1}
                                 max={30}
+                                onChange={value => updateSettings('numberOfQuestions', value)}
                             />
                         </Settings.Item>
                         <Settings.Item>
                             <Settings.Item.Label>Characters per question</Settings.Item.Label>
-                            <Settings.Item.Counter>3</Settings.Item.Counter>
+                            <Settings.Item.Counter>{jarvigSettings.charactersPerQuestion}</Settings.Item.Counter>
                             <Slider
-                                defaultValue={3}
+                                value={jarvigSettings.charactersPerQuestion}
                                 min={2}
                                 max={12}
+                                onChange={value => updateSettings('charactersPerQuestion', value)}
                             />
                         </Settings.Item>
                     </Settings>
@@ -74,12 +86,17 @@ class SidebarSettings extends Component {
 const mapStateToProps = (state) => {
     return {
         isSettingsOpen: state.ui.sidebars.settings,
+        jarvigSettings: state.jarvig.settings,
+        jarvigDifficulty: state.jarvig.difficulty,
+        difficulties: state.jarvig.difficulties,
     }
 };
 
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({
         toggleSidebar: toggleSidebar,
+        updateSettings: updateSettings,
+        setDifficulty: setDifficulty,
     }, dispatch)
 );
 
