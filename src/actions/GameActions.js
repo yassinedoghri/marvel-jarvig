@@ -1,5 +1,5 @@
 import {
-    API_CALL_REQUEST, CHECK_ANSWER, CLEAR_GAME,
+    API_CALL_REQUEST, CHECK_ANSWER, CLEAR_GAME, END_GAME,
     INIT_NEW_GAME, NEXT_QUESTION, PASS_QUESTION, SELECT_CHARACTER,
     SET_DIFFICULTY,
     UPDATE_SETTINGS
@@ -47,6 +47,10 @@ export const checkAnswer = (answer) => ({
 
 export const nextQuestion = () => ({
     type: NEXT_QUESTION,
+});
+
+export const endGame = () => ({
+    type: END_GAME,
 });
 
 export const callRequest = () => ({

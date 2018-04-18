@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {compose} from "redux";
 import {withRouter} from 'react-router-dom';
+import {bindActionCreators} from "redux";
 
 import {Header, Logo, GameUI} from '../components';
 import logo from './MarvelLogo.svg';
@@ -9,16 +10,26 @@ import FaHeart from 'react-icons/lib/fa/heart';
 import FaClock from 'react-icons/lib/fa/clock-o';
 import {connect} from "react-redux";
 import Countdown from "./Countdown";
+import {push} from "react-router-redux";
+import {endGame} from "../actions/GameActions";
 
 class HeaderContent extends Component {
+
+    handleCountdownEnd() {
+        const {redirect, endGame} = this.props;
+
+        endGame();
+        redirect('/result');
+    }
+
     render() {
-        const {location, jarvigSettings, jarvig} = this.props;
+        const {location, jarvigSettings, game, isLoading} = this.props;
 
         const content = location.pathname === '/' ? (
             <Header>
                 {/*<SearchBar>*/}
-                    {/*<SearchBar.Icon><FaSearch/></SearchBar.Icon>*/}
-                    {/*<SearchBar.Input type="search" placeholder="Search characters..."/>*/}
+                {/*<SearchBar.Icon><FaSearch/></SearchBar.Icon>*/}
+                {/*<SearchBar.Input type="search" placeholder="Search characters..."/>*/}
                 {/*</SearchBar>*/}
             </Header>
         ) : (
@@ -30,11 +41,14 @@ class HeaderContent extends Component {
                 <GameUI>
                     <GameUI.Item>
                         <GameUI.Item.Icon><FaClock/></GameUI.Item.Icon>
-                        <Countdown from={jarvigSettings.time * 60}/>
+                        <Countdown from={jarvigSettings.time * 60}
+                                   isGamePaused={isLoading || game.checked || game.over}
+                                   onCountdownEnd={() => this.handleCountdownEnd()}
+                        />
                     </GameUI.Item>
                     <GameUI.Item>
                         <GameUI.Item.Icon><FaHeart/></GameUI.Item.Icon>
-                        <GameUI.Item.Label>{jarvig.remainingLives}</GameUI.Item.Label>
+                        <GameUI.Item.Label>{game.remainingLives}</GameUI.Item.Label>
                     </GameUI.Item>
                 </GameUI>
             </Header>
@@ -43,16 +57,27 @@ class HeaderContent extends Component {
         return content;
     }
 }
+
 const mapStateToProps = (state) => {
     return {
         jarvigSettings: state.jarvig.settings,
-        jarvig: state.jarvig.game,
+        game: state.jarvig.game,
+        isLoading: state.jarvig.fetching,
     }
 };
+
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({
+        redirect: push,
+        endGame: endGame,
+    }, dispatch)
+);
+
 
 export default compose(
     withRouter,
     connect(
         mapStateToProps,
+        mapDispatchToProps
     ),
 )(HeaderContent);

@@ -8,7 +8,9 @@ export const FlexSection = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
-    box-sizing: border-box
+    box-sizing: border-box;
+    
+    
     ${media.tablet`
         padding-top: ${props => props.spaceTop ? '4em' : '0'};
         padding-right: ${props => props.spaceRight ? '4em' : '0'};

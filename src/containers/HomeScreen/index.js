@@ -13,7 +13,7 @@ class HomeScreen extends Component {
 
         const {clearGame} = this.props;
 
-        // clear game;
+        // clear all jarvig state (set defaults)
         clearGame();
     }
 
@@ -27,7 +27,7 @@ class HomeScreen extends Component {
                     <Logo.JarvigText>JARVIG</Logo.JarvigText>
                 </Logo>
                 <PlayButton to="/play">Play!</PlayButton>
-                <PlayMode>Difficulty: <button href="#" title="Open Settings"
+                <PlayMode>Difficulty: <button title="Open Settings"
                 onClick={() => toggleSidebar('settings')}>{difficulty}</button></PlayMode>
             </FlexSection>
         );

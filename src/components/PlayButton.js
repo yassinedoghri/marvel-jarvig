@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import {backgrounds} from 'polished';
+import { bounceIn, pulse } from 'react-animations';
+
+const bounceInAnimation = keyframes`${bounceIn}`;
+const pulseAnimation = keyframes`${pulse}`;
 
 const PlayButton = styled(Link)`
     ${props => backgrounds('url("/image/background.jpg")', 'linear-gradient(45deg, '+ props.theme.colors.primary.base+','+ props.theme.colors.accent.base+')', 'center no-repeat')};
@@ -16,6 +20,7 @@ const PlayButton = styled(Link)`
     transition: all 300ms ease-in-out;
     font-size: ${props => props.theme.fontSize.lg};
     box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.14);
+    animation: 1s ${bounceInAnimation}, 1.5s ${pulseAnimation} 1s infinite;
     
     &:hover {
         background: ${props => props.theme.colors.accent.base};

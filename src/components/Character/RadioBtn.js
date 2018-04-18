@@ -18,7 +18,6 @@ export const RadioBtn = styled.input.attrs({
     
     &:disabled + label>figure>img:hover {
         cursor: not-allowed;
-        box-shadow: none;
         transform: scale(1);
     }
     

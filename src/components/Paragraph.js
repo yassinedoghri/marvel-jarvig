@@ -15,6 +15,7 @@ const Paragraph = styled.p`
     text-align: ${props => {
         if (props.center) return 'center';
         if (props.right) return 'right';
+        if (props.justify) return 'justify';
         return 'left'
     }}
 `;

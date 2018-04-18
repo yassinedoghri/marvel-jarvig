@@ -1,5 +1,7 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+import {flash} from 'react-animations';
 
+const flashAnimation = keyframes`${flash}`;
 
 const Label = styled.span`
     font-family: Bangers;
@@ -10,6 +12,7 @@ const Label = styled.span`
       1px -1px 0 #222,
       -1px 1px 0 #222,
        1px 1px 0 #222;
+       animation: ${props => props.blink ? `2s ${flashAnimation} infinite` : 'none'}
 `;
 
 export default Label;

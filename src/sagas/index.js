@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js';
 import moment from 'moment';
 
 import { marvelApi as config } from '../config'
-import randomIntFromInterval from "../helpers";
+import {randomIntFromInterval} from "../helpers";
 
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga

@@ -13,6 +13,10 @@ export const FlexGrid = styled.div`
         width: 40em;
         margin: 0 auto;
     `};
+    
+    ${media.desktop`
+        width: 45em;
+    `};
 `;
 
 

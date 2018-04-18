@@ -76,6 +76,14 @@ class SidebarSettings extends Component {
                                 onChange={value => updateSettings('charactersPerQuestion', value)}
                             />
                         </Settings.Item>
+                        <Settings.Item>
+                            <Settings.Item.Checkbox>
+                                <input type="checkbox" name="hints"
+                                   checked={jarvigSettings.hints}
+                                   onChange={event => updateSettings('hints', event.target.checked)}
+                                />Hints (if available)
+                            </Settings.Item.Checkbox>
+                        </Settings.Item>
                     </Settings>
                 </Sidebar.Content>
             </Sidebar>

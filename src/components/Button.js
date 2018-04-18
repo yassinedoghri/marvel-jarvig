@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {backgrounds} from 'polished';
+import {backgrounds, transitions} from 'polished';
 
 const Button = styled.button`
     color: ${props => {
@@ -20,7 +20,7 @@ const Button = styled.button`
     border-radius: 3px;
     width: fit-content; //not supported by all browsers
     cursor: pointer;
-    transition: all 300ms ease-in-out;
+    ${transitions('all 300ms ease-in-out')}
     font-size: ${props => {
         if (props.xl) return props.theme.fontSize.xl;
         if (props.lg) return props.theme.fontSize.lg;

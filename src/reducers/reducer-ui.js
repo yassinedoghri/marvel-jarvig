@@ -1,8 +1,9 @@
-import {RESET_SIDEBARS, TOGGLE_SIDEBAR} from "../constants/actionTypes";
+import {RESET_SIDEBARS, TOGGLE_HINT, TOGGLE_SIDEBAR} from "../constants/actionTypes";
 
 const initSidebars = {
     settings: false,
     help: false,
+    isHintOpen: false,
 };
 
 export default (state = {
@@ -23,6 +24,11 @@ export default (state = {
                 sidebars: {
                     ...initSidebars
                 }
+            };
+        case TOGGLE_HINT:
+            return {
+                ...state,
+                isHintOpen: !state.isHintOpen,
             };
         default:
             return state

@@ -47,24 +47,31 @@ class Countdown extends Component {
 
     countDown() {
         // Remove one second, set state so a re-render happens.
-        let seconds = this.state.seconds - 1;
-        this.setState({
-            time: this.secondsToTime(seconds),
-            seconds: seconds,
-        });
+        const {isGamePaused, onCountdownEnd} = this.props;
 
-        // Check if we're at zero.
-        if (seconds === 0) {
-            clearInterval(this.timer);
+        if (!isGamePaused) {
+            let seconds = this.state.seconds - 1;
+            this.setState({
+                time: this.secondsToTime(seconds),
+                seconds: seconds,
+            });
+
+            // Check if we're at zero.
+            if (seconds === 0) {
+                clearInterval(this.timer);
+                onCountdownEnd();
+            }
         }
+
     }
 
     render() {
         const {time} = this.state;
+        const {isGamePaused} = this.props;
         const timer = time.m === 0 ? time.s : time.m + ':' + (time.s < 10 ? '0' + time.s : time.s);
 
         return(
-            <GameUI.Item.Label>{timer}</GameUI.Item.Label>
+            <GameUI.Item.Label blink={isGamePaused}>{timer}</GameUI.Item.Label>
         );
     }
 }

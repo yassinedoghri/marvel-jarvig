@@ -1,11 +1,11 @@
 import {
     API_CALL_FAILURE,
-    API_CALL_REQUEST, API_CALL_SUCCESS, CHECK_ANSWER, CLEAR_GAME,
+    API_CALL_REQUEST, API_CALL_SUCCESS, CHECK_ANSWER, CLEAR_GAME, END_GAME,
     INIT_NEW_GAME, NEXT_QUESTION, PASS_QUESTION, SELECT_CHARACTER,
     SET_DIFFICULTY,
     UPDATE_SETTINGS
 } from "../constants/actionTypes";
-import randomIntFromInterval from "../helpers";
+import {randomIntFromInterval} from "../helpers";
 
 const difficultySettings = {
     easy: {
@@ -13,24 +13,34 @@ const difficultySettings = {
         time: 5,
         numberOfQuestions: 10,
         charactersPerQuestion: 3,
+        hints: true,
     },
     medium: {
         numberOfLives: 3,
         time: 3,
         numberOfQuestions: 10,
         charactersPerQuestion: 6,
+        hints: true,
     },
     hard: {
         numberOfLives: 2,
         time: 1,
         numberOfQuestions: 10,
         charactersPerQuestion: 10,
+        hints: false,
     },
+    custom: {
+        numberOfLives: 1,
+        time: 1,
+        numberOfQuestions: 1,
+        charactersPerQuestion: 2,
+        hints: false,
+    }
 };
 
 const difficulties = [
     {value: 'easy', label: 'Newbie'},
-    {value: 'medium', label: 'Getting There'},
+    {value: 'medium', label: 'Intermediate'},
     {value: 'hard', label: 'Master'},
 ];
 
@@ -41,13 +51,14 @@ const gameDefaults = {
     result: [],
     remainingLives: 0,
     checked: false,
+    over: false,
 };
 
-const bannedChars = ['Pretty Boy', 'Revanche', 'Cerebro', 'Unus (Ultimate)', 'Catseye'];
+const bannedChars = ['Pretty Boy', 'Revanche', 'Cerebro', 'Unus (Ultimate)', 'Catseye', 'Battering Ram', 'Synch'];
 
 export default (state = {
-    settings: difficultySettings.medium,
-    difficulty: 'medium',
+    settings: difficultySettings.easy,
+    difficulty: 'easy',
     difficulties: difficulties,
     game: gameDefaults,
     characters: null,
@@ -81,6 +92,7 @@ export default (state = {
                 ...state,
                 game: {
                     ...state.game,
+                    over: false,
                     result: [],
                     remainingLives: state.settings.numberOfLives,
                 }
@@ -122,6 +134,14 @@ export default (state = {
                 game: {
                     ...state.game,
                     selected: action.payload,
+                }
+            };
+        case END_GAME:
+            return {
+                ...state,
+                game: {
+                    ...state.game,
+                    over: true,
                 }
             };
         case API_CALL_REQUEST:
