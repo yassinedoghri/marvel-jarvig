@@ -12,9 +12,11 @@ import Hint from './Hint';
 import HintMessage from './HintMessage';
 
 import {media} from '../../media';
-import {bounceIn} from 'react-animations';
+import {tada, bounceIn, shake} from 'react-animations';
 
+const tadaAnimation = keyframes`${tada}`;
 const bounceInAnimation = keyframes`${bounceIn}`;
+const shakeAnimation = keyframes`${shake}`;
 
 const Card = styled.div`
     position: relative;
@@ -29,7 +31,13 @@ const Card = styled.div`
     margin: ${props => props.alignCenter ? '0 auto' : '0'};
     margin-left: ${props => props.alignRight ? 'auto' : '0' };
     margin-bottom: 3em;
-    animation: 1s ${bounceInAnimation};
+    animation: 1s ${props => {
+        if (props.animation === 'correct') return tadaAnimation;
+        if (props.animation === 'incorrect') return shakeAnimation;
+        return bounceInAnimation;
+    }};
+    
+    
     
     ${media.desktop`
         width: 15em;

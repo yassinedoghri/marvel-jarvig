@@ -31,7 +31,7 @@ export const RadioBtn = styled.input.attrs({
     &:disabled + label>figure>img, &:disabled + label>figure>figcaption {
         border-color:  ${props => {
             if (props.result === 'selectedRight') return props.theme.colors.accent2.base;
-            if (props.result === 'selectedWrong') return props.theme.colors.primary.dark;
+            if (props.result === 'selectedWrong') return props.theme.colors.primary.base;
             if (props.result === 'answerRight') return props.theme.colors.accent2.base;
             return props.theme.colors.foreground.base;
         }};
@@ -40,7 +40,7 @@ export const RadioBtn = styled.input.attrs({
     &:disabled + label>figure>figcaption {
         background-color:  ${props => {
             if (props.result === 'selectedRight') return props.theme.colors.accent2.base;
-            if (props.result === 'selectedWrong') return props.theme.colors.primary.dark;
+            if (props.result === 'selectedWrong') return props.theme.colors.primary.base;
             if (props.result === 'answerRight') return props.theme.colors.accent2.base;
             return props.theme.colors.foreground.base;
         }};

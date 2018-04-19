@@ -23,6 +23,8 @@ const Sidebar = styled.aside`
     left: ${props => props.open ? '0' : '-100%'};
     overflow-y: auto;
     z-index: 1200;
+    padding-bottom: 4em;
+    box-sizing: border-box;
     
     ${media.tablet`
         min-height: calc(100% - 50px);

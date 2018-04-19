@@ -28,8 +28,8 @@ class Countdown extends Component {
     }
 
     componentWillReceiveProps() {
-        const {from, initOn} = this.props;
-        if (initOn) {
+        const {from, result, isGamePaused} = this.props;
+        if ((result.length === 0 && this.timer === 0) || (result.length === 0 && isGamePaused)) {
             this.setState({seconds: from});
             let timeLeftVar = this.secondsToTime(this.state.seconds);
             this.setState({time: timeLeftVar});
@@ -62,7 +62,7 @@ class Countdown extends Component {
             // Check if we're at zero.
             if (seconds === 0) {
                 clearInterval(this.timer);
-                onCountdownEnd(this.timer);
+                onCountdownEnd();
             }
         }
     }

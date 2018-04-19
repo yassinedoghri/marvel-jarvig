@@ -1,5 +1,9 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import {transitions} from 'polished';
+
+import {bounceIn,} from 'react-animations';
+
+const bounceInAnimation = keyframes`${bounceIn}`;
 
 export const Image = styled.img`
     width: 100%;
@@ -10,7 +14,7 @@ export const Image = styled.img`
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     box-sizing: border-box
     ${transitions('all 200ms ease-in-out')}
-
+    animation: 1s ${bounceInAnimation};
 
     &:hover {
         cursor: pointer;

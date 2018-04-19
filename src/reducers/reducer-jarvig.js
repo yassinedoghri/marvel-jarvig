@@ -52,7 +52,6 @@ const gameDefaults = {
     remainingLives: 0,
     checked: false,
     over: false,
-    clear: true, // used to reset time
 };
 
 // Black listed characters (eg. they don't have an image)

@@ -44,7 +44,7 @@ class HeaderContent extends Component {
                         <Countdown from={jarvigSettings.time * 60}
                                    isGamePaused={isLoading || game.checked || game.over || error}
                                    onCountdownEnd={() => this.handleCountdownEnd()}
-                                   initOn={game.clear}
+                                   result={game.result}
                         />
                     </GameUI.Item>
                     <GameUI.Item>

@@ -45,7 +45,7 @@ class PlayScreen extends Component {
     componentDidUpdate() {
         const {callRequest, game, jarvigSettings, redirect, endGame, error} = this.props;
         // if choices haven't been set, call request and set choices
-        console.log('UPDATE');
+
         // BAD PRACTICE to call action creators on lifecycle methods
         if (!game.choices && !error) {
             // check if all questions have been answered and there are lives remaining
@@ -162,7 +162,7 @@ class PlayScreen extends Component {
                     <PlayDiv>
                         {game.choices &&
                         <FlexAside half>
-                            <Card>
+                            <Card animation={game.checked ? (isRightAnswer ? 'correct': 'incorrect') : 'false'}>
                                 <Card.Ribbon>Question {questionNumber}/{jarvigSettings.numberOfQuestions}</Card.Ribbon>
                                 {(jarvigSettings.hints && game.answer.description !== '') && (
                                     <div>
