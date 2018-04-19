@@ -4,19 +4,9 @@ import {connect} from "react-redux";
 
 import logo from '../MarvelLogo.svg';
 import {FlexSection, Logo, PlayButton, PlayMode} from "../../components";
-import {clearGame} from "../../actions/GameActions";
 import {toggleSidebar} from "../../actions/UIActions";
 
 class HomeScreen extends Component {
-    constructor(props) {
-        super(props);
-
-        const {clearGame} = this.props;
-
-        // clear all jarvig state (set defaults)
-        clearGame();
-    }
-
     render() {
         const {difficulty, toggleSidebar} = this.props;
 
@@ -42,7 +32,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({
-        clearGame: clearGame,
         toggleSidebar: toggleSidebar,
     }, dispatch)
 );

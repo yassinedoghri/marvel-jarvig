@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {push} from 'react-router-redux'
 
-import {FlexSection, FlexGrid, Character, Card, FlexAside, PlayDiv, Emphasis, Paragraph} from "../../components";
+import {FlexSection, FlexGrid, Character, Card, FlexAside, PlayDiv, Emphasis, Paragraph, AttributionText, Loader} from "../../components";
 import {resetSidebars, toggleHint} from "../../actions/UIActions";
 import {
     callRequest,
@@ -12,21 +12,26 @@ import {
     passQuestion,
     nextQuestion,
     selectCharacter,
-    endGame,
+    endGame, clearGame,
 } from "../../actions/GameActions";
+
 import FaArrowRight from 'react-icons/lib/fa/arrow-right';
 import TiLightbulb from 'react-icons/lib/ti/lightbulb';
 import TiTimes from 'react-icons/lib/ti/times';
+import FaHome from 'react-icons/lib/fa/home';
 
 class PlayScreen extends Component {
     constructor(props) {
         super(props);
 
-        const {initNewGame, redirect, history} = this.props;
+        const {initNewGame, clearGame, redirect, history} = this.props;
 
         if (history.action === 'POP') {
             redirect('/');
         } else {
+            console.log('TESSSTT');
+            // clear all jarvig state (set defaults)
+            clearGame();
             // init new jarvig;
             initNewGame();
         }
@@ -38,9 +43,11 @@ class PlayScreen extends Component {
     }
 
     componentDidUpdate() {
-        const {callRequest, game, jarvigSettings, redirect, endGame} = this.props;
+        const {callRequest, game, jarvigSettings, redirect, endGame, error} = this.props;
         // if choices haven't been set, call request and set choices
-        if (!game.choices) {
+        console.log('UPDATE');
+        // BAD PRACTICE to call action creators on lifecycle methods
+        if (!game.choices && !error) {
             // check if all questions have been answered and there are lives remaining
             if (game.result.length < jarvigSettings.numberOfQuestions && game.remainingLives > 0) {
                 // New Question: get new characters and set choices
@@ -91,7 +98,7 @@ class PlayScreen extends Component {
     }
 
     render() {
-        const {game, isGameLoading, passQuestion, checkAnswer, nextQuestion, jarvigSettings, isHintOpen, toggleHint} = this.props;
+        const {game, isGameLoading, passQuestion, checkAnswer, nextQuestion, jarvigSettings, isHintOpen, toggleHint, error, attributionText} = this.props;
 
         const questionNumber = game.checked ? game.result.length : game.result.length + 1;
 
@@ -105,7 +112,7 @@ class PlayScreen extends Component {
             if (isRightAnswer) {
                 cardTitle = ['Correct, well done!'];
             } else {
-                cardTitle = ['Wrong, you can do better!'];
+                cardTitle = ['Too bad, you can do better!'];
             }
             const isLastGame = ((questionNumber === jarvigSettings.numberOfQuestions) || game.remainingLives === 0);
             actions = <Card.ActionContainer>
@@ -113,7 +120,7 @@ class PlayScreen extends Component {
                     {isLastGame ? 'Check results' : 'Next question'} <FaArrowRight/>
                 </Card.ActionBtn>
             </Card.ActionContainer>;
-            cardBody = isLastGame ? 'The game has ended, check your score!' : 'Press Next to get to the next question!';
+            cardBody = isLastGame ? 'The game has ended, check your score!' : 'Press Next to get a new question!';
         } else {
             cardTitle = ['Can you find', ' ', <Emphasis>{game.answer ? game.answer.name : ''}</Emphasis>, '?'];
             cardBody = `Choose a character and check your answer!`;
@@ -125,39 +132,67 @@ class PlayScreen extends Component {
             </Card.ActionContainer>;
         }
 
-
         return (
-            <PlayDiv>
-                {isGameLoading && 'Loading question...'}
-                <FlexAside half>
-                    {game.choices &&
-                    <Card>
-                        <Card.Ribbon>Question {questionNumber}/{jarvigSettings.numberOfQuestions}</Card.Ribbon>
-                        {(jarvigSettings.hints && game.answer.description !== '') && (
-                            <div>
-                                <Card.Hint onClick={() => toggleHint()}>{isHintOpen ? <TiTimes/> :
-                                    <TiLightbulb/>}</Card.Hint>
-                                <Card.HintMessage hidden={!isHintOpen}>
-                                    <Paragraph justify light>{game.answer ? game.answer.description : ''}</Paragraph>
-                                </Card.HintMessage>
-                            </div>
-                        )}
-                        <Card.Title>
-                            {cardTitle.map(function (name, index) {
-                                return <span key={index}>{name}</span>
-                            })}
-                        </Card.Title>
-                        <Card.BodyContainer>
-                            <Card.BodyParagraph center sm>{cardBody}</Card.BodyParagraph>
-                        </Card.BodyContainer>
-                        {actions}
-                    </Card>
-                    }
-                </FlexAside>
-                <FlexSection spaceRight spaceLeft play>
-                    {this.charactersGrid()}
-                </FlexSection>
-            </PlayDiv>
+            isGameLoading ? (
+                <PlayDiv>
+                    <Loader>
+                        <div className="rect1"></div>
+                        <div className="rect2"></div>
+                        <div className="rect3"></div>
+                        <div className="rect4"></div>
+                        <div className="rect5"></div>
+                    </Loader>
+                </PlayDiv>
+            ) : (
+                error ? (
+                    <PlayDiv space>
+                        <Card alignCenter>
+                            <Card.Ribbon danger="true">error!</Card.Ribbon>
+                            <Card.Title>Oops, looks like something happened with the Marvel API...</Card.Title>
+                            <Card.BodyContainer>
+                                <Card.BodyParagraph center>Message: {error.message}</Card.BodyParagraph>
+                                <Card.BodyParagraph center>Try again later!</Card.BodyParagraph>
+                            </Card.BodyContainer>
+                            <Card.ActionContainer>
+                                <Card.ActionLink to="/" accent2="true" dark="true"><FaHome/> Home</Card.ActionLink>
+                            </Card.ActionContainer>
+                        </Card>
+                    </PlayDiv>
+                ) : (
+                    <PlayDiv>
+                        {game.choices &&
+                        <FlexAside half>
+                            <Card>
+                                <Card.Ribbon>Question {questionNumber}/{jarvigSettings.numberOfQuestions}</Card.Ribbon>
+                                {(jarvigSettings.hints && game.answer.description !== '') && (
+                                    <div>
+                                        <Card.Hint onClick={() => toggleHint()}>{isHintOpen ? <TiTimes/> :
+                                            <TiLightbulb/>}</Card.Hint>
+                                        <Card.HintMessage hidden={!isHintOpen}>
+                                            <Paragraph justify
+                                                       light>{game.answer ? game.answer.description : ''}</Paragraph>
+                                        </Card.HintMessage>
+                                    </div>
+                                )}
+                                <Card.Title>
+                                    {cardTitle.map(function (name, index) {
+                                        return <span key={index}>{name}</span>
+                                    })}
+                                </Card.Title>
+                                <Card.BodyContainer>
+                                    <Card.BodyParagraph center sm>{cardBody}</Card.BodyParagraph>
+                                </Card.BodyContainer>
+                                {actions}
+                            </Card>
+                        </FlexAside>
+                        }
+                        <FlexSection spaceRight spaceLeft play>
+                            {this.charactersGrid()}
+                            <AttributionText sm>{attributionText}</AttributionText>
+                        </FlexSection>
+                    </PlayDiv>
+                )
+            )
         );
     }
 }
@@ -168,7 +203,9 @@ const mapStateToProps = (state) => {
         jarvigSettings: state.jarvig.settings,
         game: state.jarvig.game,
         isGameLoading: state.jarvig.fetching,
+        error: state.jarvig.error,
         isHintOpen: state.ui.isHintOpen,
+        attributionText: state.jarvig.attributionText,
     }
 };
 
@@ -177,6 +214,7 @@ const mapDispatchToProps = (dispatch) => (
         resetSidebars: resetSidebars,
         toggleHint: toggleHint,
         initNewGame: initNewGame,
+        clearGame: clearGame,
         callRequest: callRequest,
         selectCharacter: selectCharacter,
         checkAnswer: checkAnswer,

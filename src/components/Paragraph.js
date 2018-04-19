@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Paragraph = styled.p`
+    width: ${props => props.full ? '100%': 'auto'};
     font-size:  ${props => {
         if (props.xl) return props.theme.fontSize.xl;
         if (props.lg) return props.theme.fontSize.lg;

@@ -21,3 +21,5 @@ export {default as PlayDiv} from './PlayDiv';
 export {default as GameUI} from './GameUI';
 export {default as Emphasis} from './Emphasis';
 export {default as PlayMode} from './PlayMode';
+export {default as AttributionText} from './AttributionText';
+export {default as Loader} from './Loader';

@@ -12,6 +12,13 @@ export const RadioBtn = styled.input.attrs({
         transform: scale(1.1);
     }
     
+    &:checked + label>figure>figcaption {
+        border-color: ${props => props.theme.colors.accent.base};
+        background-color: ${props => props.theme.colors.accent.base};
+        color: ${props => props.theme.colors.light.primary};
+        transform: scale(1.1);   
+    }
+    
     &:checked + label>figure>img:hover {
         transform: scale(1.1)!important;
     }
@@ -21,8 +28,17 @@ export const RadioBtn = styled.input.attrs({
         transform: scale(1);
     }
     
-    &:disabled + label>figure>img {
+    &:disabled + label>figure>img, &:disabled + label>figure>figcaption {
         border-color:  ${props => {
+            if (props.result === 'selectedRight') return props.theme.colors.accent2.base;
+            if (props.result === 'selectedWrong') return props.theme.colors.primary.dark;
+            if (props.result === 'answerRight') return props.theme.colors.accent2.base;
+            return props.theme.colors.foreground.base;
+        }};
+    }
+    
+    &:disabled + label>figure>figcaption {
+        background-color:  ${props => {
             if (props.result === 'selectedRight') return props.theme.colors.accent2.base;
             if (props.result === 'selectedWrong') return props.theme.colors.primary.dark;
             if (props.result === 'answerRight') return props.theme.colors.accent2.base;

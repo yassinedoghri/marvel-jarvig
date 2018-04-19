@@ -22,21 +22,17 @@ class ResultScreen extends Component {
     }
 
     render() {
-        const {jarvigSettings, game} = this.props;
+        const {jarvigSettings, game, difficulty} = this.props;
         const {numberOfQuestions} = jarvigSettings;
 
         const resultCounts = getArrayCounts(game.result);
         console.log(resultCounts);
 
         const rightAnswers = resultCounts[1] ? resultCounts[1] : 0;
-        const wrongAnswers = resultCounts[0] ? resultCounts[0] : 0;
-        const unanswered = (numberOfQuestions - (rightAnswers + wrongAnswers));
-        console.log(typeof unanswered);
-        console.log(rightAnswers, wrongAnswers, unanswered, numberOfQuestions);
+        // const wrongAnswers = resultCounts[0] ? resultCounts[0] : 0;
+        // const unanswered = (numberOfQuestions - (rightAnswers + wrongAnswers));
 
         const resultPercentage = (rightAnswers / numberOfQuestions) * 100;
-
-        console.log(resultPercentage);
 
         let cardMessage = '';
         if (resultPercentage < 20) {
@@ -48,9 +44,9 @@ class ResultScreen extends Component {
         } else if (resultPercentage < 90) {
             cardMessage = 'Well, that\'s quite impressive!';
         } else if (resultPercentage < 99) {
-            cardMessage = 'Wow, you can consider yourself a Master!';
+            cardMessage = 'Wow, you\'re close to perfection!';
         } else {
-            cardMessage = 'Perfect! That\'s just amazing!'
+            cardMessage = 'Perfect! That\'s just amazing, teach me master!'
         }
 
         return (
@@ -62,10 +58,11 @@ class ResultScreen extends Component {
                         <Card.BodyResult>
                             <CountUp start={0} end={resultPercentage} />%
                         </Card.BodyResult>
+                        <Card.BodyParagraph center>Difficulty: {difficulty}</Card.BodyParagraph>
                     </Card.BodyContainer>
                     <Card.ActionContainer>
-                        <Card.ActionLink to="/play" half accent dark><FaRepeat/> Restart</Card.ActionLink>
-                        <Card.ActionLink to="/" half accent2 dark><FaHome/> Home</Card.ActionLink>
+                        <Card.ActionLink to="/play" half="true" accent="true" dark="true"><FaRepeat/> Restart</Card.ActionLink>
+                        <Card.ActionLink to="/" half="true" accent2="true" dark="true"><FaHome/> Home</Card.ActionLink>
                     </Card.ActionContainer>
                 </Card>
             </FlexSection>
@@ -77,6 +74,7 @@ const mapStateToProps = (state) => {
     return {
         jarvigSettings: state.jarvig.settings,
         game: state.jarvig.game,
+        difficulty: state.jarvig.difficulty,
     }
 };
 

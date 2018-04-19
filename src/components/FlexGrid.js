@@ -3,7 +3,6 @@ import {media} from '../media';
 
 export const FlexGrid = styled.div`
     display: flex;
-    padding-bottom: 15em;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;

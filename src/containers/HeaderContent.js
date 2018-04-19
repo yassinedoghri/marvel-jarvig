@@ -23,7 +23,7 @@ class HeaderContent extends Component {
     }
 
     render() {
-        const {location, jarvigSettings, game, isLoading} = this.props;
+        const {location, jarvigSettings, game, isLoading, error} = this.props;
 
         const content = location.pathname === '/' ? (
             <Header>
@@ -42,8 +42,9 @@ class HeaderContent extends Component {
                     <GameUI.Item>
                         <GameUI.Item.Icon><FaClock/></GameUI.Item.Icon>
                         <Countdown from={jarvigSettings.time * 60}
-                                   isGamePaused={isLoading || game.checked || game.over}
+                                   isGamePaused={isLoading || game.checked || game.over || error}
                                    onCountdownEnd={() => this.handleCountdownEnd()}
+                                   initOn={game.clear}
                         />
                     </GameUI.Item>
                     <GameUI.Item>
@@ -63,6 +64,7 @@ const mapStateToProps = (state) => {
         jarvigSettings: state.jarvig.settings,
         game: state.jarvig.game,
         isLoading: state.jarvig.fetching,
+        error: state.jarvig.error,
     }
 };
 

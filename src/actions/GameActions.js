@@ -49,8 +49,9 @@ export const nextQuestion = () => ({
     type: NEXT_QUESTION,
 });
 
-export const endGame = () => ({
+export const endGame = (time) => ({
     type: END_GAME,
+    payload: time
 });
 
 export const callRequest = () => ({

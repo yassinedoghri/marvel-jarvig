@@ -9,15 +9,15 @@ import {randomIntFromInterval} from "../helpers";
 
 const difficultySettings = {
     easy: {
-        numberOfLives: 5,
-        time: 5,
+        numberOfLives: 4,
+        time: 3,
         numberOfQuestions: 10,
         charactersPerQuestion: 3,
         hints: true,
     },
     medium: {
         numberOfLives: 3,
-        time: 3,
+        time: 2,
         numberOfQuestions: 10,
         charactersPerQuestion: 6,
         hints: true,
@@ -52,15 +52,18 @@ const gameDefaults = {
     remainingLives: 0,
     checked: false,
     over: false,
+    clear: true, // used to reset time
 };
 
-const bannedChars = ['Pretty Boy', 'Revanche', 'Cerebro', 'Unus (Ultimate)', 'Catseye', 'Battering Ram', 'Synch'];
+// Black listed characters (eg. they don't have an image)
+const bannedChars = ['Pretty Boy', 'Revanche', 'Cerebro', 'Unus (Ultimate)', 'Catseye', 'Battering Ram', 'Synch', 'Beef'];
 
 export default (state = {
     settings: difficultySettings.easy,
     difficulty: 'easy',
     difficulties: difficulties,
     game: gameDefaults,
+    attributionText: null,
     characters: null,
     fetching: false,
     error: null,
@@ -85,6 +88,7 @@ export default (state = {
         case CLEAR_GAME:
             return {
                 ...state,
+                error: false,
                 game: gameDefaults
             };
         case INIT_NEW_GAME:
@@ -93,6 +97,7 @@ export default (state = {
                 game: {
                     ...state.game,
                     over: false,
+                    clear: false,
                     result: [],
                     remainingLives: state.settings.numberOfLives,
                 }
@@ -147,7 +152,8 @@ export default (state = {
         case API_CALL_REQUEST:
             return {...state, fetching: true, error: null};
         case API_CALL_SUCCESS:
-            const characters = action.payload;
+            const characters = action.payload.characters;
+            const attributionText = action.payload.attributionText;
             const charactersToDisplay = [];
             const visitedIndices = [];
             while (charactersToDisplay.length < state.settings.charactersPerQuestion) {
@@ -166,6 +172,7 @@ export default (state = {
                 fetching: false,
                 error: null,
                 characters: action.payload,
+                attributionText: attributionText,
                 game: {
                     ...state.game,
                     choices: charactersToDisplay,

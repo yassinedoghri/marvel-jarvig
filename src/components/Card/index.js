@@ -28,6 +28,7 @@ const Card = styled.div`
     padding: .8em;
     margin: ${props => props.alignCenter ? '0 auto' : '0'};
     margin-left: ${props => props.alignRight ? 'auto' : '0' };
+    margin-bottom: 3em;
     animation: 1s ${bounceInAnimation};
     
     ${media.desktop`

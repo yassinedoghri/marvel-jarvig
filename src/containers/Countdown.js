@@ -5,13 +5,13 @@ import {GameUI} from '../components';
 class Countdown extends Component {
     constructor() {
         super();
-        this.state = { time: {}, seconds: 0};
+        this.state = {time: {}, seconds: 0};
         this.timer = 0;
         this.startTimer = this.startTimer.bind(this);
         this.countDown = this.countDown.bind(this);
     }
 
-    secondsToTime(secs){
+    secondsToTime(secs) {
         let hours = Math.floor(secs / (60 * 60));
 
         let divisor_for_minutes = secs % (60 * 60);
@@ -27,14 +27,17 @@ class Countdown extends Component {
         };
     }
 
-    componentDidMount() {
-        this.setState({ seconds: this.props.from });
-        let timeLeftVar = this.secondsToTime(this.state.seconds);
-        this.setState({ time: timeLeftVar });
-        this.startTimer();
+    componentWillReceiveProps() {
+        const {from, initOn} = this.props;
+        if (initOn) {
+            this.setState({seconds: from});
+            let timeLeftVar = this.secondsToTime(this.state.seconds);
+            this.setState({time: timeLeftVar});
+            this.startTimer();
+        }
     }
 
-    componentWillUnmount () {
+    componentWillUnmount() {
         this.timer && clearInterval(this.timer);
         this.timer = 0;
     }
@@ -59,10 +62,9 @@ class Countdown extends Component {
             // Check if we're at zero.
             if (seconds === 0) {
                 clearInterval(this.timer);
-                onCountdownEnd();
+                onCountdownEnd(this.timer);
             }
         }
-
     }
 
     render() {
@@ -70,7 +72,7 @@ class Countdown extends Component {
         const {isGamePaused} = this.props;
         const timer = time.m === 0 ? time.s : time.m + ':' + (time.s < 10 ? '0' + time.s : time.s);
 
-        return(
+        return (
             <GameUI.Item.Label blink={isGamePaused}>{timer}</GameUI.Item.Label>
         );
     }

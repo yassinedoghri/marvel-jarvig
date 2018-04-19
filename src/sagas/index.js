@@ -4,20 +4,13 @@ import {API_CALL_FAILURE, API_CALL_REQUEST, API_CALL_SUCCESS} from "../constants
 import CryptoJS from 'crypto-js';
 import moment from 'moment';
 
-import { marvelApi as config } from '../config'
-import {randomIntFromInterval} from "../helpers";
+import {marvelApi as config} from '../config'
+import {generateQuery, randomIntFromInterval} from "../helpers";
 
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
     yield takeLatest(API_CALL_REQUEST, workerSaga);
-}
-
-function generateQuery(params) {
-    let esc = encodeURIComponent;
-    return Object.keys(params)
-        .map(k => esc(k) + '=' + esc(params[k]))
-        .join('&');
 }
 
 const marvelApi = {
@@ -28,7 +21,7 @@ const marvelApi = {
 
         const URI = '/v1/public/characters';
         const params = {
-            apikey : config.publicKey,
+            apikey: config.publicKey,
             ts: timeStamp,
             hash: hash,
             offset: randomIntFromInterval(0, 1391), // There are 1491 characters
@@ -43,7 +36,6 @@ const marvelApi = {
         })
             .then(statusHelper)
             .then(response => response.json())
-            .catch(error => error)
     }
 };
 
@@ -51,7 +43,6 @@ function statusHelper(response) {
     if (response.status >= 200 && response.status < 300) {
         return Promise.resolve(response)
     } else {
-        console.log('hahah');
         return Promise.reject(new Error(response.statusText))
     }
 }
@@ -60,12 +51,14 @@ function statusHelper(response) {
 function* workerSaga() {
     try {
         const response = yield call(marvelApi.getCharacters);
-        const characters = response.data.results;
 
-        console.log(response);
-
-        // dispatch a success action to the store with the new dog
-        yield put({type: API_CALL_SUCCESS, payload: characters});
+        // dispatch a success action to the store with the characters and attribution text
+        yield put({
+            type: API_CALL_SUCCESS, payload: {
+                characters: response.data.results,
+                attributionText: response.attributionText
+            }
+        });
 
     } catch (error) {
         // dispatch a failure action to the store with the error
