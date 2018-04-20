@@ -3,7 +3,18 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {push} from 'react-router-redux'
 
-import {FlexSection, FlexGrid, Character, Card, FlexAside, PlayDiv, Emphasis, Paragraph, AttributionText, Loader} from "../../components";
+import {
+    FlexSection,
+    FlexGrid,
+    Character,
+    Card,
+    FlexAside,
+    PlayDiv,
+    Emphasis,
+    Paragraph,
+    AttributionText,
+    Loader
+} from "../../components";
 import {resetSidebars, toggleHint} from "../../actions/UIActions";
 import {
     callRequest,
@@ -19,6 +30,8 @@ import FaArrowRight from 'react-icons/lib/fa/arrow-right';
 import TiLightbulb from 'react-icons/lib/ti/lightbulb';
 import TiTimes from 'react-icons/lib/ti/times';
 import FaHome from 'react-icons/lib/fa/home';
+import TiTimesOutline from 'react-icons/lib/ti/times-outline';
+import TiTickOutline from 'react-icons/lib/ti/tick-outline';
 
 class PlayScreen extends Component {
     constructor(props) {
@@ -61,7 +74,7 @@ class PlayScreen extends Component {
         }
     }
 
-    charactersGrid() {
+    charactersGrid(isRightAnswer) {
         const {game, selectCharacter} = this.props;
 
         let gridItems = '';
@@ -83,6 +96,12 @@ class PlayScreen extends Component {
                                             result={result}/>
                         <label htmlFor={i}>
                             <Character.Figure>
+                                {game.selected === item.name &&
+                                <Character.CheckBadge
+                                    answer={game.checked ? (isRightAnswer ? 'correct' : 'incorrect') : 'none'}>
+                                    {isRightAnswer ? <TiTickOutline/> : <TiTimesOutline/>}
+                                </Character.CheckBadge>
+                                }
                                 <Character.Image
                                     src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}/>
                                 <Character.Caption
@@ -162,8 +181,9 @@ class PlayScreen extends Component {
                     <PlayDiv>
                         {game.choices &&
                         <FlexAside half>
-                            <Card animation={game.checked ? (isRightAnswer ? 'correct': 'incorrect') : 'false'}>
-                                <Card.Ribbon background={game.checked ? (isRightAnswer ? 'accent2': 'primary') : 'default'}>
+                            <Card animation={game.checked ? (isRightAnswer ? 'correct' : 'incorrect') : 'false'}>
+                                <Card.Ribbon
+                                    background={game.checked ? (isRightAnswer ? 'accent2' : 'primary') : 'default'}>
                                     Question {questionNumber}/{jarvigSettings.numberOfQuestions}
                                 </Card.Ribbon>
                                 {(jarvigSettings.hints && game.answer.description !== '') && (
@@ -189,7 +209,7 @@ class PlayScreen extends Component {
                         </FlexAside>
                         }
                         <FlexSection spaceRight spaceLeft spaceDown>
-                            {this.charactersGrid()}
+                            {this.charactersGrid(isRightAnswer)}
                             <AttributionText sm>{attributionText}</AttributionText>
                         </FlexSection>
                     </PlayDiv>

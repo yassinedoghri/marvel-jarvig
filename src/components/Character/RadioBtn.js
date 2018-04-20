@@ -45,6 +45,10 @@ export const RadioBtn = styled.input.attrs({
             return props.theme.colors.foreground.base;
         }};
     }
+    
+    & + label {
+        position: relative;
+    }
 `;
 
 export default RadioBtn;

@@ -1,5 +1,4 @@
 import styled, {keyframes} from "styled-components";
-import {media} from '../media';
 import { bounceInDown } from 'react-animations';
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 

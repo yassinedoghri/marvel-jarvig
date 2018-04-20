@@ -1,7 +1,7 @@
 import styled, {keyframes} from "styled-components";
 import {transitions} from 'polished';
 
-import {bounceIn,} from 'react-animations';
+import {bounceIn} from 'react-animations';
 
 const bounceInAnimation = keyframes`${bounceIn}`;
 
