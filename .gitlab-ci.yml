@@ -5,4 +5,4 @@ test:
     tags: [ek-docker]
     script:
        - npm install
-       - react-scripts test --env=jsdom
+       - npm test
