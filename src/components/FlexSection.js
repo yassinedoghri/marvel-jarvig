@@ -12,7 +12,11 @@ export const FlexSection = styled.section`
     box-sizing: border-box;
     
     ${media.tablet`
-        padding-top: ${props => props.spaceTop ? '4em' : '0'};
+        padding-top: ${props => {
+            if (props.spaceTop) return '4em';
+            if (props.bigSpaceTop) return '8em';
+            return '0'
+        }};
         padding-right: ${props => props.spaceRight ? '4em' : '0'};
         padding-left: ${props => props.spaceLeft ? '4em' : '0'};
         padding-bottom: 0;

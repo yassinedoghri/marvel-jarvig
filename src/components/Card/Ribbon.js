@@ -12,8 +12,10 @@ export const Ribbon = Paragraph.extend`
     padding: .5em;
     font-weight: bold;
     background: ${props => {
-    if (props.danger) return props.theme.colors.primary.base;
-    return props.theme.colors.accent2.base;
+    if (props.background === 'primary') return props.theme.colors.primary.base;
+    if (props.background === 'accent') return props.theme.colors.accent.base;
+    if (props.background === 'accent2') return props.theme.colors.accent2.base;
+    return props.theme.colors.foreground.base;
     }};
     color: ${props => props.theme.colors.dark.primary};
     border: solid ${props => props.theme.colors.foreground.base};

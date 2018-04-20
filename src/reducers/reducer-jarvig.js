@@ -55,7 +55,16 @@ const gameDefaults = {
 };
 
 // Black listed characters (eg. they don't have an image)
-const bannedChars = ['Pretty Boy', 'Revanche', 'Cerebro', 'Unus (Ultimate)', 'Catseye', 'Battering Ram', 'Synch', 'Beef'];
+const bannedChars = [
+    'Pretty Boy',
+    'Revanche',
+    'Cerebro',
+    'Unus (Ultimate)',
+    'Catseye',
+    'Battering Ram',
+    'Synch',
+    'Beef'
+];
 
 export default (state = {
     settings: difficultySettings.easy,

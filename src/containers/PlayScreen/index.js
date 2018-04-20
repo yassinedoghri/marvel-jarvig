@@ -147,7 +147,7 @@ class PlayScreen extends Component {
                 error ? (
                     <PlayDiv space>
                         <Card alignCenter>
-                            <Card.Ribbon danger="true">error!</Card.Ribbon>
+                            <Card.Ribbon background="primary">error!</Card.Ribbon>
                             <Card.Title>Oops, looks like something happened with the Marvel API...</Card.Title>
                             <Card.BodyContainer>
                                 <Card.BodyParagraph center>Message: {error.message}</Card.BodyParagraph>
@@ -163,7 +163,9 @@ class PlayScreen extends Component {
                         {game.choices &&
                         <FlexAside half>
                             <Card animation={game.checked ? (isRightAnswer ? 'correct': 'incorrect') : 'false'}>
-                                <Card.Ribbon>Question {questionNumber}/{jarvigSettings.numberOfQuestions}</Card.Ribbon>
+                                <Card.Ribbon background={game.checked ? (isRightAnswer ? 'accent2': 'primary') : 'default'}>
+                                    Question {questionNumber}/{jarvigSettings.numberOfQuestions}
+                                </Card.Ribbon>
                                 {(jarvigSettings.hints && game.answer.description !== '') && (
                                     <div>
                                         <Card.Hint onClick={() => toggleHint()}>{isHintOpen ? <TiTimes/> :

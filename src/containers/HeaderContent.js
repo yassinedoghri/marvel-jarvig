@@ -25,14 +25,7 @@ class HeaderContent extends Component {
     render() {
         const {location, jarvigSettings, game, isLoading, error} = this.props;
 
-        const content = location.pathname === '/' ? (
-            <Header>
-                {/*<SearchBar>*/}
-                {/*<SearchBar.Icon><FaSearch/></SearchBar.Icon>*/}
-                {/*<SearchBar.Input type="search" placeholder="Search characters..."/>*/}
-                {/*</SearchBar>*/}
-            </Header>
-        ) : (
+        return location.pathname !== '/' && (
             <Header>
                 <Logo inline="true" to="/">
                     <Logo.MarvelLogo sm src={logo} alt="Marvel Logo"/>
@@ -54,8 +47,6 @@ class HeaderContent extends Component {
                 </GameUI>
             </Header>
         );
-
-        return content;
     }
 }
 

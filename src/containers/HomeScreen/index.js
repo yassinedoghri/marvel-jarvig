@@ -11,7 +11,7 @@ class HomeScreen extends Component {
         const {difficulty, toggleSidebar} = this.props;
 
         return (
-            <FlexSection spaceTop>
+            <FlexSection bigSpaceTop>
                 <Logo center="true" to="/">
                     <Logo.MarvelLogo src={logo} alt="Marvel Logo" />
                     <Logo.JarvigText>JARVIG</Logo.JarvigText>
