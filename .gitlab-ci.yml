@@ -1,0 +1,8 @@
+stages: [test]
+image: ekino/docker-buildbox:node9.4-2018.01.25
+
+test:
+    tags: [ek-docker]
+    script:
+       - yarn
+       - yarn test
