@@ -74,7 +74,7 @@ class PlayScreen extends Component {
         }
     }
 
-    charactersGrid(isRightAnswer) {
+    charactersGrid() {
         const {game, selectCharacter} = this.props;
 
         let gridItems = '';
@@ -209,7 +209,7 @@ class PlayScreen extends Component {
                         </FlexAside>
                         }
                         <FlexSection spaceRight spaceLeft spaceDown>
-                            {this.charactersGrid(isRightAnswer)}
+                            {this.charactersGrid()}
                             <AttributionText sm>{attributionText}</AttributionText>
                         </FlexSection>
                     </PlayDiv>

@@ -41,7 +41,7 @@ class HeaderContent extends Component {
                         />
                     </GameUI.Item>
                     <GameUI.Item>
-                        <GameUI.Item.Icon><FaHeart/></GameUI.Item.Icon>
+                        <GameUI.Item.Icon animated="true"><FaHeart/></GameUI.Item.Icon>
                         <GameUI.Item.Label>{game.remainingLives}</GameUI.Item.Label>
                     </GameUI.Item>
                 </GameUI>

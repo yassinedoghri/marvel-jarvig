@@ -6,7 +6,6 @@ import {toggleSidebar} from "../actions/UIActions";
 import {Footer, Copyright, Toolbar} from '../components';
 import {withRouter} from 'react-router-dom';
 
-import FaVolume from 'react-icons/lib/fa/volume-off';
 import FaCog from 'react-icons/lib/fa/cog';
 import FaHelp from 'react-icons/lib/fa/question-circle';
 
@@ -17,7 +16,7 @@ class FooterContent extends Component {
         return (
             <Footer>
                 <Toolbar>
-                    <Toolbar.Item md><FaVolume/></Toolbar.Item>
+                    {/*<Toolbar.Item md><FaVolume/></Toolbar.Item>*/}
                     {location.pathname === '/' &&
                     <Toolbar.Item md
                                   onClick={() => toggleSidebar('settings')}
