@@ -188,7 +188,7 @@ class PlayScreen extends Component {
                             </Card>
                         </FlexAside>
                         }
-                        <FlexSection spaceRight spaceLeft play>
+                        <FlexSection spaceRight spaceLeft spaceDown>
                             {this.charactersGrid()}
                             <AttributionText sm>{attributionText}</AttributionText>
                         </FlexSection>

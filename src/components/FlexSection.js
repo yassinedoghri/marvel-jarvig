@@ -5,7 +5,7 @@ export const FlexSection = styled.section`
     padding-top: ${props => props.spaceTop ? '2em' : '0'};
     padding-right: ${props => props.spaceRight ? '2em' : '0'};
     padding-left: ${props => props.spaceLeft ? '2em' : '0'};
-    padding-bottom: 18em;
+    padding-bottom: ${props => props.spaceDown ? '18em' : '0'};
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -14,7 +14,6 @@ export const FlexSection = styled.section`
     ${media.tablet`
         padding-top: ${props => {
             if (props.spaceTop) return '4em';
-            if (props.bigSpaceTop) return '8em';
             return '0'
         }};
         padding-right: ${props => props.spaceRight ? '4em' : '0'};

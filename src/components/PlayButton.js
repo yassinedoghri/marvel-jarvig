@@ -24,7 +24,7 @@ const PlayButton = styled(Link)`
     
     &:hover {
         background: ${props => props.theme.colors.accent.base};
-        color: ${props => props.theme.colors.primary.base};
+        color: ${props => props.theme.colors.primary.dark};
         box-shadow: 0 19px 38px rgba(0,0,0,0.2), 0 15px 12px rgba(0,0,0,0.14);
         transform: scale(1.05);
     }
