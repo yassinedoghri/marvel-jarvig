@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import Figure from './Figure';
-import Image from './Image';
-import Caption from './Caption';
-import RadioBtn from './RadioBtn';
-import CheckBadge from './CheckBadge';
+import Figure from "components/Character/Figure";
+import Image from "components/Character/Image";
+import Caption from "components/Character/Caption";
+import RadioBtn from "components/Character/RadioBtn";
+import CheckBadge from "components/Character/CheckBadge";
 
-export const Character = styled.div`
-    margin: 1em auto;
+const Character = styled.div`
+  margin: 1em auto;
 `;
 
 Character.Figure = Figure;

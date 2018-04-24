@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const stretchDelay = keyframes`
     0%, 40%, 100% { 
@@ -9,44 +9,42 @@ const stretchDelay = keyframes`
 `;
 
 export const FlexGrid = styled.div`
-    margin: 0 auto;
-    margin-top: -5em;
-    width: 60px;
-    height: 40px;
-    text-align: center;
-    font-size: 10px;
-    
-    & > div {
-        background-color: ${props => props.theme.colors.dark.secondary};
-        height: 100%;
-        margin: 1px;
-        width: 6px;
-        display: inline-block;
-        
-        animation: ${stretchDelay} 1.2s infinite ease-in-out;
-    }
-    
-    & .rect2 {
-        -webkit-animation-delay: -1.1s;
-        animation-delay: -1.1s;
-    }
-    
-    & .rect3 {
-        -webkit-animation-delay: -1.0s;
-        animation-delay: -1.0s;
-    }
-    
-    & .rect4 {
-        -webkit-animation-delay: -0.9s;
-        animation-delay: -0.9s;
-    }
-    
-    & .rect5 {
-        -webkit-animation-delay: -0.8s;
-        animation-delay: -0.8s;
-    }
+  margin: 0 auto;
+  margin-top: -5em;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+
+  & > div {
+    background-color: ${props => props.theme.colors.dark.secondary};
+    height: 100%;
+    margin: 1px;
+    width: 6px;
+    display: inline-block;
+
+    animation: ${stretchDelay} 1.2s infinite ease-in-out;
+  }
+
+  & .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+
+  & .rect3 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+  }
+
+  & .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+
+  & .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
 `;
-
-
 
 export default FlexGrid;

@@ -1,7 +1,7 @@
-import UIReducer from './reducer-ui';
-import JarvigReducer from './reducer-jarvig';
+import UIReducer from "./reducer-ui";
+import JarvigReducer from "./reducer-jarvig";
 
 export default {
-    ui: UIReducer,
-    jarvig: JarvigReducer,
-}
+  ui: UIReducer,
+  jarvig: JarvigReducer
+};

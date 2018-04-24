@@ -1,11 +1,11 @@
-import styled, {keyframes} from "styled-components";
-import {transitions} from 'polished';
+import styled, { keyframes } from "styled-components";
+import { transitions } from "polished";
 
-import {bounceIn} from 'react-animations';
+import { bounceIn } from "react-animations";
 
 const bounceInAnimation = keyframes`${bounceIn}`;
 
-export const Image = styled.img`
+const Image = styled.img`
     width: 100%;
     border: solid ${props => props.theme.colors.foreground.base};
     border-width: 5px 3px 3px 5px;
@@ -13,7 +13,7 @@ export const Image = styled.img`
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     box-sizing: border-box
-    ${transitions('all 200ms ease-in-out')}
+    ${transitions("all 200ms ease-in-out")}
     animation: 1s ${bounceInAnimation};
 
     &:hover {

@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Label from './Label';
-import Counter from './Counter';
-import Checkbox from './Checkbox';
+import Label from "components/Settings/Item/Label";
+import Counter from "components/Settings/Item/Counter";
+import Checkbox from "components/Settings/Item/Checkbox";
 
 const Item = styled.div`
-    position: relative;
+  position: relative;
 `;
 
 Item.Label = Label;

@@ -1,39 +1,52 @@
-import React, {Component} from 'react';
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import logo from '../MarvelLogo.svg';
-import {FlexSection, Logo, PlayButton, PlayMode} from "../../components";
-import {toggleSidebar} from "../../actions/UIActions";
+import logo from "containers/MarvelLogo.svg";
+import { FlexSection, Logo, PlayButton, PlayMode } from "components";
+import { toggleSidebar } from "actions/UIActions";
 
 class HomeScreen extends Component {
-    render() {
-        const {difficulty, toggleSidebar} = this.props;
+  render() {
+    const { difficulty, toggleSidebar } = this.props;
 
-        return (
-            <FlexSection>
-                <Logo center="true" to="/">
-                    <Logo.MarvelLogo src={logo} alt="Marvel Logo" />
-                    <Logo.JarvigText>JARVIG</Logo.JarvigText>
-                </Logo>
-                <PlayButton to="/play">Play!</PlayButton>
-                <PlayMode>Difficulty: <button title="Open Settings"
-                onClick={() => toggleSidebar('settings')}>{difficulty}</button></PlayMode>
-            </FlexSection>
-        );
-    }
+    return (
+      <FlexSection>
+        <Logo center="true" to="/">
+          <Logo.MarvelLogo src={logo} alt="Marvel Logo" />
+          <Logo.JarvigText>JARVIG</Logo.JarvigText>
+        </Logo>
+        <PlayButton to="/play">Play!</PlayButton>
+        <PlayMode>
+          Difficulty:
+          <button
+            title="Open Settings"
+            onClick={() => toggleSidebar("settings")}
+          >
+            {difficulty}
+          </button>
+        </PlayMode>
+      </FlexSection>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        difficulty: state.jarvig.difficulty,
-    }
+HomeScreen.propTypes = {
+  difficulty: PropTypes.string.isRequired,
+  toggleSidebar: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({
-        toggleSidebar: toggleSidebar,
-    }, dispatch)
-);
+const mapStateToProps = state => ({
+  difficulty: state.jarvig.difficulty
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      toggleSidebar
+    },
+    dispatch
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

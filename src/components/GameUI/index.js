@@ -1,13 +1,13 @@
-import styled from 'styled-components';
-import {media} from '../../media';
+import styled from "styled-components";
+import media from "media";
 
-import Item from './Item';
+import Item from "components/GameUI/Item";
 
 const GameUI = styled.ul`
-    list-style-type: none;
-    padding: 0;
-    margin-left: auto;
-    ${media.tablet`margin-left: auto;`}
+  list-style-type: none;
+  padding: 0;
+  margin-left: auto;
+  ${media.tablet`margin-left: auto;`};
 `;
 
 GameUI.Item = Item;

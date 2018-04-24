@@ -1,6 +1,6 @@
 // ----- styles/FlexGrid.js
-import {injectGlobal} from 'styled-components';
-import {normalize} from 'polished';
+import { injectGlobal } from "styled-components";
+import { normalize } from "polished";
 
 export default () => injectGlobal`
     ${normalize()}
@@ -24,5 +24,4 @@ export default () => injectGlobal`
     body {
     padding: 0;
     background-color: white;
-}
-`
+}`;
