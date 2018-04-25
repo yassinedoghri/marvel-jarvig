@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Jarvig Text adds the size and spacing modifiers 1`] = `
+.c0 {
+  color: rgba(255,255,255,0.7);
+  font-family: Bangers;
+  margin: 0;
+  text-align: center;
+  -webkit-letter-spacing: 0.4em;
+  -moz-letter-spacing: 0.4em;
+  -ms-letter-spacing: 0.4em;
+  letter-spacing: 0.4em;
+  font-size: 1rem;
+  margin-left: .5em;
+}
+
+<h1
+  className="c0"
+/>
+`;
+
+exports[`Logo Jarvig Text renders correctly 1`] = `
+.c0 {
+  color: rgba(34,34,34,0.54);
+  font-family: Bangers;
+  margin: 0;
+  text-align: center;
+  -webkit-letter-spacing: 0.4em;
+  -moz-letter-spacing: 0.4em;
+  -ms-letter-spacing: 0.4em;
+  letter-spacing: 0.4em;
+  font-size: 2rem;
+  margin-left: 0;
+}
+
+<h1
+  className="c0"
+/>
+`;

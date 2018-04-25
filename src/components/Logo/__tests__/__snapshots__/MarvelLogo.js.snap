@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Marvel adds the size modifier 1`] = `
+.c0 {
+  height: 2em;
+}
+
+<img
+  className="c0"
+/>
+`;
+
+exports[`Logo Marvel renders correctly 1`] = `
+.c0 {
+  height: 4.5em;
+}
+
+<img
+  className="c0"
+/>
+`;

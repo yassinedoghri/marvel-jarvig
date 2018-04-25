@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "media";
 
-export const PlayDiv = styled.div`
+const PlayDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

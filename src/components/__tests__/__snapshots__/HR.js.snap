@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HR renders correctly 1`] = `
+.c0 {
+  border: 1px solid rgba(34,34,34,0.54);
+}
+
+<hr
+  className="c0"
+/>
+`;

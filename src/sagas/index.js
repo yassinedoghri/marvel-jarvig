@@ -35,8 +35,9 @@ const marvelApi = {
       offset: randomIntFromInterval(0, 1391), // There are 1491 characters
       limit: 100
     };
+    const URL = `${marvelApi.baseUrl}${URI}?${generateQuery(params)}`;
 
-    return fetch(`${marvelApi.baseUrl}${URI}?${generateQuery(params)}`, {
+    return fetch(URL, {
       method: "get",
       headers: new Headers({
         "Content-Type": "application/json"

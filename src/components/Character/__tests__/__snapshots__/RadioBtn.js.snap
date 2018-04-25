@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character RadioBtn adds answerRight result modifier 1`] = `
+.c0 {
+  position: absolute;
+  left: -9999px;
+}
+
+.c0:checked + label > figure > img {
+  border-color: #fbca03;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > figcaption {
+  border-color: #fbca03;
+  background-color: #fbca03;
+  color: rgba(34,34,34,0.87);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > img:hover {
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
+}
+
+.c0:disabled + label > figure > img:hover {
+  cursor: not-allowed;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0:disabled + label > figure > img,
+.c0:disabled + label > figure > figcaption {
+  border-color: #67c7eb;
+}
+
+.c0:disabled + label > figure > figcaption {
+  background-color: #67c7eb;
+}
+
+.c0 + label {
+  position: relative;
+}
+
+<input
+  className="c0"
+  result="answerRight"
+  type="radio"
+/>
+`;
+
+exports[`Character RadioBtn adds selectedRight result modifier 1`] = `
+.c0 {
+  position: absolute;
+  left: -9999px;
+}
+
+.c0:checked + label > figure > img {
+  border-color: #fbca03;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > figcaption {
+  border-color: #fbca03;
+  background-color: #fbca03;
+  color: rgba(34,34,34,0.87);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > img:hover {
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
+}
+
+.c0:disabled + label > figure > img:hover {
+  cursor: not-allowed;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0:disabled + label > figure > img,
+.c0:disabled + label > figure > figcaption {
+  border-color: #67c7eb;
+}
+
+.c0:disabled + label > figure > figcaption {
+  background-color: #67c7eb;
+}
+
+.c0 + label {
+  position: relative;
+}
+
+<input
+  className="c0"
+  result="selectedRight"
+  type="radio"
+/>
+`;
+
+exports[`Character RadioBtn adds selectedWrong result modifier 1`] = `
+.c0 {
+  position: absolute;
+  left: -9999px;
+}
+
+.c0:checked + label > figure > img {
+  border-color: #fbca03;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > figcaption {
+  border-color: #fbca03;
+  background-color: #fbca03;
+  color: rgba(34,34,34,0.87);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > img:hover {
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
+}
+
+.c0:disabled + label > figure > img:hover {
+  cursor: not-allowed;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0:disabled + label > figure > img,
+.c0:disabled + label > figure > figcaption {
+  border-color: #ED1D24;
+}
+
+.c0:disabled + label > figure > figcaption {
+  background-color: #ED1D24;
+}
+
+.c0 + label {
+  position: relative;
+}
+
+<input
+  className="c0"
+  result="selectedWrong"
+  type="radio"
+/>
+`;
+
+exports[`Character RadioBtn renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  left: -9999px;
+}
+
+.c0:checked + label > figure > img {
+  border-color: #fbca03;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > figcaption {
+  border-color: #fbca03;
+  background-color: #fbca03;
+  color: rgba(34,34,34,0.87);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0:checked + label > figure > img:hover {
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
+}
+
+.c0:disabled + label > figure > img:hover {
+  cursor: not-allowed;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0:disabled + label > figure > img,
+.c0:disabled + label > figure > figcaption {
+  border-color: #222;
+}
+
+.c0:disabled + label > figure > figcaption {
+  background-color: #222;
+}
+
+.c0 + label {
+  position: relative;
+}
+
+<input
+  className="c0"
+  type="radio"
+/>
+`;

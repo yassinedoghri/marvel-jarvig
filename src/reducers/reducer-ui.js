@@ -4,25 +4,24 @@ import {
   TOGGLE_SIDEBAR
 } from "constants/actionTypes";
 
-const initSidebars = {
+export const initSidebars = {
   settings: false,
-  help: false,
+  help: false
+};
+
+export const initialState = {
+  sidebars: initSidebars,
   isHintOpen: false
 };
 
-export default (
-  state = {
-    sidebars: initSidebars
-  },
-  action
-) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_SIDEBAR: {
       return {
         ...state,
         sidebars: {
           ...initSidebars,
-          [action.payload.sidebar]: !state.sidebars[action.payload.sidebar]
+          [action.payload]: !state.sidebars[action.payload]
         }
       };
     }
@@ -41,7 +40,9 @@ export default (
       };
     }
     default: {
-      return state;
+      return {
+        ...state
+      };
     }
   }
 };

@@ -6,9 +6,7 @@ import {
 
 export const toggleSidebar = sidebar => ({
   type: TOGGLE_SIDEBAR,
-  payload: {
-    sidebar
-  }
+  payload: sidebar
 });
 
 export const resetSidebars = () => ({

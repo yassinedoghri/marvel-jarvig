@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameUI Block renders correctly 1`] = `
+.c1 {
+  display: inline;
+  font-size: 1.2rem;
+}
+
+.c1:last-child {
+  margin-left: 1em;
+}
+
+.c2 {
+  color: rgba(255,255,255,1);
+  padding-left: 0.6em;
+  padding-right: 0.3em;
+  font-size: 1.8rem;
+}
+
+.c2 svg {
+  -webkit-animation: none;
+  animation: none;
+}
+
+.c3 {
+  font-family: Bangers;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
+  text-shadow: 3px 3px 0 #222,-1px -1px 0 #222,1px -1px 0 #222, -1px 1px 0 #222,1px 1px 0 #222;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.c0 {
+  list-style-type: none;
+  padding: 0;
+  margin-left: auto;
+}
+
+@media (min-width:48em) {
+  .c0 {
+    margin-left: auto;
+  }
+}
+
+<ul
+  className="c0"
+>
+  <li
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      Icon
+    </span>
+    <span
+      className="c3"
+    >
+      GameUI Label
+    </span>
+  </li>
+</ul>
+`;

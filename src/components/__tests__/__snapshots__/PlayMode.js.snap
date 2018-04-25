@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayMode renders correctly 1`] = `
+.c0 {
+  margin: 1em auto;
+  color: rgba(255,255,255,0.7);
+}
+
+.c0 button {
+  color: rgba(255,255,255,1);
+  background: transparent;
+  border: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c0 button:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<p
+  className="c0"
+/>
+`;

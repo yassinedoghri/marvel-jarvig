@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Block renders correctly 1`] = `
+.c2 {
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.c4 {
+  width: 100%;
+  border: solid #222;
+  border-width: 5px 3px 3px 5px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-sizing: border-box;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-animation: 1s fGBwqf;
+  animation: 1s fGBwqf;
+}
+
+.c4:hover {
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c4:hover + figcaption {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c4:active {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+}
+
+.c5 {
+  position: absolute;
+  width: auto;
+  bottom: 1em;
+  left: 1em;
+  font-weight: 900;
+  text-align: center;
+  font-size: 0.75rem;
+  background: #222;
+  color: rgba(255,255,255,1);
+  padding: 0.2em 0.5em;
+  box-sizing: border-box;
+  border: solid #222;
+  border-width: 2px 2px 3px 3px;
+  border-radius: 25px;
+  -webkit-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.c1 {
+  position: absolute;
+  left: -9999px;
+}
+
+.c1:checked + label > figure > img {
+  border-color: #fbca03;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c1:checked + label > figure > figcaption {
+  border-color: #fbca03;
+  background-color: #fbca03;
+  color: rgba(34,34,34,0.87);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c1:checked + label > figure > img:hover {
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
+}
+
+.c1:disabled + label > figure > img:hover {
+  cursor: not-allowed;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c1:disabled + label > figure > img,
+.c1:disabled + label > figure > figcaption {
+  border-color: #222;
+}
+
+.c1:disabled + label > figure > figcaption {
+  background-color: #222;
+}
+
+.c1 + label {
+  position: relative;
+}
+
+.c3 {
+  position: absolute;
+  display: block;
+  width: auto;
+  top: -.3em;
+  right: -.3em;
+  text-align: center;
+  background: #222;
+  color: rgba(255,255,255,1);
+  padding: .1em .2em;
+  box-sizing: border-box;
+  border: solid #222;
+  border-width: 2px 2px 3px 3px;
+  border-radius: 30px;
+  -webkit-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-animation: 1s fGBwqf,1s dYtXmW 2s;
+  animation: 1s fGBwqf,1s dYtXmW 2s;
+  font-size: 1.8rem;
+  z-index: 10;
+}
+
+.c0 {
+  margin: 1em auto;
+}
+
+<div
+  className="c0"
+>
+  <input
+    className="c1"
+    id={1}
+    type="radio"
+  />
+  <label
+    htmlFor={1}
+  >
+    <figure
+      className="c2"
+    >
+      <div
+        className="c3"
+      />
+      <img
+        className="c4"
+      />
+      <figcaption
+        className="c5"
+      />
+    </figure>
+  </label>
+</div>
+`;

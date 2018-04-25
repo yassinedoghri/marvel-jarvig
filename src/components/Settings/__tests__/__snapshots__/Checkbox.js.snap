@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Checkbox renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.c0 input {
+  margin-right: 0.5em;
+}
+
+<label
+  className="c0"
+>
+  <input
+    type="checkbox"
+  />
+</label>
+`;

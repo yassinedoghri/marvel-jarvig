@@ -47,10 +47,10 @@ class SidebarSettings extends Component {
               placeholder="Custom..."
             />
             <Settings.Item>
-              <Settings.Item.Label>Game time (min)</Settings.Item.Label>
-              <Settings.Item.Counter>
+              <Settings.Label>Game time (min)</Settings.Label>
+              <Settings.Counter>
                 {jarvigSettings.time}
-              </Settings.Item.Counter>
+              </Settings.Counter>
               <Slider
                 value={jarvigSettings.time}
                 min={1}
@@ -59,10 +59,10 @@ class SidebarSettings extends Component {
               />
             </Settings.Item>
             <Settings.Item>
-              <Settings.Item.Label>Number of Lives</Settings.Item.Label>
-              <Settings.Item.Counter>
+              <Settings.Label>Number of Lives</Settings.Label>
+              <Settings.Counter>
                 {jarvigSettings.numberOfLives}
-              </Settings.Item.Counter>
+              </Settings.Counter>
               <Slider
                 value={jarvigSettings.numberOfLives}
                 min={1}
@@ -71,10 +71,10 @@ class SidebarSettings extends Component {
               />
             </Settings.Item>
             <Settings.Item>
-              <Settings.Item.Label>Number of Questions</Settings.Item.Label>
-              <Settings.Item.Counter>
+              <Settings.Label>Number of Questions</Settings.Label>
+              <Settings.Counter>
                 {jarvigSettings.numberOfQuestions}
-              </Settings.Item.Counter>
+              </Settings.Counter>
               <Slider
                 value={jarvigSettings.numberOfQuestions}
                 min={1}
@@ -83,10 +83,10 @@ class SidebarSettings extends Component {
               />
             </Settings.Item>
             <Settings.Item>
-              <Settings.Item.Label>Characters per question</Settings.Item.Label>
-              <Settings.Item.Counter>
+              <Settings.Label>Characters per question</Settings.Label>
+              <Settings.Counter>
                 {jarvigSettings.charactersPerQuestion}
-              </Settings.Item.Counter>
+              </Settings.Counter>
               <Slider
                 value={jarvigSettings.charactersPerQuestion}
                 min={2}
@@ -97,7 +97,7 @@ class SidebarSettings extends Component {
               />
             </Settings.Item>
             <Settings.Item>
-              <Settings.Item.Checkbox>
+              <Settings.Checkbox>
                 <input
                   type="checkbox"
                   name="hints"
@@ -106,7 +106,7 @@ class SidebarSettings extends Component {
                     updateSettings("hints", event.target.checked)
                   }
                 />Hints (if available)
-              </Settings.Item.Checkbox>
+              </Settings.Checkbox>
             </Settings.Item>
           </Settings>
         </Sidebar.Content>

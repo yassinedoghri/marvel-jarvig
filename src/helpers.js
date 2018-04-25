@@ -18,5 +18,33 @@ export const generateQuery = params => {
     .join("&");
 };
 
-export const isEmpty = obj =>
-  Object.keys(obj).length === 0 && obj.constructor === Object;
+export const generateAnswers = (
+  characters,
+  charactersPerQuestion,
+  bannedChars
+) => {
+  const charactersToDisplay = [];
+  const visitedIndices = [];
+  while (charactersToDisplay.length < charactersPerQuestion) {
+    const randomItem = randomIntFromInterval(0, 99);
+    const currChar = characters[randomItem];
+    if (!visitedIndices.includes(randomItem)) {
+      // remove duplicates: check if character has been already added
+      visitedIndices.push(randomItem); // add it to visited indices if not
+      if (
+        !currChar.thumbnail.path.includes("image_not_available") &&
+        !bannedChars.includes(currChar.name)
+      ) {
+        // check if character has image and not in banned characters
+        charactersToDisplay.push(currChar); // only add characters with image
+      }
+    }
+  }
+  const answer =
+    charactersToDisplay[randomIntFromInterval(0, charactersPerQuestion - 1)];
+
+  return {
+    charactersToDisplay,
+    answer
+  };
+};

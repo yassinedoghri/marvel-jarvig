@@ -33,14 +33,6 @@ const Button = styled.button`
           })`,
           "center no-repeat"
         );
-      if (props.play)
-        return backgrounds(
-          'url("/image/background.jpg")',
-          `linear-gradient(45deg, ${props.theme.colors.primary.base},${
-            props.theme.colors.accent.light
-          })`,
-          "center no-repeat"
-        );
       return backgrounds(
         'url("/image/background.jpg")',
         `linear-gradient(45deg, ${props.theme.colors.def.base},${

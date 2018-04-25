@@ -12,9 +12,9 @@ import {
   SET_DIFFICULTY,
   UPDATE_SETTINGS
 } from "constants/actionTypes";
-import { randomIntFromInterval } from "../helpers";
+import { generateAnswers } from "helpers";
 
-const difficultySettings = {
+export const difficultySettings = {
   easy: {
     numberOfLives: 4,
     time: 3,
@@ -51,7 +51,7 @@ const difficulties = [
   { value: "hard", label: "Master" }
 ];
 
-const gameDefaults = {
+export const gameDefaults = {
   choices: null,
   selected: null,
   answer: null,
@@ -73,19 +73,18 @@ const bannedChars = [
   "Beef"
 ];
 
-export default (
-  state = {
-    settings: difficultySettings.easy,
-    difficulty: "easy",
-    difficulties,
-    game: gameDefaults,
-    attributionText: "",
-    characters: null,
-    fetching: false,
-    error: null
-  },
-  action
-) => {
+export const initialState = {
+  settings: difficultySettings.easy,
+  difficulty: "easy",
+  difficulties,
+  game: gameDefaults,
+  attributionText: "",
+  characters: null,
+  fetching: false,
+  error: null
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_SETTINGS: {
       return {
@@ -129,7 +128,7 @@ export default (
         ...state,
         game: {
           ...state.game,
-          result: [...state.game.result, "0"], // set 1 if correct, 0 if not
+          result: [...state.game.result, "0"], // set 0 as "wrong answer" because passed
           checked: true
         }
       };
@@ -181,29 +180,11 @@ export default (
     }
     case API_CALL_SUCCESS: {
       const { characters, attributionText } = action.payload;
-      const charactersToDisplay = [];
-      const visitedIndices = [];
-      while (
-        charactersToDisplay.length < state.settings.charactersPerQuestion
-      ) {
-        const randomItem = randomIntFromInterval(0, 99);
-        const currChar = characters[randomItem];
-        if (!visitedIndices.includes(randomItem)) {
-          // remove duplicates: check if character has been already added
-          visitedIndices.push(randomItem); // add it to visited indices if not
-          if (
-            !currChar.thumbnail.path.includes("image_not_available") &&
-            !bannedChars.includes(currChar.name)
-          ) {
-            // check if character has image and not in banned characters
-            charactersToDisplay.push(currChar); // only add characters with image
-          }
-        }
-      }
-      const answer =
-        charactersToDisplay[
-          randomIntFromInterval(0, state.settings.charactersPerQuestion - 1)
-        ];
+      const { charactersToDisplay, answer } = generateAnswers(
+        characters,
+        state.settings.charactersPerQuestion,
+        bannedChars
+      );
       return {
         ...state,
         fetching: false,

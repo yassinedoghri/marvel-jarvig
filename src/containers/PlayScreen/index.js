@@ -6,8 +6,6 @@ import { push } from "react-router-redux";
 
 import {
   FlexSection,
-  FlexGrid,
-  Character,
   Card,
   FlexAside,
   PlayDiv,
@@ -31,8 +29,8 @@ import {
 import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import TiLightbulb from "react-icons/lib/ti/lightbulb";
 import TiTimes from "react-icons/lib/ti/times";
-import TiTimesOutline from "react-icons/lib/ti/times-outline";
-import TiTickOutline from "react-icons/lib/ti/tick-outline";
+
+import CharactersGrid from "containers/PlayScreen/CharactersGrid";
 import ErrorCard from "containers/PlayScreen/ErrorCard";
 
 class PlayScreen extends Component {
@@ -85,61 +83,6 @@ class PlayScreen extends Component {
     }
   }
 
-  charactersGrid() {
-    const { game, selectCharacter } = this.props;
-
-    let gridItems = "";
-    if (game.choices) {
-      gridItems = game.choices.map((item, i) => {
-        const isRightAnswer = item.name === game.answer.name;
-        let result;
-        if (game.checked) {
-          if (game.selected === item.name) {
-            result = isRightAnswer ? "selectedRight" : "selectedWrong";
-          } else {
-            result = isRightAnswer ? "answerRight" : "none";
-          }
-        }
-
-        let isRightAnswerString = "none";
-        if (game.checked) {
-          isRightAnswerString = isRightAnswer ? "correct" : "incorrect";
-        }
-
-        return (
-          <Character key={item.id}>
-            <Character.RadioBtn
-              id={i}
-              name="character"
-              onClick={() => selectCharacter(item.name)}
-              disabled={game.checked}
-              result={result}
-            />
-            <label htmlFor={i}>
-              <Character.Figure>
-                {game.selected === item.name && (
-                  <Character.CheckBadge answer={isRightAnswerString}>
-                    {isRightAnswer ? <TiTickOutline /> : <TiTimesOutline />}
-                  </Character.CheckBadge>
-                )}
-                <Character.Image
-                  src={`${item.thumbnail.path}/standard_large.${
-                    item.thumbnail.extension
-                  }`}
-                />
-                <Character.Caption checked={game.checked}>
-                  {game.checked ? item.name : i + 1}
-                </Character.Caption>
-              </Character.Figure>
-            </label>
-          </Character>
-        );
-      });
-    }
-
-    return <FlexGrid>{gridItems}</FlexGrid>;
-  }
-
   render() {
     const {
       game,
@@ -151,7 +94,8 @@ class PlayScreen extends Component {
       isHintOpen,
       toggleHint,
       error,
-      attributionText
+      attributionText,
+      selectCharacter
     } = this.props;
 
     const questionNumber = game.checked
@@ -277,7 +221,7 @@ class PlayScreen extends Component {
               </FlexAside>
             )}
             <FlexSection spaceRight spaceLeft spaceDown>
-              {this.charactersGrid()}
+              <CharactersGrid game={game} selectCharacter={selectCharacter} />
               <AttributionText sm>{attributionText}</AttributionText>
             </FlexSection>
           </PlayDiv>
@@ -313,10 +257,10 @@ PlayScreen.propTypes = {
   initNewGame: PropTypes.func.isRequired,
   clearGame: PropTypes.func.isRequired,
   callRequest: PropTypes.func.isRequired,
-  selectCharacter: PropTypes.func.isRequired,
   checkAnswer: PropTypes.func.isRequired,
   nextQuestion: PropTypes.func.isRequired,
   passQuestion: PropTypes.func.isRequired,
+  selectCharacter: PropTypes.func.isRequired,
   endGame: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired,
   history: PropTypes.shape({

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar Block renders correctly 1`] = `
+.c1 {
+  background: transparent;
+  border: none;
+  color: #fbca03;
+  font-size: 1rem;
+}
+
+.c1:hover {
+  cursor: pointer;
+  color: #fddf67;
+}
+
+.c1:active {
+  color: #967902;
+}
+
+.c0 {
+  border-radius: 2px;
+}
+
+<nav
+  className="c0"
+>
+  <button
+    className="c1"
+  >
+    Item 1
+  </button>
+  <button
+    className="c1"
+  >
+    Item 2
+  </button>
+</nav>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Ribbon renders correctly 1`] = `
+.c0 {
+  width: auto;
+  font-size: 1rem;
+  color: rgba(34,34,34,0.87);
+  text-align: left;
+  position: absolute;
+  top: -2.5em;
+  left: -1em;
+  padding: 0.5em;
+  font-weight: bold;
+  background: #222;
+  color: rgba(255,255,255,1);
+  border: solid #222;
+  border-width: 4px 3px 3px 5px;
+  border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+  -webkit-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  -webkit-animation: 1s fGBwqf;
+  animation: 1s fGBwqf;
+  z-index: 12;
+}
+
+@media (min-width:48em) {
+  .c0 {
+    display: block;
+  }
+}
+
+<p
+  className="c0"
+/>
+`;

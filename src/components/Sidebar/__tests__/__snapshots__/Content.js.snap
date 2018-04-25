@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Content renders correctly 1`] = `
+.c0 {
+  padding: 1.5em;
+  text-align: justify;
+}
+
+<div
+  className="c0"
+>
+  Hello World!
+</div>
+`;

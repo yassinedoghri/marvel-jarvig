@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Body Paragraph renders correctly 1`] = `
+.c0 {
+  width: auto;
+  font-size: 1rem;
+  color: rgba(34,34,34,0.87);
+  text-align: left;
+  color: rgba(34,34,34,0.54);
+  display: none;
+}
+
+@media (min-width:48em) {
+  .c0 {
+    display: block;
+  }
+}
+
+<p
+  className="c0"
+/>
+`;

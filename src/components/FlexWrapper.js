@@ -3,7 +3,7 @@ import { backgroundImages } from "polished";
 import ComicLines from "./comic-lines.svg";
 import ComicDots from "./comic-dots.svg";
 
-export const FlexWrapper = styled.div`
+const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;

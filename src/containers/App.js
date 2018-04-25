@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "theme";
 import PropTypes from "prop-types";
 
-import { FLexWrapper } from "components";
+import { FlexWrapper } from "components";
 
 import HeaderContent from "containers/HeaderContent";
 import FooterContent from "containers/FooterContent";
@@ -18,13 +18,13 @@ class App extends Component {
 
     return (
       <ThemeProvider theme={theme}>
-        <FLexWrapper>
+        <FlexWrapper>
           <HeaderContent />
           <MainContent />
           <FooterContent />
           <SidebarHelp />
           {location.pathname === "/" && <SidebarSettings />}
-        </FLexWrapper>
+        </FlexWrapper>
       </ThemeProvider>
     );
   }

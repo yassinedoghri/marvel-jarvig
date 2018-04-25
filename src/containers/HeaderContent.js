@@ -35,9 +35,9 @@ class HeaderContent extends Component {
           </Logo>
           <GameUI>
             <GameUI.Item>
-              <GameUI.Item.Icon>
+              <GameUI.Icon>
                 <FaClock />
-              </GameUI.Item.Icon>
+              </GameUI.Icon>
               <Countdown
                 from={time * 60}
                 isGamePaused={isLoading || game.checked || game.over || error}
@@ -46,10 +46,10 @@ class HeaderContent extends Component {
               />
             </GameUI.Item>
             <GameUI.Item>
-              <GameUI.Item.Icon animated="true">
+              <GameUI.Icon animated="true">
                 <FaHeart />
-              </GameUI.Item.Icon>
-              <GameUI.Item.Label>{game.remainingLives}</GameUI.Item.Label>
+              </GameUI.Icon>
+              <GameUI.Label>{game.remainingLives}</GameUI.Label>
             </GameUI.Item>
           </GameUI>
         </Header>

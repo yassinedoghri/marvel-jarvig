@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Hint Message renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-width: 3px 4px 3px 5px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  box-sizing: border-box;
+  padding: 1em;
+  padding-top: 2em;
+  overflow-y: auto;
+  background: #222;
+  color: rgba(255,255,255,1);
+  -webkit-animation: 1s fGBwqf;
+  animation: 1s fGBwqf;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  display: block;
+}
+
+@media (min-width:48em) {
+  .c0 {
+    display: block;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

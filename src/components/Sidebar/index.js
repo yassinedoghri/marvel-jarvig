@@ -5,7 +5,6 @@ import media from "media";
 import Title from "components/Sidebar/Title";
 import Content from "components/Sidebar/Content";
 import CloseButton from "components/Sidebar/CloseButton";
-import Actions from "components/Sidebar/Actions";
 
 const Sidebar = styled.aside`
   background-color: ${props => props.theme.colors.foreground.base};
@@ -35,6 +34,5 @@ const Sidebar = styled.aside`
 Sidebar.Title = Title;
 Sidebar.Content = Content;
 Sidebar.CloseButton = CloseButton;
-Sidebar.Actions = Actions;
 
 export default Sidebar;

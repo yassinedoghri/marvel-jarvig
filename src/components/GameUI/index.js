@@ -2,6 +2,8 @@ import styled from "styled-components";
 import media from "media";
 
 import Item from "components/GameUI/Item";
+import Icon from "components/GameUI/Icon";
+import Label from "components/GameUI/Label";
 
 const GameUI = styled.ul`
   list-style-type: none;
@@ -11,5 +13,7 @@ const GameUI = styled.ul`
 `;
 
 GameUI.Item = Item;
+GameUI.Icon = Icon;
+GameUI.Label = Label;
 
 export default GameUI;

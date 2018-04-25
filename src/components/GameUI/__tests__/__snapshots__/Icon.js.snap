@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameUI Icon adds animated modifier 1`] = `
+.c0 {
+  color: rgba(255,255,255,1);
+  padding-left: 0.6em;
+  padding-right: 0.3em;
+  font-size: 1.8rem;
+}
+
+.c0 svg {
+  -webkit-animation: 1s gqnhIe infinite;
+  animation: 1s gqnhIe infinite;
+}
+
+<span
+  className="c0"
+>
+  Icon
+</span>
+`;
+
+exports[`GameUI Icon renders correctly 1`] = `
+.c0 {
+  color: rgba(255,255,255,1);
+  padding-left: 0.6em;
+  padding-right: 0.3em;
+  font-size: 1.8rem;
+}
+
+.c0 svg {
+  -webkit-animation: none;
+  animation: none;
+}
+
+<span
+  className="c0"
+>
+  Icon
+</span>
+`;

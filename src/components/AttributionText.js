@@ -1,6 +1,6 @@
 import Paragraph from "components/Paragraph";
 
-export const Footer = Paragraph.extend`
+const Footer = Paragraph.extend`
   color: ${props => props.theme.colors.light.disabled};
   padding: 0.2em;
   font-weight: bold;

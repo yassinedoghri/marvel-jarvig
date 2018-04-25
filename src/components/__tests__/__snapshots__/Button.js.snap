@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button adds accent modifier 1`] = `
+.c0 {
+  color: rgba(34,34,34,0.87);
+  border: none;
+  background-color: #ED1D24;
+  background: url("/image/background.jpg"),linear-gradient(45deg,#fbca03,#fddf67),center no-repeat;
+  margin: 0;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-size: 1rem;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.c0:active {
+  background: url("/image/background.jpg"),linear-gradient(45deg,#967902,#fbca03),center no-repeat;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:disabled,
+.c0[disabled] {
+  background: #ccc;
+  color: #999;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button adds accent2 modifier 1`] = `
+.c0 {
+  color: rgba(34,34,34,0.87);
+  border: none;
+  background-color: #ED1D24;
+  background: url("/image/background.jpg"),linear-gradient(45deg,#67c7eb,#c1e8f7),center no-repeat;
+  margin: 0;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-size: 1rem;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.c0:active {
+  background: url("/image/background.jpg"),linear-gradient(45deg,#1b9fd1,#67c7eb),center no-repeat;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:disabled,
+.c0[disabled] {
+  background: #ccc;
+  color: #999;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button adds primary modifier 1`] = `
+.c0 {
+  color: rgba(34,34,34,0.87);
+  border: none;
+  background-color: #ED1D24;
+  background: url("/image/background.jpg"),linear-gradient(45deg,#ED1D24,#f57b80),center no-repeat;
+  margin: 0;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-size: 1rem;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.c0:active {
+  background: url("/image/background.jpg"),linear-gradient(45deg,#980c11,#ED1D24),center no-repeat;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:disabled,
+.c0[disabled] {
+  background: #ccc;
+  color: #999;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button renders correctly 1`] = `
+.c0 {
+  color: rgba(34,34,34,0.87);
+  border: none;
+  background-color: #ED1D24;
+  background: url("/image/background.jpg"),linear-gradient(45deg,#ccc,#fff),center no-repeat;
+  margin: 0;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-size: 1rem;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.c0:active {
+  background: url("/image/background.jpg"),linear-gradient(45deg,#999,#fff),center no-repeat;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.c0:disabled,
+.c0[disabled] {
+  background: #ccc;
+  color: #999;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<button
+  className="c0"
+/>
+`;

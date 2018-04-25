@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "media";
 
-export const FlexGrid = styled.div`
+const FlexGrid = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

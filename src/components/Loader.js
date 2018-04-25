@@ -8,7 +8,7 @@ const stretchDelay = keyframes`
     }
 `;
 
-export const FlexGrid = styled.div`
+const FlexGrid = styled.div`
   margin: 0 auto;
   margin-top: -5em;
   width: 60px;

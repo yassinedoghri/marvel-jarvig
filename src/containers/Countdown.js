@@ -80,7 +80,7 @@ class Countdown extends Component {
         ? time.s
         : `${time.m}:${time.s < 10 ? `0${time.s}` : time.s}`;
 
-    return <GameUI.Item.Label blink={isGamePaused}>{timer}</GameUI.Item.Label>;
+    return <GameUI.Label blink={isGamePaused}>{timer}</GameUI.Label>;
   }
 }
 

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayButton renders correctly 1`] = `
+.c0 {
+  background: url("/image/background.jpg"),linear-gradient(45deg,#ED1D24,#fbca03),center no-repeat;
+  border: 2px solid #fddf67;
+  border-width: 4px 3px 4px 3px;
+  font-weight: 600;
+  color: rgba(255,255,255,1);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 1em auto 0.2em auto;
+  padding: 0.25em 1em;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1),0 6px 6px rgba(0,0,0,0.14);
+  -webkit-animation: 1s fGBwqf,1.5s gqnhIe 1s infinite;
+  animation: 1s fGBwqf,1.5s gqnhIe 1s infinite;
+}
+
+.c0:hover {
+  background: #fbca03;
+  color: #980c11;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.2),0 15px 12px rgba(0,0,0,0.14);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c0:active {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+<a
+  className="c0"
+  href="/"
+  onClick={[Function]}
+/>
+`;

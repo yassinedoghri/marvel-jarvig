@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "media";
 
-export const FlexAside = styled.aside`
+const FlexAside = styled.aside`
   display: flex;
   flex-direction: column;
   width: 100%;

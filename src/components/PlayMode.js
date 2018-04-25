@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PlayMode = styled.p`
+const PlayMode = styled.p`
   margin: 1em auto;
   color: ${props => props.theme.colors.dark.secondary};
 
