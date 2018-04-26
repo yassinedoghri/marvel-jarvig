@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import Counter from "components/Settings/Counter";
 
 describe("Settings Counter", () => {

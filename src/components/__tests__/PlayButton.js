@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import { MemoryRouter } from "react-router-dom";
 import { PlayButton } from "components";
 

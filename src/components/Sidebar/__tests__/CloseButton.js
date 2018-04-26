@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import CloseButton from "components/Sidebar/CloseButton";
 
 describe("Sidebar Close Button", () => {

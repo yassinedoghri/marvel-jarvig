@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import Hint from "components/Card/Hint";
 
 describe("Card Hint", () => {

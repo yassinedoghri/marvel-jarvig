@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import Item from "components/GameUI/Item";
 
 describe("GameUI Icon", () => {

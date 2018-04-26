@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import Image from "components/Character/Image";
 
 describe("Character Image", () => {

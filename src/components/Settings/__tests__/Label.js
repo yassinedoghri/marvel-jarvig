@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import Label from "components/Settings/Label";
 
 describe("Settings Label", () => {

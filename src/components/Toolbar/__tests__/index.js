@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import Toolbar from "components/Toolbar";
 
 describe("Toolbar Block", () => {

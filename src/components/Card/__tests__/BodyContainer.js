@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import BodyContainer from "components/Card/BodyContainer";
 
 describe("Card Body Container", () => {

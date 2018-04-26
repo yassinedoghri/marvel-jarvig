@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import BodyParagraph from "components/Card/BodyParagraph";
 
 describe("Card Body Paragraph", () => {

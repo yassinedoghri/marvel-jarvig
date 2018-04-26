@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import BodyResult from "components/Card/BodyResult";
 
 describe("Card Body Result", () => {

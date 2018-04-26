@@ -1,5 +1,5 @@
 import React from "react";
-import renderWithTheme from "testHelpers";
+import { renderWithTheme } from "testHelpers";
 import JarvigText from "components/Logo/JarvigText";
 
 describe("Logo Jarvig Text", () => {
