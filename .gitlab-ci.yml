@@ -1,9 +1,0 @@
-stages: [test]
-image: ekino/docker-buildbox:node9.4-2018.01.25
-
-build:
-    tags: [ek-docker]
-    script:
-       - npm install
-       - npm test
-       - npm run-script build
