@@ -1,7 +1,18 @@
-# Marvel J.A.R.V.I.G.
+<h1 align="center">Marvel J.A.R.V.I.G.</h1>
 
-**Marvel J.A.R.V.I.G.** (Just A Rather Very Interesting Game) is a game that lets you find and discover
-Marvel Comics characters based on their name, image and description!
+<div align="center">
+  <strong>Marvel J.A.R.V.I.G. (Just A Rather Very Interesting Game) is a game that lets you find and discover Marvel Comics characters based on their name, image and description!</strong>
+  <br />
+  <br />
+  <a href="https://travis-ci.org/yassinedoghri/marvel-jarvig" title="master build"><img src="https://travis-ci.org/yassinedoghri/marvel-jarvig.svg?branch=master" alt="Master build"></a>
+  <a href="https://travis-ci.org/yassinedoghri/marvel-jarvig" title="development build"><img src="https://travis-ci.org/yassinedoghri/marvel-jarvig.svg?branch=development" alt="Development build"></a>
+  <a href="https://codeclimate.com/github/yassinedoghri/marvel-jarvig/maintainability" title="maintainability"><img src="https://api.codeclimate.com/v1/badges/ead146f32706746e5e79/maintainability" /></a>
+  <a href="https://codeclimate.com/github/yassinedoghri/marvel-jarvig/test_coverage" title="test coverage"><img src="https://api.codeclimate.com/v1/badges/ead146f32706746e5e79/test_coverage" /></a>
+  <a href="https://opensource.org/licenses/MIT" title="MIT License"><img src="https://img.shields.io/badge/License-MIT-blue.svg" /></a>
+</div>
+
+<br />
+<br />
 
 For that, **the player answers a set of questions** regarding the **Marvel Universe** to determine if he trully knows every character. 
 
