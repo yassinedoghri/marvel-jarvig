@@ -4,8 +4,14 @@ node_js:
 cache:
   directories:
     - node_modules
-script:
-  - npm run build
-  - npm test
 before_install:
   - mv src/config/index.js.dist src/config/index.js
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - npm run build
+  - npm test -- --coverage
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
