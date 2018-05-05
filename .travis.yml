@@ -7,3 +7,5 @@ cache:
 script:
   - npm run build
   - npm test
+before_install:
+  - mv src/config/index.js.dist src/config/index.js
