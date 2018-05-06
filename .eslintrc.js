@@ -76,7 +76,9 @@ module.exports = {
 
     // Disable no-param-reassign only for param properties
     // https://stackoverflow.com/a/35637900
-    "no-param-reassign": [2, { "props": false }]
+    "no-param-reassign": [2, { "props": false }],
+
+    "linebreak-style": ["error", "windows"]
   },
   settings: {
     // Allow absolute paths in imports, e.g. import Button from 'components/Button'
