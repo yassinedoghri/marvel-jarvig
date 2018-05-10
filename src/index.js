@@ -1,25 +1,23 @@
+import App from "containers/App";
+
+import createHistory from "history/createBrowserHistory";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
-
-import watcherSaga from "sagas";
-
-import createHistory from "history/createBrowserHistory";
-import registerServiceWorker from "registerServiceWorker";
 
 import {
   ConnectedRouter,
-  routerReducer,
-  routerMiddleware
+  routerMiddleware,
+  routerReducer
 } from "react-router-redux";
 
 import rootReducer from "reducers";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import createSagaMiddleware from "redux-saga";
 
-import baseStyles from "baseStyles";
-import App from "containers/App";
+import watcherSaga from "sagas";
+import { baseStyles, registerServiceWorker } from "utils";
 
 const history = createHistory();
 

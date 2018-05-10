@@ -1,7 +1,8 @@
-import { keyframes } from "styled-components";
 import Paragraph from "components/Paragraph";
-import media from "media";
 import { bounceIn } from "react-animations";
+import { keyframes } from "styled-components";
+import media from "utils/media";
+import { getColor } from "utils/style";
 
 const bounceInAnimation = keyframes`${bounceIn}`;
 
@@ -11,19 +12,14 @@ const Ribbon = Paragraph.extend`
   left: -1em;
   padding: 0.5em;
   font-weight: bold;
-  background: ${props => {
-    if (props.background === "primary") return props.theme.colors.primary.base;
-    if (props.background === "accent") return props.theme.colors.accent.base;
-    if (props.background === "accent2") return props.theme.colors.accent2.base;
-    return props.theme.colors.foreground.base;
-  }};
-  color: ${props => props.theme.colors.dark.primary};
+  background: ${props => getColor(props.theme, props.backgroundcolor)};
+  color: ${props => props.theme.colors.contrastDark.primary};
   border: solid ${props => props.theme.colors.foreground.base};
   border-width: 4px 3px 3px 5px;
   border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
   transform: rotate(-2deg);
   animation: 1s ${bounceInAnimation};
-  z-index: 12;
+  z-index: 1;
 
   ${media.tablet`
         display: block;

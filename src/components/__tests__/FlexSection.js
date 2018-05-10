@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import { FlexSection } from "components";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("FlexSection", () => {
   it("renders correctly", () => {

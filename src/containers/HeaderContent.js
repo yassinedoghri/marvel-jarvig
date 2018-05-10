@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { bindActionCreators, compose } from "redux";
-import { withRouter } from "react-router-dom";
+import { endGame } from "actions/GameActions";
 
 import { GameUI, Header, Logo } from "components/index";
+import Countdown from "containers/Countdown";
 import logo from "containers/MarvelLogo.svg";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import FaClock from "react-icons/lib/fa/clock-o";
 
 import FaHeart from "react-icons/lib/fa/heart";
-import FaClock from "react-icons/lib/fa/clock-o";
 import { connect } from "react-redux";
-import Countdown from "containers/Countdown";
+import { withRouter } from "react-router-dom";
 import { push } from "react-router-redux";
-import { endGame } from "actions/GameActions";
-import PropTypes from "prop-types";
+import { bindActionCreators, compose } from "redux";
 
 class HeaderContent extends Component {
   handleCountdownEnd() {
@@ -46,7 +46,7 @@ class HeaderContent extends Component {
               />
             </GameUI.Item>
             <GameUI.Item>
-              <GameUI.Icon animated="true">
+              <GameUI.Icon animated>
                 <FaHeart />
               </GameUI.Icon>
               <GameUI.Label>{game.remainingLives}</GameUI.Label>

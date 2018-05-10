@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Settings Label renders correctly 1`] = `
-.c0 {
-  display: inline-block;
-  margin-bottom: 0.5em;
-}
-
 <p
-  className="c0"
+  className="sc-bdVaJa ilhhXt"
 >
   This is a test
 </p>

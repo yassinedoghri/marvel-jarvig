@@ -1,17 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Body Container renders correctly 1`] = `
-.c0 {
-  padding: 0;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    padding: 1em;
-  }
-}
-
 <div
-  className="c0"
+  className="sc-bdVaJa dsRsjT"
 />
 `;

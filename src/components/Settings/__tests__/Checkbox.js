@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Checkbox from "components/Settings/Checkbox";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Settings Checkbox", () => {
   it("renders correctly", () => {

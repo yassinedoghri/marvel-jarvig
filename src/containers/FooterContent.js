@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import { bindActionCreators, compose } from "redux";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-
 import { toggleSidebar } from "actions/UIActions";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 
 import FaCog from "react-icons/lib/fa/cog";
 import FaHelp from "react-icons/lib/fa/question-circle";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { bindActionCreators, compose } from "redux";
 
-import { Copyright, Footer, Toolbar } from "../components/index";
+import { Footer, Paragraph, Toolbar } from "../components";
 
 class FooterContent extends Component {
   render() {
@@ -27,7 +26,13 @@ class FooterContent extends Component {
             <FaHelp />
           </Toolbar.Item>
         </Toolbar>
-        <Copyright>
+        <Paragraph
+          style={{ margin: "0 0 0 auto" }}
+          size="sm"
+          color="contrastDark"
+          tint="secondary"
+          anchorColor="accent"
+        >
           {`Created by `}
           <a
             href="https://yassine.doghri.fr/"
@@ -36,15 +41,7 @@ class FooterContent extends Component {
           >
             {`Yassine Doghri`}
           </a>
-          {` © 2018 `}
-          <a
-            href="https://www.ekino.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {`ekino.`}
-          </a>
-        </Copyright>
+        </Paragraph>
       </Footer>
     );
   }

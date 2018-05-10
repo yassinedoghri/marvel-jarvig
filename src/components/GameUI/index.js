@@ -1,12 +1,11 @@
-import styled from "styled-components";
-import media from "media";
+import Icon from "components/GameUI/Icon";
 
 import Item from "components/GameUI/Item";
-import Icon from "components/GameUI/Icon";
 import Label from "components/GameUI/Label";
+import styled from "styled-components";
+import media from "utils/media";
 
 const GameUI = styled.ul`
-  list-style-type: none;
   padding: 0;
   margin-left: auto;
   ${media.tablet`margin-left: auto;`};

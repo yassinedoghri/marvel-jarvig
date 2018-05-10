@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-
 import { Card } from "components";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 
 import FaHome from "react-icons/lib/fa/home";
 
@@ -11,7 +10,7 @@ class ErrorCard extends Component {
 
     return (
       <Card alignCenter>
-        <Card.Ribbon background="primary">error!</Card.Ribbon>
+        <Card.Ribbon backgroundcolor="primary">error!</Card.Ribbon>
         <Card.Title>
           {`Oops, looks like something went wrong with the Marvel API...`}
         </Card.Title>
@@ -22,7 +21,11 @@ class ErrorCard extends Component {
           <Card.BodyParagraph center>Try again later!</Card.BodyParagraph>
         </Card.BodyContainer>
         <Card.ActionContainer>
-          <Card.ActionLink to="/" accent2="true" dark="true">
+          <Card.ActionLink
+            to="/"
+            backgroundcolor="accent2"
+            color="contrastLight"
+          >
             <FaHome /> Home
           </Card.ActionLink>
         </Card.ActionContainer>

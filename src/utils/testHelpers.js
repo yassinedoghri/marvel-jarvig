@@ -1,18 +1,17 @@
-import React from "react";
-import "jest-styled-components";
-import renderer from "react-test-renderer";
-import ShallowRenderer from "react-test-renderer/shallow";
-import theme from "theme";
-import { ThemeProvider } from "styled-components";
-import rootReducer from "reducers";
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
 import { createMemoryHistory } from "history";
+import React from "react";
+import { Provider } from "react-redux";
 import {
   ConnectedRouter,
   routerMiddleware,
   routerReducer
 } from "react-router-redux";
+import renderer from "react-test-renderer";
+import ShallowRenderer from "react-test-renderer/shallow";
+import rootReducer from "reducers";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { ThemeProvider } from "styled-components";
+import theme from "theme";
 
 const history = createMemoryHistory("/");
 const routeMiddleware = routerMiddleware(history);

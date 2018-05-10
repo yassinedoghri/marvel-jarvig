@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Caption from "components/Character/Caption";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Character Caption", () => {
   it("renders correctly", () => {

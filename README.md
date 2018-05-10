@@ -85,10 +85,8 @@ $ yarn start
 │  │  ├── App.js        # higher-order component
 │  │  ...
 │  ├── reducers/        # redux reducers
-│  ├── helpers.js       # helper file for common functions
+│  ├── utils/           # utility files (eg. helpers.js, style utils, etc.)
 │  ├── index.js         # main entry point for react app
-│  ├── media.js         # definition of responsive breaking points
-│  ├── testHelpers.js   # helper file for testing
 │  └── theme.js         # theme file (colors, font size, ...)
 ├── .env
 ├── .eslintrc.js        # eslint config file

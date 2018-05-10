@@ -1,23 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FlexWrapper renders correctly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 100%;
-  position: relative;
-  background-image: url(comic-lines.svg),url(comic-dots.svg),radial-gradient(#fbca03 0%,#ED1D24 80%);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 <div
-  className="c0"
+  className="sc-gZMcBi cbyIoi"
 />
 `;

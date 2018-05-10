@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const PlayMode = styled.p`
   margin: 1em auto;
-  color: ${props => props.theme.colors.dark.secondary};
+  color: ${props => props.theme.colors.contrastDark.secondary};
 
   & button {
-    color: ${props => props.theme.colors.dark.primary};
+    color: ${props => props.theme.colors.contrastDark.primary};
     background: transparent;
     border: none;
     text-decoration: underline;

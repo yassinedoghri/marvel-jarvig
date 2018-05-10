@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Label = styled.p`
   display: inline-block;
-  margin-bottom: 0.5em;
+  margin-bottom: ${props => props.theme.spaces.sm}em;
 `;
 
 export default Label;

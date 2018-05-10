@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Settings Counter renders correctly 1`] = `
-.c0 {
-  display: inline-block;
-  float: right;
-}
-
 <p
-  className="c0"
+  className="sc-bdVaJa jMCOdv"
 >
   10
 </p>

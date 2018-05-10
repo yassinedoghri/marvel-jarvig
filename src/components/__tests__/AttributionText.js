@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import { AttributionText } from "components";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("AttributionText", () => {
   it("renders correctly", () => {

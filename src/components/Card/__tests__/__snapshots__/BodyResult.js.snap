@@ -1,31 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Body Result renders correctly 1`] = `
-.c0 {
-  font-family: Bangers;
-  color: #222;
-  font-size: 4rem;
-  text-align: center;
-  margin: 0;
-  -webkit-letter-spacing: 0.1em;
-  -moz-letter-spacing: 0.1em;
-  -ms-letter-spacing: 0.1em;
-  letter-spacing: 0.1em;
-}
-
-.c0 span {
-  font-family: Bangers;
-  color: #fbca03;
-  text-shadow: -1px 2px 0px #ED1D24, 2px -1px 0px #ED1D24, 4px 4px 0 #222;
-}
-
-@media (min-width:48em) {
-  .c0 {
-    display: block;
-  }
-}
-
 <h3
-  className="c0"
+  className="sc-bdVaJa hyvANh"
 />
 `;

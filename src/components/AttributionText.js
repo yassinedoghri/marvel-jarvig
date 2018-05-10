@@ -1,12 +1,11 @@
 import Paragraph from "components/Paragraph";
 
-const Footer = Paragraph.extend`
-  color: ${props => props.theme.colors.light.disabled};
-  padding: 0.2em;
+const AttributionText = Paragraph.extend`
+  color: ${props => props.theme.colors.contrastLight.disabled};
   font-weight: bold;
   width: 100%;
   text-align: center;
-  box-sizing: border-box;
+  padding: ${props => props.theme.spaces.md}em 0;
 `;
 
-export default Footer;
+export default AttributionText.withComponent("footer");

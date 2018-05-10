@@ -1,22 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Title renders correctly 1`] = `
-.c0 {
-  color: rgba(34,34,34,0.54);
-  font-family: Bangers;
-  text-align: center;
-  -webkit-letter-spacing: 0.1em;
-  -moz-letter-spacing: 0.1em;
-  -ms-letter-spacing: 0.1em;
-  letter-spacing: 0.1em;
-  font-size: 1.4rem;
-}
-
-.c0 span {
-  font-family: Bangers;
-}
-
 <h2
-  className="c0"
+  className="sc-bdVaJa jkvLQu"
 />
 `;

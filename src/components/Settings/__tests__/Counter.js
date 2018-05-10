@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Counter from "components/Settings/Counter";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Settings Counter", () => {
   it("renders correctly", () => {

@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import { Main } from "components";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Main", () => {
   it("renders correctly", () => {

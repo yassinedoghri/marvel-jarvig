@@ -1,11 +1,11 @@
-import React, { Component } from "react";
 import { Main } from "components";
-import { Route, Switch, withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
 
 import HomeScreen from "containers/HomeScreen";
 import PlayScreen from "containers/PlayScreen";
 import ResultScreen from "containers/ResultScreen";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
 
 class MainContent extends Component {
   render() {

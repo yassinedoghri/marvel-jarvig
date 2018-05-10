@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { transitions } from "polished/lib/index";
+import styled from "styled-components";
 
 const Caption = styled.figcaption`
   position: absolute;
@@ -8,11 +8,10 @@ const Caption = styled.figcaption`
   left: ${props => (props.checked ? "0" : "1em")};
   font-weight: ${props => (props.checked ? "normal" : "900")};
   text-align: center;
-  font-size: ${props => props.theme.fontSize.sm};
+  font-size: ${props => props.theme.fontSize.sm}rem;
   background: ${props => props.theme.colors.foreground.base};
-  color: ${props => props.theme.colors.dark.primary};
+  color: ${props => props.theme.colors.contrastDark.primary};
   padding: 0.2em 0.5em;
-  box-sizing: border-box;
   border: solid ${props => props.theme.colors.foreground.base};
   border-width: 2px 2px 3px 3px;
   border-radius: ${props =>

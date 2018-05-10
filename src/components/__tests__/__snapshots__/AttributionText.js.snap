@@ -1,20 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AttributionText renders correctly 1`] = `
-.c0 {
-  width: auto;
-  font-size: 1rem;
-  color: rgba(34,34,34,0.87);
-  text-align: left;
-  color: rgba(34,34,34,0.38);
-  padding: 0.2em;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-<p
-  className="c0"
+<footer
+  className="sc-eqIVtm egNyTn"
 />
 `;

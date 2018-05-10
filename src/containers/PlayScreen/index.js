@@ -1,37 +1,30 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import PropTypes from "prop-types";
-import { push } from "react-router-redux";
-
-import {
-  FlexSection,
-  Card,
-  FlexAside,
-  PlayDiv,
-  Emphasis,
-  Paragraph,
-  AttributionText,
-  Loader
-} from "components";
-import { resetSidebars, toggleHint } from "actions/UIActions";
 import {
   callRequest,
   checkAnswer,
-  initNewGame,
-  passQuestion,
-  nextQuestion,
-  selectCharacter,
+  clearGame,
   endGame,
-  clearGame
+  initNewGame,
+  nextQuestion,
+  passQuestion,
+  selectCharacter
 } from "actions/GameActions";
+import { resetSidebars, toggleHint } from "actions/UIActions";
 
-import FaArrowRight from "react-icons/lib/fa/arrow-right";
-import TiLightbulb from "react-icons/lib/ti/lightbulb";
-import TiTimes from "react-icons/lib/ti/times";
+import {
+  AttributionText,
+  ChoicesSection,
+  Loader,
+  PlaySection
+} from "components";
 
 import CharactersGrid from "containers/PlayScreen/CharactersGrid";
 import ErrorCard from "containers/PlayScreen/ErrorCard";
+import QuestionCard from "containers/PlayScreen/QuestionCard";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { push } from "react-router-redux";
+import { bindActionCreators } from "redux";
 
 class PlayScreen extends Component {
   constructor(props) {
@@ -98,133 +91,37 @@ class PlayScreen extends Component {
       selectCharacter
     } = this.props;
 
-    const questionNumber = game.checked
-      ? game.result.length
-      : game.result.length + 1;
-
-    let isRightAnswer = false;
-    if (game.answer) {
-      isRightAnswer = game.selected === game.answer.name;
-    }
-
-    let cardTitle;
-    let cardBody;
-    let actions;
-    if (game.checked) {
-      if (isRightAnswer) {
-        cardTitle = { 1: "Correct, well done!" };
-      } else {
-        cardTitle = { 1: "Too bad, you can do better!" };
-      }
-      const isLastGame =
-        questionNumber === jarvigSettings.numberOfQuestions ||
-        game.remainingLives === 0;
-      actions = (
-        <Card.ActionContainer>
-          <Card.ActionBtn
-            accent={!isLastGame}
-            primary={isLastGame}
-            dark
-            onClick={() => nextQuestion()}
-          >
-            {isLastGame ? "Check results" : "Next question"} <FaArrowRight />
-          </Card.ActionBtn>
-        </Card.ActionContainer>
-      );
-      cardBody = isLastGame
-        ? "The game has ended, check your score!"
-        : "Press Next to get a new question!";
-    } else {
-      cardTitle = {
-        1: "Can you find ",
-        2: <Emphasis>{game.answer ? game.answer.name : ""}</Emphasis>,
-        3: "?"
-      };
-      cardBody = "Choose a character and check your answer!";
-      actions = (
-        <Card.ActionContainer>
-          <Card.ActionBtn primary dark half onClick={() => passQuestion()}>
-            Pass
-          </Card.ActionBtn>
-          <Card.ActionBtn
-            accent2
-            dark
-            half
-            disabled={!game.selected}
-            onClick={() => checkAnswer(isRightAnswer)}
-          >
-            Check
-          </Card.ActionBtn>
-        </Card.ActionContainer>
-      );
-    }
-
-    let color = "default";
-    let animation = "none";
-    if (game.checked) {
-      color = isRightAnswer ? "accent2" : "primary";
-      animation = isRightAnswer ? "correct" : "incorrect";
-    }
-
     let gameScreen = (
-      <PlayDiv>
-        <Loader>
-          <div className="rect1" />
-          <div className="rect2" />
-          <div className="rect3" />
-          <div className="rect4" />
-          <div className="rect5" />
-        </Loader>
-      </PlayDiv>
+      <PlaySection>
+        <Loader />
+      </PlaySection>
     );
     if (!isGameLoading) {
       if (error) {
         gameScreen = (
-          <PlayDiv>
+          <PlaySection>
             <ErrorCard error={error} />
-          </PlayDiv>
+          </PlaySection>
         );
       } else {
         gameScreen = (
-          <PlayDiv>
+          <PlaySection>
             {game.choices && (
-              <FlexAside half>
-                <Card animation={animation}>
-                  <Card.Ribbon background={color}>
-                    Question {questionNumber}/{jarvigSettings.numberOfQuestions}
-                  </Card.Ribbon>
-                  {jarvigSettings.hints &&
-                    game.answer.description !== "" && (
-                      <div>
-                        <Card.Hint onClick={() => toggleHint()}>
-                          {isHintOpen ? <TiTimes /> : <TiLightbulb />}
-                        </Card.Hint>
-                        <Card.HintMessage hidden={!isHintOpen}>
-                          <Paragraph justify light>
-                            {game.answer ? game.answer.description : ""}
-                          </Paragraph>
-                        </Card.HintMessage>
-                      </div>
-                    )}
-                  <Card.Title>
-                    {Object.keys(cardTitle).map(item => (
-                      <span key={item}>{cardTitle[item]}</span>
-                    ))}
-                  </Card.Title>
-                  <Card.BodyContainer>
-                    <Card.BodyParagraph center sm>
-                      {cardBody}
-                    </Card.BodyParagraph>
-                  </Card.BodyContainer>
-                  {actions}
-                </Card>
-              </FlexAside>
+              <QuestionCard
+                game={game}
+                passQuestion={passQuestion}
+                checkAnswer={checkAnswer}
+                nextQuestion={nextQuestion}
+                jarvigSettings={jarvigSettings}
+                isHintOpen={isHintOpen}
+                toggleHint={toggleHint}
+              />
             )}
-            <FlexSection spaceRight spaceLeft spaceDown>
+            <ChoicesSection>
               <CharactersGrid game={game} selectCharacter={selectCharacter} />
               <AttributionText sm>{attributionText}</AttributionText>
-            </FlexSection>
-          </PlayDiv>
+            </ChoicesSection>
+          </PlaySection>
         );
       }
     }

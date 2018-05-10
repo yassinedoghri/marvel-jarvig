@@ -1,7 +1,7 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
-import { MemoryRouter } from "react-router-dom";
 import { PlayButton } from "components";
+import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("PlayButton", () => {
   it("renders correctly", () => {

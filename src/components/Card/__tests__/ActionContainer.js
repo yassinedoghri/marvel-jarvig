@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import ActionContainer from "components/Card/ActionContainer";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Card Action Container", () => {
   it("renders correctly", () => {

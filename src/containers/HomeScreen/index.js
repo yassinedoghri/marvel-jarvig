@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import { toggleSidebar } from "actions/UIActions";
+import { FlexSection, Logo, PlayButton, PlayMode } from "components";
 
 import logo from "containers/MarvelLogo.svg";
-import { FlexSection, Logo, PlayButton, PlayMode } from "components";
-import { toggleSidebar } from "actions/UIActions";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 class HomeScreen extends Component {
   render() {
@@ -17,7 +17,9 @@ class HomeScreen extends Component {
           <Logo.MarvelLogo src={logo} alt="Marvel Logo" />
           <Logo.JarvigText>JARVIG</Logo.JarvigText>
         </Logo>
-        <PlayButton to="/play">Play!</PlayButton>
+        <PlayButton to="/play" backgroundcolor="accent2" color="accent">
+          Play
+        </PlayButton>
         <PlayMode>
           Difficulty:
           <button

@@ -1,43 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Hint renders correctly 1`] = `
-.c0 {
-  position: absolute;
-  top: -1.2em;
-  right: -1em;
-  padding: 0.5em 0.6em;
-  font-weight: bold;
-  background: #fbca03;
-  color: rgba(34,34,34,0.87);
-  border: solid #222;
-  border-width: 3px 4px 5px 3px;
-  border-radius: 25px;
-  -webkit-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
-  transform: rotate(10deg);
-  -webkit-animation: 1s fGBwqf;
-  animation: 1s fGBwqf;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  z-index: 10;
-}
-
-.c0:hover {
-  cursor: pointer;
-  background: #fddf67;
-}
-
-.c0:active {
-  background: #967902;
-}
-
-@media (min-width:48em) {
-  .c0 {
-    display: block;
-  }
-}
-
 <button
-  className="c0"
+  className="sc-bdVaJa iKnYXY"
 />
 `;

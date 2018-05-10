@@ -1,32 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FlexSection renders correctly 1`] = `
-.c0 {
-  padding-top: 0;
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-@media (min-width:48em) {
-  .c0 {
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-  }
-}
-
 <section
-  className="c0"
+  className="sc-ckVGcZ cOEcdc"
 />
 `;

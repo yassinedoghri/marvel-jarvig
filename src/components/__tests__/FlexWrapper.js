@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import { FlexWrapper } from "components";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("FlexWrapper", () => {
   it("renders correctly", () => {

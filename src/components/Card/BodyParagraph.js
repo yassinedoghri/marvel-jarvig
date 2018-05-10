@@ -1,13 +1,7 @@
 import { Paragraph } from "components";
-import media from "media";
 
 const BodyParagraph = Paragraph.extend`
-  color: ${props => props.theme.colors.light.secondary};
-  display: none;
-
-  ${media.tablet`
-        display: block;
-    `};
+  color: ${props => props.theme.colors.contrastLight.secondary};
 `;
 
 export default BodyParagraph;

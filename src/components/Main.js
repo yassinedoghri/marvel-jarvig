@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Main = styled.main`
-  color: ${props => props.theme.colors.dark.primary};
   display: flex;
   flex-direction: column;
-  flex-grow: 2;
   justify-content: center;
-  padding-top: ${props => (props.isHome ? "0" : "5em")};
+  align-items: center;
+  flex: 1;
+  padding-top: ${props => (props.isHome ? "0" : `${props.theme.spaces.xl}em`)};
 `;
 
 export default Main;

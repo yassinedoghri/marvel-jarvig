@@ -1,43 +1,33 @@
-import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
-import { backgrounds } from "polished";
+import { Button } from "components/index";
 import { bounceIn, pulse } from "react-animations";
+import { Link } from "react-router-dom";
+import { keyframes } from "styled-components";
+import { getColor } from "utils/style";
 
 const bounceInAnimation = keyframes`${bounceIn}`;
 const pulseAnimation = keyframes`${pulse}`;
 
-const PlayButton = styled(Link)`
-  ${props =>
-    backgrounds(
-      'url("/image/background.jpg")',
-      `linear-gradient(45deg, ${props.theme.colors.primary.base},${
-        props.theme.colors.accent.base
-      })`,
-      "center no-repeat"
-    )};
-  border: 2px solid ${props => props.theme.colors.accent.light};
-  border-width: 4px 3px 4px 3px;
-  font-weight: 600;
-  color: ${props => props.theme.colors.dark.primary};
-  text-decoration: none;
+const PlayButton = Button.withComponent(Link).extend`
+  font-family: "Press Start 2P", sans-serif;
+  text-shadow: 0 2px 0 ${props =>
+    getColor(props.theme, props.backgroundcolor, "dark")};
+  border: 1px solid ${props => getColor(props.theme, props.color, "light")};
+  font-weight: 900;
+  font-size: 1.3rem;
+  padding: ${props => props.theme.spaces.sm + 0.25}em ${props =>
+  props.theme.spaces.md}em !important;
+  color: ${props => getColor(props.theme, props.color, "light")};
   margin: 1em auto 0.2em auto;
-  padding: 0.25em 1em;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  font-size: ${props => props.theme.fontSize.lg};
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.14);
-  animation: 1s ${bounceInAnimation}, 1.5s ${pulseAnimation} 1s infinite;
+  border-radius: ${props => props.theme.spaces.sm}em;
+  animation: 1s ${bounceInAnimation}, 1.5s ${pulseAnimation} 1s infinite;;
 
   &:hover {
-    background: ${props => props.theme.colors.accent.base};
-    color: ${props => props.theme.colors.primary.dark};
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.14);
+    color: ${props => getColor(props.theme, props.color, "light")};
+    animation: none;
     transform: scale(1.05);
   }
 
   &:active {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transform: scale(1);
   }
 `;

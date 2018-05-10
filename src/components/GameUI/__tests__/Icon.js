@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Icon from "components/GameUI/Icon";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("GameUI Icon", () => {
   it("renders correctly", () => {

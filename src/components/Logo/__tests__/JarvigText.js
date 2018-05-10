@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import JarvigText from "components/Logo/JarvigText";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Logo Jarvig Text", () => {
   it("renders correctly", () => {

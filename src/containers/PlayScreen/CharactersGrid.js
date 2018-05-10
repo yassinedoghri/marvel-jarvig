@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { FlexGrid, Character } from "components";
-import TiTimesOutline from "react-icons/lib/ti/times-outline";
-import TiTickOutline from "react-icons/lib/ti/tick-outline";
+import { Character, FlexGrid } from "components";
 import PropTypes from "prop-types";
+import React, { Component } from "react";
+import TiTickOutline from "react-icons/lib/ti/tick-outline";
+import TiTimesOutline from "react-icons/lib/ti/times-outline";
 
 class CharactersGrid extends Component {
   render() {
@@ -12,38 +12,40 @@ class CharactersGrid extends Component {
     if (game.choices) {
       gridItems = game.choices.map((item, i) => {
         const isRightAnswer = item.name === game.answer.name;
-        let result;
+        let result = "none";
         if (game.checked) {
           if (game.selected === item.name) {
-            result = isRightAnswer ? "selectedRight" : "selectedWrong";
+            result = isRightAnswer ? "correct" : "incorrect";
           } else {
-            result = isRightAnswer ? "answerRight" : "none";
+            result = isRightAnswer ? "correct" : "none";
           }
         }
 
-        let isRightAnswerString = "none";
-        if (game.checked) {
-          isRightAnswerString = isRightAnswer ? "correct" : "incorrect";
-        }
-
         return (
-          <Character key={item.id}>
+          <Character
+            key={item.id}
+            result={result}
+            selected={game.selected === item.name}
+          >
             <Character.RadioBtn
               id={i}
               name="character"
               onClick={() => selectCharacter(item.name)}
               disabled={game.checked}
-              result={result}
             />
-            <label htmlFor={i}>
-              <Character.Figure>
-                {game.selected === item.name && (
-                  <Character.CheckBadge answer={isRightAnswerString}>
-                    {isRightAnswer ? <TiTickOutline /> : <TiTimesOutline />}
-                  </Character.CheckBadge>
-                )}
+            <Character.Label htmlFor={i}>
+              <Character.Figure
+                result={result}
+                selected={game.selected === item.name}
+              >
+                {game.checked &&
+                  result !== "none" && (
+                    <Character.CheckBadge>
+                      {isRightAnswer ? <TiTickOutline /> : <TiTimesOutline />}
+                    </Character.CheckBadge>
+                  )}
                 <Character.Image
-                  src={`${item.thumbnail.path}/standard_large.${
+                  src={`${item.thumbnail.path}/standard_amazing.${
                     item.thumbnail.extension
                   }`}
                 />
@@ -51,7 +53,7 @@ class CharactersGrid extends Component {
                   {game.checked ? item.name : i + 1}
                 </Character.Caption>
               </Character.Figure>
-            </label>
+            </Character.Label>
           </Character>
         );
       });
@@ -64,7 +66,9 @@ class CharactersGrid extends Component {
 CharactersGrid.propTypes = {
   game: PropTypes.shape({
     choices: PropTypes.array,
-    answer: PropTypes.object,
+    answer: PropTypes.shape({
+      name: PropTypes.string
+    }),
     checked: PropTypes.bool,
     selected: PropTypes.string
   }).isRequired,

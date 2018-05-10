@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import media from "media";
+import media from "utils/media";
 
-const FlexGrid = styled.div`
+const FlexGrid = styled.ul`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   width: 100%;
-
-  ${media.tablet`
-        padding-bottom: 0;
-        width: 40em;
-        margin: 0 auto;
-    `};
+  margin: 0;
+  padding: ${props => props.theme.spaces.md}em;
 
   ${media.desktop`
-        width: 45em;
-    `};
+    max-height: 45em;
+    overflow-y: auto;
+    overflow-x: visible;
+    flex-wrap: wrap;
+  `};
 `;
 
 export default FlexGrid;

@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import media from "media";
+import media from "utils/media";
 
 const Footer = styled.footer`
   display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: ${props => props.theme.colors.foreground.base};
-  min-height: 50px;
-  padding: 10px;
+  min-height: 3em;
+  padding: 0 ${props => props.theme.spaces.md}em;
   color: white;
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
+  z-index: 3;
 
   ${media.tablet`
         flex-direction: row;

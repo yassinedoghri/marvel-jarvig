@@ -1,11 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import { toggleSidebar } from "actions/UIActions";
 
-import { Sidebar, Paragraph, HR } from "components";
-import TiTimesOutline from "react-icons/lib/ti/times-outline";
+import { HR, Paragraph, Sidebar } from "components";
 import PropTypes from "prop-types";
+import React, { Component } from "react";
+import TiTimesOutline from "react-icons/lib/ti/times-outline";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { description, repository, version } from "../../package.json";
 
 class SidebarHelp extends Component {
   render() {
@@ -18,20 +20,15 @@ class SidebarHelp extends Component {
           <TiTimesOutline />
         </Sidebar.CloseButton>
         <Sidebar.Content>
-          <Paragraph light>
-            {`J.A.R.V.I.G. (Just A Rather Very Interesting Game) lets you find and
-            discover Marvel Comics characters based on their name, image and
-            description!`}
+          <Paragraph color="contrastDark" lineHeight={1.5}>
+            {description}
           </Paragraph>
-          <Paragraph light>
-            {`You'll have to find characters based on their name and image.`}
-          </Paragraph>
-          <Paragraph light>
-            {`It's a game! So, you can tweak some settings before playing, have fun!`}
-          </Paragraph>
-          <HR />
-          <Paragraph light sm>
-            {`Developed by me (Yassine Doghri) during ekino's onboarding. v0.1`}
+          <HR color="contrastDark" tint="secondary" />
+          <Paragraph size="sm" color="contrastDark" anchorColor="accent">
+            {`JARVIG v${version} is an Open Source project, source code can be found here: `}
+            <a href={repository.url} target="_blank" rel="noopener noreferrer">
+              Github Repository
+            </a>
           </Paragraph>
         </Sidebar.Content>
       </Sidebar>

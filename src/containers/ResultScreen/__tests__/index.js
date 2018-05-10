@@ -1,7 +1,7 @@
-import React from "react";
-import { ShallowRenderInContext } from "testHelpers";
 import ResultScreen from "containers/ResultScreen";
 import { createMemoryHistory } from "history";
+import React from "react";
+import { ShallowRenderInContext } from "utils/testHelpers";
 
 describe("ResultScreen container", () => {
   it("renders without crashing", () => {

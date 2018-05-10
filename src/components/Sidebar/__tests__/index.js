@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Sidebar from "components/Sidebar";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Sidebar Block", () => {
   it("renders correctly", () => {

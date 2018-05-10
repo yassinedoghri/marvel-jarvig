@@ -1,55 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Settings Block renders correctly 1`] = `
-.c0 {
-  position: relative;
-}
-
-.c1 {
-  display: inline-block;
-  margin-bottom: 0.5em;
-}
-
-.c2 {
-  display: inline-block;
-  float: right;
-}
-
-.c3 {
-  display: inline-block;
-  margin-top: 2em;
-  width: 100%;
-}
-
-.c3 input {
-  margin-right: 0.5em;
-}
-
 <div
-  className=""
+  className="sc-ifAKCX cFlEyZ"
 >
-  <p
-    className=""
-  >
-    Tweak your parameters to better suit your level!
-  </p>
   <div
-    className="c0"
+    className="sc-htpNat fjcJqy"
   >
     <p
-      className="c1"
+      className="sc-bxivhb juXbqX"
     >
       Game time (min)
     </p>
     <p
-      className="c2"
+      className="sc-bwzfXH iHMWje"
     />
   </div>
   <div
-    className="c0"
+    className="sc-htpNat fjcJqy"
   >
     <label
-      className="c3"
+      className="sc-bdVaJa jTaxDY"
     >
       <input
         type="checkbox"

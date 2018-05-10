@@ -1,16 +1,15 @@
+import { FlexWrapper } from "components";
+import FooterContent from "containers/FooterContent";
+
+import HeaderContent from "containers/HeaderContent";
+import MainContent from "containers/MainContent";
+import SidebarHelp from "containers/SidebarHelp";
+import SidebarSettings from "containers/SidebarSettings";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import theme from "theme";
-import PropTypes from "prop-types";
-
-import { FlexWrapper } from "components";
-
-import HeaderContent from "containers/HeaderContent";
-import FooterContent from "containers/FooterContent";
-import MainContent from "containers/MainContent";
-import SidebarHelp from "containers/SidebarHelp";
-import SidebarSettings from "containers/SidebarSettings";
 
 class App extends Component {
   render() {
@@ -21,9 +20,9 @@ class App extends Component {
         <FlexWrapper>
           <HeaderContent />
           <MainContent />
-          <FooterContent />
           <SidebarHelp />
           {location.pathname === "/" && <SidebarSettings />}
+          <FooterContent />
         </FlexWrapper>
       </ThemeProvider>
     );

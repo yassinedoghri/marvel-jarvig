@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Character Figure renders correctly 1`] = `
-.c0 {
-  width: 100%;
-  position: relative;
-  margin: 0;
-}
-
 <figure
-  className="c0"
+  className="sc-bdVaJa hjRdrm"
 />
 `;

@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Item from "components/GameUI/Item";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("GameUI Item", () => {
   it("renders correctly", () => {

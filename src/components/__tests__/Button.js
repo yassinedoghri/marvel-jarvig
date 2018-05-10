@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import { Button } from "components";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Button", () => {
   it("renders correctly", () => {
@@ -8,18 +8,13 @@ describe("Button", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("adds primary modifier", () => {
-    const tree = renderWithTheme(<Button primary />).toJSON();
+  it("adds backgroundcolor modifier", () => {
+    const tree = renderWithTheme(<Button backgroundcolor="accent" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it("adds accent modifier", () => {
-    const tree = renderWithTheme(<Button accent />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it("adds accent2 modifier", () => {
-    const tree = renderWithTheme(<Button accent2 />).toJSON();
+  it("adds color modifier", () => {
+    const tree = renderWithTheme(<Button color="primary" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

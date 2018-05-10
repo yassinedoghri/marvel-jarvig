@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Title from "components/Card/Title";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Card Title", () => {
   it("renders correctly", () => {

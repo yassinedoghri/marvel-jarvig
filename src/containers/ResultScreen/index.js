@@ -1,16 +1,15 @@
-import React, { Component } from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import { Card, FlexSection } from "components";
 import PropTypes from "prop-types";
-
-import { FlexSection, Card } from "components";
+import React, { Component } from "react";
 import CountUp from "react-countup";
-
-import { push } from "react-router-redux";
-import { getArrayCounts } from "helpers";
+import FaHome from "react-icons/lib/fa/home";
 
 import FaRepeat from "react-icons/lib/fa/repeat";
-import FaHome from "react-icons/lib/fa/home";
+import { connect } from "react-redux";
+
+import { push } from "react-router-redux";
+import { bindActionCreators } from "redux";
+import { getArrayCounts } from "utils/helpers";
 
 class ResultScreen extends Component {
   constructor(props) {
@@ -52,7 +51,7 @@ class ResultScreen extends Component {
     return (
       <FlexSection spaceTop spaceRight spaceLeft>
         <Card alignCenter>
-          <Card.Ribbon>Game Over!</Card.Ribbon>
+          <Card.Ribbon backgroundcolor="foreground">Game Over!</Card.Ribbon>
           <Card.Title>{cardMessage}</Card.Title>
           <Card.BodyContainer>
             <Card.BodyResult>
@@ -63,11 +62,23 @@ class ResultScreen extends Component {
             </Card.BodyParagraph>
           </Card.BodyContainer>
           <Card.ActionContainer>
-            <Card.ActionLink to="/play" half="true" accent="true" dark="true">
-              <FaRepeat /> Restart
+            <Card.ActionLink
+              to="/play"
+              half="true"
+              backgroundcolor="accent"
+              color="contrastDark"
+            >
+              <FaRepeat />
+              <span>Restart</span>
             </Card.ActionLink>
-            <Card.ActionLink to="/" half="true" accent2="true" dark="true">
-              <FaHome /> Home
+            <Card.ActionLink
+              to="/"
+              half="true"
+              backgroundcolor="accent2"
+              color="contrastDark"
+            >
+              <FaHome />
+              <span>Home</span>
             </Card.ActionLink>
           </Card.ActionContainer>
         </Card>

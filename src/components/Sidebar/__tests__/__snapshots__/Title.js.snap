@@ -1,18 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar Title renders correctly 1`] = `
-.c0 {
-  padding-left: 1em;
-  color: white;
-  font-family: Bangers;
-  -webkit-letter-spacing: 0.1em;
-  -moz-letter-spacing: 0.1em;
-  -ms-letter-spacing: 0.1em;
-  letter-spacing: 0.1em;
-}
-
 <h2
-  className="c0"
+  className="sc-bdVaJa hwtrNY"
 >
   Sidebar Title
 </h2>

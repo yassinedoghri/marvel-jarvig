@@ -4,13 +4,9 @@ const Item = styled.button`
   background: transparent;
   border: none;
   color: ${props => props.theme.colors.accent.base};
-  font-size: ${props => {
-    if (props.xl) return props.theme.fontSize.xl;
-    if (props.lg) return props.theme.fontSize.lg;
-    if (props.md) return props.theme.fontSize.md;
-    if (props.sm) return props.theme.fontSize.sm;
-    return props.theme.fontSize.nm;
-  }};
+  font-size: 1.3rem;
+  padding: ${props => props.theme.spaces.xs}em
+    ${props => props.theme.spaces.sm}em;
 
   &:hover {
     cursor: pointer;

@@ -1,36 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Action Container renders correctly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 1em;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-@media (min-width:73.125em) {
-  .c0 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-}
-
 <div
-  className="c0"
+  className="sc-bdVaJa cqrJCk"
 />
 `;

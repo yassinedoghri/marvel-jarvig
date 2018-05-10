@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import BodyParagraph from "components/Card/BodyParagraph";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Card Body Paragraph", () => {
   it("renders correctly", () => {

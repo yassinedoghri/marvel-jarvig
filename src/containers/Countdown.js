@@ -1,6 +1,6 @@
-import React, { Component } from "react";
 import { GameUI } from "components";
 import PropTypes from "prop-types";
+import React, { Component } from "react";
 
 class Countdown extends Component {
   static secondsToTime(secs) {

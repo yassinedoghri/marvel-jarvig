@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import RadioBtn from "components/Character/RadioBtn";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Character RadioBtn", () => {
   it("renders correctly", () => {

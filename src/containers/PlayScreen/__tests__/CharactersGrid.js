@@ -1,6 +1,6 @@
-import React from "react";
-import { renderInContext } from "testHelpers";
 import CharactersGrid from "containers/PlayScreen/CharactersGrid";
+import React from "react";
+import { renderInContext } from "utils/testHelpers";
 
 describe("CharactersGrid container", () => {
   it("renders without crashing", () => {

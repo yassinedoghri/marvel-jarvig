@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Title from "components/Sidebar/Title";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Sidebar Title", () => {
   it("renders correctly", () => {

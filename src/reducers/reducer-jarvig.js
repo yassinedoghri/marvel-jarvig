@@ -12,7 +12,7 @@ import {
   SET_DIFFICULTY,
   UPDATE_SETTINGS
 } from "constants/actionTypes";
-import { generateAnswers } from "helpers";
+import { generateAnswers } from "utils/helpers";
 
 export const difficultySettings = {
   easy: {

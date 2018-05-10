@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import MarvelLogo from "components/Logo/MarvelLogo";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Logo Marvel", () => {
   it("renders correctly", () => {

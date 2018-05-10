@@ -1,11 +1,11 @@
 import {
-  randomIntFromInterval,
+  generateAnswers,
   generateQuery,
   getArrayCounts,
-  generateAnswers
-} from "helpers";
+  randomIntFromInterval
+} from "utils/helpers";
 
-const characters = require("data_test");
+const characters = require("utils/data_test");
 
 describe("Helper functions", () => {
   describe("randomIntFromInterval", () => {

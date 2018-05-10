@@ -1,23 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar Close Button renders correctly 1`] = `
-.c0 {
-  position: absolute;
-  background-color: transparent;
-  color: rgba(255,255,255,0.7);
-  border: none;
-  top: 0;
-  right: 0;
-  font-size: 3em;
-}
-
-.c0:hover {
-  cursor: pointer;
-  color: rgba(255,255,255,1);
-}
-
 <button
-  className="c0"
+  className="sc-bdVaJa gAPlTG"
 >
   X
 </button>

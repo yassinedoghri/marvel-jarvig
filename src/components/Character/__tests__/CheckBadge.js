@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import CheckBadge from "components/Character/CheckBadge";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Character CheckBadge", () => {
   it("renders correctly", () => {

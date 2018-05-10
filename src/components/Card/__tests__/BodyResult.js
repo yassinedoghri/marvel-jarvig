@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import BodyResult from "components/Card/BodyResult";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Card Body Result", () => {
   it("renders correctly", () => {

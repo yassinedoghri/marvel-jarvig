@@ -1,234 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Block renders correctly 1`] = `
-.c4 {
-  color: rgba(34,34,34,0.54);
-  font-family: Bangers;
-  text-align: center;
-  -webkit-letter-spacing: 0.1em;
-  -moz-letter-spacing: 0.1em;
-  -ms-letter-spacing: 0.1em;
-  letter-spacing: 0.1em;
-  font-size: 1.4rem;
-}
-
-.c4 span {
-  font-family: Bangers;
-}
-
-.c1 {
-  width: auto;
-  font-size: 1rem;
-  color: rgba(34,34,34,0.87);
-  text-align: left;
-  position: absolute;
-  top: -2.5em;
-  left: -1em;
-  padding: 0.5em;
-  font-weight: bold;
-  background: #ED1D24;
-  color: rgba(255,255,255,1);
-  border: solid #222;
-  border-width: 4px 3px 3px 5px;
-  border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
-  -webkit-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  transform: rotate(-2deg);
-  -webkit-animation: 1s fGBwqf;
-  animation: 1s fGBwqf;
-  z-index: 12;
-}
-
-.c6 {
-  width: auto;
-  font-size: 1rem;
-  color: rgba(34,34,34,0.87);
-  text-align: center;
-  color: rgba(34,34,34,0.54);
-  display: none;
-}
-
-.c5 {
-  padding: 0;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 1em;
-}
-
-.c2 {
-  position: absolute;
-  top: -1.2em;
-  right: -1em;
-  padding: 0.5em 0.6em;
-  font-weight: bold;
-  background: #fbca03;
-  color: rgba(34,34,34,0.87);
-  border: solid #222;
-  border-width: 3px 4px 5px 3px;
-  border-radius: 25px;
-  -webkit-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
-  transform: rotate(10deg);
-  -webkit-animation: 1s fGBwqf;
-  animation: 1s fGBwqf;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  z-index: 10;
-}
-
-.c2:hover {
-  cursor: pointer;
-  background: #fddf67;
-}
-
-.c2:active {
-  background: #967902;
-}
-
-.c3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-  box-sizing: border-box;
-  padding: 1em;
-  padding-top: 2em;
-  overflow-y: auto;
-  background: #222;
-  color: rgba(255,255,255,1);
-  -webkit-animation: 1s fGBwqf;
-  animation: 1s fGBwqf;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  display: block;
-}
-
-.c0 {
-  position: relative;
-  width: 100%;
-  background-color: #f8f8f8;
-  border: solid #222;
-  border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-  box-sizing: border-box;
-  padding: 0.8em;
-  margin: 0;
-  margin-left: 0;
-  margin-bottom: 3em;
-  -webkit-animation: 1s fGBwqf;
-  animation: 1s fGBwqf;
-}
-
-@media (min-width:48em) {
-  .c1 {
-    display: block;
-  }
-}
-
-@media (min-width:48em) {
-  .c6 {
-    display: block;
-  }
-}
-
-@media (min-width:62em) {
-  .c5 {
-    padding: 1em;
-  }
-}
-
-@media (min-width:62em) {
-  .c7 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-@media (min-width:73.125em) {
-  .c7 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-}
-
-@media (min-width:48em) {
-  .c2 {
-    display: block;
-  }
-}
-
-@media (min-width:48em) {
-  .c3 {
-    display: block;
-  }
-}
-
-@media (min-width:62em) {
-  .c0 {
-    width: 15em;
-    margin-left: auto;
-  }
-}
-
-@media (min-width:73.125em) {
-  .c0 {
-    width: 20em;
-    margin-left: auto;
-  }
-}
-
 <div
-  className="c0"
+  className="sc-caSCKo hnbwiE"
 >
   <p
-    className="c1"
+    className="sc-eqIVtm bmHTKX"
   >
     Ribbon!
   </p>
-  <div>
-    <button
-      className="c2"
-    >
-      X
-    </button>
-    <div
-      className="c3"
-    >
-      This is a hint!
-    </div>
+  [
+  <button
+    className="sc-fMiknA fFHlVn"
+  >
+    X
+  </button>
+  ,
+  <div
+    className="sc-dVhcbM fwYBZf"
+  >
+    This is a hint!
   </div>
+  ]
   <h2
-    className="c4"
+    className="sc-fAjcbJ lmPSwh"
   >
     Card Title
   </h2>
   <div
-    className="c5"
+    className="sc-hzDkRC ctnzKs"
   >
     <p
-      className="c6"
+      className="sc-jhAzac eJkfIa"
     >
       Card text
     </p>
   </div>
   <div
-    className="c7"
+    className="sc-Rmtcm dehTgb"
   />
 </div>
 `;

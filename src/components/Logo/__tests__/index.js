@@ -1,7 +1,7 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
-import { MemoryRouter } from "react-router-dom";
 import Logo from "components/Logo";
+import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Logo Block", () => {
   it("renders correctly", () => {

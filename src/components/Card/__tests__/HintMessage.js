@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import HintMessage from "components/Card/HintMessage";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Card Hint Message", () => {
   it("renders correctly", () => {

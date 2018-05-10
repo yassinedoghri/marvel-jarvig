@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import { HR } from "components";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("HR", () => {
   it("renders correctly", () => {

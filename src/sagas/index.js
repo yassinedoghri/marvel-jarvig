@@ -1,4 +1,4 @@
-import { takeLatest, call, put } from "redux-saga/effects";
+import config from "config";
 import {
   API_CALL_FAILURE,
   API_CALL_REQUEST,
@@ -7,9 +7,8 @@ import {
 
 import CryptoJS from "crypto-js";
 import moment from "moment";
-
-import config from "config";
-import { generateQuery, randomIntFromInterval } from "helpers";
+import { call, put, takeLatest } from "redux-saga/effects";
+import { generateQuery, randomIntFromInterval } from "utils/helpers";
 
 function statusHelper(response) {
   if (response.status >= 200 && response.status < 300) {

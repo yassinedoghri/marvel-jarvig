@@ -1,6 +1,6 @@
-import React from "react";
-import { renderWithTheme } from "testHelpers";
 import Content from "components/Sidebar/Content";
+import React from "react";
+import { renderWithTheme } from "utils/testHelpers";
 
 describe("Sidebar Content", () => {
   it("renders correctly", () => {

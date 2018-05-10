@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { toggleSidebar } from "actions/UIActions";
 import { setDifficulty, updateSettings } from "actions/GameActions";
+import { toggleSidebar } from "actions/UIActions";
 
-import { Settings, Sidebar } from "components";
-
-import TiTimesOutline from "react-icons/lib/ti/times-outline";
+import { Paragraph, Settings, Sidebar } from "components";
+import PropTypes from "prop-types";
+import "rc-slider/assets/index.css";
 
 import Slider from "rc-slider/lib/Slider";
-import "rc-slider/assets/index.css";
+import React, { Component } from "react";
+
+import TiTimesOutline from "react-icons/lib/ti/times-outline";
+import { connect } from "react-redux";
 
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-import PropTypes from "prop-types";
+import { bindActionCreators } from "redux";
 
 class SidebarSettings extends Component {
   render() {
@@ -35,9 +35,9 @@ class SidebarSettings extends Component {
         </Sidebar.CloseButton>
         <Sidebar.Content>
           <Settings>
-            <Settings.Text>
+            <Paragraph>
               Tweak your parameters to better suit your level!
-            </Settings.Text>
+            </Paragraph>
             <Select
               name="degree-difficulty"
               defaultValue={jarvigDifficulty}
@@ -48,9 +48,7 @@ class SidebarSettings extends Component {
             />
             <Settings.Item>
               <Settings.Label>Game time (min)</Settings.Label>
-              <Settings.Counter>
-                {jarvigSettings.time}
-              </Settings.Counter>
+              <Settings.Counter>{jarvigSettings.time}</Settings.Counter>
               <Slider
                 value={jarvigSettings.time}
                 min={1}
