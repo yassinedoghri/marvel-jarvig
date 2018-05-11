@@ -16,11 +16,12 @@ before_script:
 script:
   - commitlint-travis
   - npm test -- --coverage
-  - npm run deploy
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  keep-history: true
   local_dir: build
   on:
     branch: master
