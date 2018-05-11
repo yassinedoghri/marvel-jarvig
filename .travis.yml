@@ -16,7 +16,7 @@ before_script:
 script:
   - commitlint-travis
   - npm test -- --coverage
-  - npm run build
+  - npm run deploy
 deploy:
   provider: pages
   skip_cleanup: true
