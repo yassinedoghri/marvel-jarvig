@@ -6,6 +6,7 @@ import ResultScreen from "containers/ResultScreen";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
+import withTracker from "utils/withTracker";
 
 class MainContent extends Component {
   render() {
@@ -13,9 +14,9 @@ class MainContent extends Component {
     return (
       <Main isHome={location.pathname === "/"}>
         <Switch>
-          <Route exact path="/" component={HomeScreen} />
-          <Route path="/play" component={PlayScreen} />
-          <Route path="/result" component={ResultScreen} />
+          <Route exact path="/" component={withTracker(HomeScreen)} />
+          <Route path="/play" component={withTracker(PlayScreen)} />
+          <Route path="/result" component={withTracker(ResultScreen)} />
         </Switch>
       </Main>
     );
