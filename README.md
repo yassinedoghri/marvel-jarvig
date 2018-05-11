@@ -122,7 +122,7 @@ $ yarn build
 
 ## Contributing
 
-> TODO
+Love Marvel JARVIG and would like to help? Check out the [contribution guidelines for this project](./CONTRIBUTING.md), everything should be there!
 
 ## Versioning
 
