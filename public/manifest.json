@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Marvel JARVIG",
+  "name": "Marvel J.A.R.V.I.G. (Just A Rather Very Interesting Game) is a game that lets you find and discover Marvel Comics characters based on their name, image and description!",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,7 +9,8 @@
     }
   ],
   "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#ed1d24",
+  "background_color": "#222"
 }
