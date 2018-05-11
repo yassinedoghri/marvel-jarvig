@@ -1,12 +1,16 @@
 {
   "name": "marvel-jarvig",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Marvel J.A.R.V.I.G. (Just A Rather Very Interesting Game) is a game that lets you find and discover Marvel Comics characters based on their name, image and description!",
   "repository": {
     "type": "git",
     "url": "https://github.com/yassinedoghri/marvel-jarvig"
   },
-  "author": "Yassine Doghri",
+  "author": {
+    "name": "Yassine Doghri",
+    "email": "yassine@doghri.fr",
+    "url": "https://yassine.doghri.fr/"
+  },
   "keywords": [
     "marvel",
     "game",
