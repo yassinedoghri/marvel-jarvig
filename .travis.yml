@@ -17,5 +17,12 @@ script:
   - commitlint-travis
   - npm test -- --coverage
   - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
