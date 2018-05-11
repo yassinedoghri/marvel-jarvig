@@ -39,7 +39,8 @@ const marvelApi = {
     return fetch(URL, {
       method: "get",
       headers: new Headers({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Accept-Encoding": "gzip"
       })
     })
       .then(statusHelper)

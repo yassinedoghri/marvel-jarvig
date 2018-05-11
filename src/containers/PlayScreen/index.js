@@ -54,19 +54,22 @@ class PlayScreen extends Component {
       jarvigSettings,
       push,
       endGame,
-      error
+      error,
+      isGameLoading
     } = this.props;
     // if choices haven't been set, call request and set choices
 
-    // BAD PRACTICE to call action creators on lifecycle methods
     if (!game.choices && !error) {
       // check if all questions have been answered and there are lives remaining
       if (
         game.result.length < jarvigSettings.numberOfQuestions &&
         game.remainingLives > 0
       ) {
-        // New Question: get new characters and set choices
-        callRequest();
+        // New Question: get new characters from Marvel API and set choices
+        // Make sure it's called only once when game is not loading
+        if (!isGameLoading) {
+          callRequest();
+        }
       } else {
         console.info("Game Over.");
         // Quizz is over: end game and redirect to results page
