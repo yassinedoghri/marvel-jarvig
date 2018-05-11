@@ -101,7 +101,7 @@ class QuestionCard extends Component {
     }
 
     return (
-      <Card animation={animation} isAside>
+      <Card animation={animation}>
         <Card.Ribbon backgroundcolor={color}>
           Question {questionNumber}/{jarvigSettings.numberOfQuestions}
         </Card.Ribbon>
