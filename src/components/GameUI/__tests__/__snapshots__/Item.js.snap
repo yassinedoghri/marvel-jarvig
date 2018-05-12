@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameUI Item renders correctly 1`] = `
+<li
+  className="sc-bdVaJa OHkvc"
+/>
+`;

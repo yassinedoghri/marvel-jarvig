@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameUI Block renders correctly 1`] = `
+<ul
+  className="sc-bxivhb dvpYRR"
+>
+  <li
+    className="sc-bwzfXH hAajTB"
+  >
+    <span
+      className="sc-bdVaJa iVzWHn"
+    >
+      Icon
+    </span>
+    <span
+      className="sc-htpNat kfOksF"
+    >
+      GameUI Label
+    </span>
+  </li>
+</ul>
+`;

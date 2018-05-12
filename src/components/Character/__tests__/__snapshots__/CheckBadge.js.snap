@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character CheckBadge adds the correct answer modifier 1`] = `
+<div
+  className="sc-bdVaJa VwVsz"
+>
+  Ok
+</div>
+`;
+
+exports[`Character CheckBadge adds the incorrect answer modifier 1`] = `
+<div
+  className="sc-bdVaJa VwVsz"
+>
+  Ok
+</div>
+`;
+
+exports[`Character CheckBadge renders correctly 1`] = `
+<div
+  className="sc-bdVaJa VwVsz"
+>
+  Ok
+</div>
+`;

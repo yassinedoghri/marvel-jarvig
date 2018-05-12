@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Jarvig Text adds the size and spacing modifiers 1`] = `
+<h1
+  className="sc-bdVaJa kadOOX"
+/>
+`;
+
+exports[`Logo Jarvig Text renders correctly 1`] = `
+<h1
+  className="sc-bdVaJa duNkzU"
+/>
+`;

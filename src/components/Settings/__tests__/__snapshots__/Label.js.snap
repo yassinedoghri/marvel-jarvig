@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Label renders correctly 1`] = `
+<p
+  className="sc-bdVaJa ilhhXt"
+>
+  This is a test
+</p>
+`;

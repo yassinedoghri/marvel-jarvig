@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar Block renders correctly 1`] = `
+<nav
+  className="sc-bwzfXH ebXUzM"
+>
+  <button
+    className="sc-bdVaJa jsCjUK"
+  >
+    Item 1
+  </button>
+  <button
+    className="sc-bdVaJa jsCjUK"
+  >
+    Item 2
+  </button>
+</nav>
+`;

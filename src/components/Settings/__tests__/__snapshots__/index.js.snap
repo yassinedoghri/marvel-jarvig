@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Block renders correctly 1`] = `
+<div
+  className="sc-ifAKCX cFlEyZ"
+>
+  <div
+    className="sc-htpNat fjcJqy"
+  >
+    <p
+      className="sc-bxivhb juXbqX"
+    >
+      Game time (min)
+    </p>
+    <p
+      className="sc-bwzfXH iHMWje"
+    />
+  </div>
+  <div
+    className="sc-htpNat fjcJqy"
+  >
+    <label
+      className="sc-bdVaJa jTaxDY"
+    >
+      <input
+        type="checkbox"
+      />
+      Checkbox
+    </label>
+  </div>
+</div>
+`;

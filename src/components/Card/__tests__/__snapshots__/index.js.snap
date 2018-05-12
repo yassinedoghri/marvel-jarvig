@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Block renders correctly 1`] = `
+<div
+  className="sc-gisBJw eLWijE"
+>
+  <p
+    className="sc-fAjcbJ gwDekQ"
+  >
+    Ribbon!
+  </p>
+  [
+  <button
+    className="sc-dVhcbM kwrEQA"
+  >
+    X
+  </button>
+  ,
+  <div
+    className="sc-eqIVtm blkeIP"
+  >
+    This is a hint!
+  </div>
+  ]
+  <h2
+    className="sc-caSCKo bYqcUu"
+  >
+    Card Title
+  </h2>
+  <div
+    className="sc-jhAzac fhqzSw"
+  >
+    <p
+      className="sc-fBuWsC gdYvkp"
+    >
+      Card text
+    </p>
+  </div>
+  <div
+    className="sc-bRBYWo bzSgXm"
+  />
+</div>
+`;

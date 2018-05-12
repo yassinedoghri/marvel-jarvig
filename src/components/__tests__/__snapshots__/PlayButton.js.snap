@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayButton renders correctly 1`] = `
+<a
+  className="sc-ckVGcZ eZeqXi"
+  href="/"
+  onClick={[Function]}
+/>
+`;

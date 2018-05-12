@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Caption adds the checked modifier 1`] = `
+<figcaption
+  checked={true}
+  className="sc-bdVaJa jvulXB"
+>
+  Iron Man
+</figcaption>
+`;
+
+exports[`Character Caption renders correctly 1`] = `
+<figcaption
+  className="sc-bdVaJa eykFkZ"
+>
+  Iron Man
+</figcaption>
+`;

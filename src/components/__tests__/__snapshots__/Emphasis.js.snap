@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Emphasis renders correctly 1`] = `
+<em
+  className="sc-fMiknA kFDXwh"
+/>
+`;

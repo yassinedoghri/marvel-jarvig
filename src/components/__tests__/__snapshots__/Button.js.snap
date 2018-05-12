@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button adds backgroundcolor modifier 1`] = `
+<button
+  className="sc-bxivhb dqFBuB"
+/>
+`;
+
+exports[`Button adds color modifier 1`] = `
+<button
+  className="sc-bxivhb inqPeq"
+  color="primary"
+/>
+`;
+
+exports[`Button renders correctly 1`] = `
+<button
+  className="sc-bxivhb bPvufI"
+/>
+`;

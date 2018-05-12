@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Body Paragraph renders correctly 1`] = `
+<p
+  className="sc-gisBJw ibHfWk"
+/>
+`;

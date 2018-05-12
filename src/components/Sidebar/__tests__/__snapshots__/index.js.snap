@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Block adds open modifier 1`] = `
+<aside
+  className="sc-bxivhb kVpWcR"
+  open={true}
+>
+  <h2
+    className="sc-htpNat bWyIsR"
+  >
+    Sidebar Title
+  </h2>
+  <button
+    className="sc-bdVaJa gAPlTG"
+  >
+    X
+  </button>
+  <div
+    className="sc-bwzfXH jSvnsT"
+  >
+    This is a Sidebar
+  </div>
+</aside>
+`;
+
+exports[`Sidebar Block renders correctly 1`] = `
+<aside
+  className="sc-bxivhb hOqVLK"
+>
+  <h2
+    className="sc-htpNat bWyIsR"
+  >
+    Sidebar Title
+  </h2>
+  <button
+    className="sc-bdVaJa gAPlTG"
+  >
+    X
+  </button>
+  <div
+    className="sc-bwzfXH jSvnsT"
+  >
+    This is a Sidebar
+  </div>
+</aside>
+`;

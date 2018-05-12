@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Counter renders correctly 1`] = `
+<p
+  className="sc-bdVaJa jMCOdv"
+>
+  10
+</p>
+`;

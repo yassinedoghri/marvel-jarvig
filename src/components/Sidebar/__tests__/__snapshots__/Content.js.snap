@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Content renders correctly 1`] = `
+<div
+  className="sc-bdVaJa elZJUJ"
+>
+  Hello World!
+</div>
+`;

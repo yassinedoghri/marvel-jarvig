@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character RadioBtn adds answerRight result modifier 1`] = `
+<input
+  className="sc-bdVaJa cpvvfW"
+  result="answerRight"
+  type="radio"
+/>
+`;
+
+exports[`Character RadioBtn adds selectedRight result modifier 1`] = `
+<input
+  className="sc-bdVaJa cpvvfW"
+  result="selectedRight"
+  type="radio"
+/>
+`;
+
+exports[`Character RadioBtn adds selectedWrong result modifier 1`] = `
+<input
+  className="sc-bdVaJa cpvvfW"
+  result="selectedWrong"
+  type="radio"
+/>
+`;
+
+exports[`Character RadioBtn renders correctly 1`] = `
+<input
+  className="sc-bdVaJa cpvvfW"
+  type="radio"
+/>
+`;

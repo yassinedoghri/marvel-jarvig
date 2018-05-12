@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Block adds correct result modifier 1`] = `
+<li
+  className="sc-bZQynM fMaqNf"
+  result="correct"
+  resultcolor="#67c7eb"
+>
+  <input
+    className="sc-EHOje hwKelP"
+    id={1}
+    type="radio"
+  />
+  <label
+    htmlFor={1}
+  >
+    <figure
+      className="sc-htpNat dszAmi"
+    >
+      <div
+        className="sc-bwzfXH IjDNC"
+      />
+      <img
+        className="sc-bxivhb MsGqr"
+      />
+      <figcaption
+        className="sc-bdVaJa eykFkZ"
+      />
+    </figure>
+  </label>
+</li>
+`;
+
+exports[`Character Block adds incorrect result modifier 1`] = `
+<li
+  className="sc-bZQynM kOaOUm"
+  result="incorrect"
+  resultcolor="#ed1d24"
+>
+  <input
+    className="sc-EHOje hwKelP"
+    id={1}
+    type="radio"
+  />
+  <label
+    htmlFor={1}
+  >
+    <figure
+      className="sc-htpNat dszAmi"
+    >
+      <div
+        className="sc-bwzfXH IjDNC"
+      />
+      <img
+        className="sc-bxivhb MsGqr"
+      />
+      <figcaption
+        className="sc-bdVaJa eykFkZ"
+      />
+    </figure>
+  </label>
+</li>
+`;
+
+exports[`Character Block adds result modifier 1`] = `
+<li
+  className="sc-bZQynM iwUaRa"
+  result="none"
+  resultcolor="#222"
+>
+  <input
+    className="sc-EHOje hwKelP"
+    id={1}
+    type="radio"
+  />
+  <label
+    htmlFor={1}
+  >
+    <figure
+      className="sc-htpNat dszAmi"
+    >
+      <div
+        className="sc-bwzfXH IjDNC"
+      />
+      <img
+        className="sc-bxivhb MsGqr"
+      />
+      <figcaption
+        className="sc-bdVaJa eykFkZ"
+      />
+    </figure>
+  </label>
+</li>
+`;
+
+exports[`Character Block renders correctly 1`] = `
+<li
+  className="sc-bZQynM iwUaRa"
+  resultcolor="#222"
+>
+  <input
+    className="sc-EHOje hwKelP"
+    id={1}
+    type="radio"
+  />
+  <label
+    htmlFor={1}
+  >
+    <figure
+      className="sc-htpNat dszAmi"
+    >
+      <div
+        className="sc-bwzfXH IjDNC"
+      />
+      <img
+        className="sc-bxivhb MsGqr"
+      />
+      <figcaption
+        className="sc-bdVaJa eykFkZ"
+      />
+    </figure>
+  </label>
+</li>
+`;

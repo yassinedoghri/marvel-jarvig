@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Ribbon renders correctly 1`] = `
+<p
+  className="sc-bwzfXH kLTDYJ"
+/>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameUI Icon adds animated modifier 1`] = `
+<span
+  className="sc-bdVaJa cwMKVC"
+>
+  Icon
+</span>
+`;
+
+exports[`GameUI Icon renders correctly 1`] = `
+<span
+  className="sc-bdVaJa iVzWHn"
+>
+  Icon
+</span>
+`;
