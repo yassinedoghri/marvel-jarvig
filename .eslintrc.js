@@ -1,13 +1,7 @@
 module.exports = {
   parser: "babel-eslint",
-  extends: [
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
-  plugins: [
-    "prettier"
-  ],
+  extends: ["airbnb", "prettier", "prettier/react"],
+  plugins: ["prettier"],
   env: {
     browser: true,
     node: true,
@@ -39,7 +33,7 @@ module.exports = {
 
     // Allow .js files to use JSX syntax
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
 
     // Functional and class components are equivalent from React’s point of view
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
@@ -76,9 +70,12 @@ module.exports = {
 
     // Disable no-param-reassign only for param properties
     // https://stackoverflow.com/a/35637900
-    "no-param-reassign": [2, { "props": false }],
+    "no-param-reassign": [2, { props: false }],
 
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+
+    // work-around on conflicting peer dep for eslint-plugin-jsx-ally
+    "jsx-a11y/href-no-hash": [0]
   },
   settings: {
     // Allow absolute paths in imports, e.g. import Button from 'components/Button'
