@@ -19,23 +19,24 @@ class Countdown extends Component {
     };
   }
 
-  constructor() {
-    super();
-    this.state = { time: {}, seconds: 0 };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      time: Countdown.secondsToTime(props.from),
+      seconds: props.from
+    };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
   }
 
-  componentWillReceiveProps() {
-    const { from, result, isGamePaused } = this.props;
+  componentDidMount() {
+    const { result, isGamePaused } = this.props;
     if (
       (result.length === 0 && this.timer === 0) ||
       (result.length === 0 && isGamePaused)
     ) {
-      this.setState({ seconds: from });
-      const timeLeftVar = Countdown.secondsToTime(this.state.seconds);
-      this.setState({ time: timeLeftVar });
       this.startTimer();
     }
   }
