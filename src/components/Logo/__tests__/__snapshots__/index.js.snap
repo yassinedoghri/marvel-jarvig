@@ -1,16 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Logo Block adds mobileIcon modifier 1`] = `
+<a
+  className="sc-bxivhb cZFXvN"
+  href="/"
+  mobileIcon="true"
+  onClick={[Function]}
+>
+  <img
+    className="sc-htpNat ljPkey"
+  />
+  <h1
+    className="sc-bwzfXH ljyKVz"
+  />
+  <img
+    className="sc-bdVaJa ibrkLT"
+  />
+</a>
+`;
+
 exports[`Logo Block renders correctly 1`] = `
 <a
-  className="sc-htpNat cFwZEN"
+  className="sc-bxivhb cEytNk"
   href="/"
   onClick={[Function]}
 >
   <img
-    className="sc-bwzfXH cvnUdE"
+    className="sc-htpNat ljPkey"
   />
   <h1
-    className="sc-bdVaJa duNkzU"
+    className="sc-bwzfXH ljyKVz"
+  />
+  <img
+    className="sc-bdVaJa ibrkLT"
   />
 </a>
 `;

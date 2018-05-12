@@ -2,7 +2,7 @@
 
 exports[`PlayButton renders correctly 1`] = `
 <a
-  className="sc-dxgOiQ hnxtHf"
+  className="sc-ckVGcZ eZeqXi"
   href="/"
   onClick={[Function]}
 />

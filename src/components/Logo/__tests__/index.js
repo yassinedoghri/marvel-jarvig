@@ -10,6 +10,20 @@ describe("Logo Block", () => {
         <Logo to="/">
           <Logo.MarvelLogo />
           <Logo.JarvigText />
+          <Logo.Icon />
+        </Logo>
+      </MemoryRouter>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("adds mobileIcon modifier", () => {
+    const tree = renderWithTheme(
+      <MemoryRouter>
+        <Logo to="/" mobileIcon="true">
+          <Logo.MarvelLogo />
+          <Logo.JarvigText />
+          <Logo.Icon />
         </Logo>
       </MemoryRouter>
     ).toJSON();

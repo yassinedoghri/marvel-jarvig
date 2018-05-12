@@ -2,42 +2,42 @@
 
 exports[`Card Block renders correctly 1`] = `
 <div
-  className="sc-caSCKo hnbwiE"
+  className="sc-gisBJw eLWijE"
 >
   <p
-    className="sc-eqIVtm bmHTKX"
+    className="sc-fAjcbJ gwDekQ"
   >
     Ribbon!
   </p>
   [
   <button
-    className="sc-fMiknA fFHlVn"
+    className="sc-dVhcbM kwrEQA"
   >
     X
   </button>
   ,
   <div
-    className="sc-dVhcbM fwYBZf"
+    className="sc-eqIVtm blkeIP"
   >
     This is a hint!
   </div>
   ]
   <h2
-    className="sc-fAjcbJ lmPSwh"
+    className="sc-caSCKo bYqcUu"
   >
     Card Title
   </h2>
   <div
-    className="sc-hzDkRC ctnzKs"
+    className="sc-jhAzac fhqzSw"
   >
     <p
-      className="sc-jhAzac eJkfIa"
+      className="sc-fBuWsC gdYvkp"
     >
       Card text
     </p>
   </div>
   <div
-    className="sc-Rmtcm dehTgb"
+    className="sc-bRBYWo bzSgXm"
   />
 </div>
 `;

@@ -13,6 +13,7 @@ const PlaySection = FlexSection.extend`
 
   & ${Card} {
     width: calc(100% - ${props => props.theme.spaces.xl}em);
+    margin-top: ${props => props.theme.spaces.lg}em;
 
     ${media.desktop`
       margin-right: 5em;

@@ -3,6 +3,7 @@ import { endGame } from "actions/GameActions";
 import { GameUI, Header, Logo } from "components/index";
 import Countdown from "containers/Countdown";
 import logo from "containers/MarvelLogo.svg";
+import iconJarvig from "containers/icon-jarvig.svg";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import FaClock from "react-icons/lib/fa/clock-o";
@@ -12,6 +13,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { push } from "react-router-redux";
 import { bindActionCreators, compose } from "redux";
+
+import TiChevronLeft from "react-icons/lib/ti/chevron-left";
 
 class HeaderContent extends Component {
   handleCountdownEnd() {
@@ -27,11 +30,13 @@ class HeaderContent extends Component {
     return (
       location.pathname !== "/" && (
         <Header>
-          <Logo inline="true" to="/">
+          <Logo inline="true" mobileIcon="true" to="/" title="Go Home">
+            <TiChevronLeft />
             <Logo.MarvelLogo sm src={logo} alt="Marvel Logo" />
             <Logo.JarvigText sm spaceLeft>
               JARVIG
             </Logo.JarvigText>
+            <Logo.Icon src={iconJarvig} alt="Marvel Jarvig icon" />
           </Logo>
           <GameUI>
             <GameUI.Item>
