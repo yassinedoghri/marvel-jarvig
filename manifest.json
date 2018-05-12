@@ -1,0 +1,16 @@
+{
+  "short_name": "Marvel JARVIG",
+  "name": "Marvel J.A.R.V.I.G. (Just A Rather Very Interesting Game) is a game that lets you find and discover Marvel Comics characters based on their name, image and description!",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#ed1d24",
+  "background_color": "#222"
+}
