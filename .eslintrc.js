@@ -75,7 +75,7 @@ module.exports = {
     "linebreak-style": ["error", "windows"],
 
     // work-around on conflicting peer dep for eslint-plugin-jsx-ally
-    "jsx-a11y/href-no-hash": [0]
+    "jsx-a11y/href-no-hash": "off"
   },
   settings: {
     // Allow absolute paths in imports, e.g. import Button from 'components/Button'
