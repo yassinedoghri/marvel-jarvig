@@ -6,9 +6,9 @@ cache:
     - node_modules
 before_install:
   - mv src/config/index.js.dist src/config/index.js
-  - sed -i -e 's/YOUR_PUBLIC_API_KEY/$MARVEL_API_PUBLIC_KEY/' src/config/index.js
-  - sed -i -e 's/YOUR_PRIVATE_API_KEY/$MARVEL_API_PRIVATE_KEY/' src/config/index.js
-  - sed -i -e 's/UA-0000000-0/$GOOGLE_TRACKING_ID/' src/config/index.js
+  - sed -i -e "s/YOUR_PUBLIC_API_KEY/$MARVEL_API_PUBLIC_KEY/" src/config/index.js
+  - sed -i -e "s/YOUR_PRIVATE_API_KEY/$MARVEL_API_PRIVATE_KEY/" src/config/index.js
+  - sed -i -e "s/UA-0000000-0/$GOOGLE_TRACKING_ID/" src/config/index.js
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
