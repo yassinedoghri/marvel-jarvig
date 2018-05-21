@@ -1,7 +1,7 @@
-<h1 align="center">Marvel J.A.R.V.I.G.</h1>
+<h1 align="center">Marvel JARVIG</h1>
 
 <div align="center">
-  <strong>Marvel J.A.R.V.I.G. (Just A Rather Very Interesting Game) is a game that lets you find and discover Marvel Comics characters based on their name, image and description!</strong>
+  <strong>Marvel JARVIG (Just A Rather Very Interesting Game) is a game that lets you find and discover Marvel Comics characters based on their name, image and description!</strong>
   <br />
   <br />
   <a href="https://travis-ci.org/yassinedoghri/marvel-jarvig" title="master build"><img src="https://travis-ci.org/yassinedoghri/marvel-jarvig.svg?branch=master" alt="Master build"></a>
