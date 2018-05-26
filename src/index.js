@@ -14,6 +14,7 @@ import {
 
 import rootReducer from "reducers";
 import { applyMiddleware, combineReducers, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 
 import watcherSaga from "sagas";
@@ -29,8 +30,10 @@ const store = createStore(
     ...rootReducer,
     router: routerReducer
   }),
-  applyMiddleware(sagaMiddleware),
-  applyMiddleware(routeMiddleware)
+  composeWithDevTools(
+    applyMiddleware(sagaMiddleware),
+    applyMiddleware(routeMiddleware)
+  )
 );
 
 sagaMiddleware.run(watcherSaga);
