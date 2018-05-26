@@ -27,11 +27,11 @@ const Logo = styled(Link)`
   }
 
   & ${MarvelLogo}, & ${JarvigText} {
-    display: ${props => (props.mobileIcon ? "none" : "block")};
+    display: ${props => (props.mobileicon ? "none" : "block")};
   }
 
   & ${Icon} {
-    display: ${props => (props.mobileIcon ? "block" : "none")};
+    display: ${props => (props.mobileicon ? "block" : "none")};
   }
 
   ${media.desktop`

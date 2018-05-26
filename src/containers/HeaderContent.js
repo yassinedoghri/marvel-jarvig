@@ -30,7 +30,7 @@ class HeaderContent extends Component {
     return (
       location.pathname !== "/" && (
         <Header>
-          <Logo inline="true" mobileIcon="true" to="/" title="Go Home">
+          <Logo inline="true" mobileicon="true" to="/" title="Go Home">
             <TiChevronLeft />
             <Logo.MarvelLogo sm src={logo} alt="Marvel Logo" />
             <Logo.JarvigText sm spaceLeft>
