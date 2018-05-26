@@ -1,4 +1,5 @@
 import { FlexWrapper } from "components";
+import Routes from "constants/routes";
 import FooterContent from "containers/FooterContent";
 
 import HeaderContent from "containers/HeaderContent";
@@ -21,7 +22,7 @@ class App extends Component {
           <HeaderContent />
           <MainContent />
           <SidebarHelp />
-          {location.pathname === "/" && <SidebarSettings />}
+          {location.pathname === Routes.Home && <SidebarSettings />}
           <FooterContent />
         </FlexWrapper>
       </ThemeProvider>

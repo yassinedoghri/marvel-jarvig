@@ -6,6 +6,7 @@ import {
   INIT_NEW_GAME,
   NEXT_QUESTION,
   PASS_QUESTION,
+  SAVE_GAME_TIME,
   SELECT_CHARACTER,
   SET_DIFFICULTY,
   UPDATE_SETTINGS
@@ -57,6 +58,11 @@ export const nextQuestion = () => ({
 
 export const endGame = () => ({
   type: END_GAME
+});
+
+export const saveGameTime = time => ({
+  type: SAVE_GAME_TIME,
+  payload: time
 });
 
 export const callRequest = () => ({

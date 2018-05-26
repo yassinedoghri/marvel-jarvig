@@ -1,4 +1,5 @@
 import { toggleSidebar } from "actions/UIActions";
+import Routes from "constants/routes";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 
@@ -17,7 +18,7 @@ class FooterContent extends Component {
     return (
       <Footer>
         <Toolbar>
-          {location.pathname === "/" && (
+          {location.pathname === Routes.Home && (
             <Toolbar.Item md onClick={() => toggleSidebar("settings")}>
               <FaCog />
             </Toolbar.Item>

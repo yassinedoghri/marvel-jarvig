@@ -1,4 +1,3 @@
-import { GameUI } from "components";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 
@@ -28,24 +27,23 @@ class Countdown extends Component {
     };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
+    this.stopTimer = this.stopTimer.bind(this);
     this.countDown = this.countDown.bind(this);
   }
 
   componentDidMount() {
-    const { result, isGamePaused } = this.props;
-    if (
-      (result.length === 0 && this.timer === 0) ||
-      (result.length === 0 && isGamePaused)
-    ) {
-      this.startTimer();
+    this.startTimer();
+  }
+
+  componentDidUpdate() {
+    const { isPaused, onCountdownPaused } = this.props;
+    if (isPaused) {
+      onCountdownPaused(this.state.time);
     }
   }
 
   componentWillUnmount() {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
-    this.timer = 0;
+    this.stopTimer();
   }
 
   startTimer() {
@@ -54,11 +52,18 @@ class Countdown extends Component {
     }
   }
 
+  stopTimer() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+    this.timer = 0;
+  }
+
   countDown() {
     // Remove one second, set state so a re-render happens.
-    const { isGamePaused, onCountdownEnd } = this.props;
+    const { isPaused, onCountdownEnd } = this.props;
 
-    if (!isGamePaused) {
+    if (!isPaused) {
       const seconds = this.state.seconds - 1;
       this.setState({
         time: Countdown.secondsToTime(seconds),
@@ -67,33 +72,34 @@ class Countdown extends Component {
 
       // Check if we're at zero.
       if (seconds === 0) {
-        clearInterval(this.timer);
-        onCountdownEnd();
+        this.stopTimer();
+        onCountdownEnd(this.state.time);
       }
     }
   }
 
   render() {
     const { time } = this.state;
-    const { isGamePaused } = this.props;
     const timer =
       time.m === 0
         ? time.s
         : `${time.m}:${time.s < 10 ? `0${time.s}` : time.s}`;
 
-    return <GameUI.Label blink={isGamePaused}>{timer}</GameUI.Label>;
+    return <React.Fragment>{timer}</React.Fragment>;
   }
 }
 
 Countdown.propTypes = {
   from: PropTypes.number.isRequired,
-  isGamePaused: PropTypes.bool,
-  result: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onCountdownEnd: PropTypes.func.isRequired
+  isPaused: PropTypes.bool,
+  onCountdownPaused: PropTypes.func,
+  onCountdownEnd: PropTypes.func
 };
 
 Countdown.defaultProps = {
-  isGamePaused: false
+  isPaused: false,
+  onCountdownPaused: () => {},
+  onCountdownEnd: () => {}
 };
 
 export default Countdown;

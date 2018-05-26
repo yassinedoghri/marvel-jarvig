@@ -16,6 +16,7 @@ import {
   Loader,
   PlaySection
 } from "components";
+import Routes from "constants/routes";
 
 import CharactersGrid from "containers/PlayScreen/CharactersGrid";
 import ErrorCard from "containers/PlayScreen/ErrorCard";
@@ -30,20 +31,18 @@ class PlayScreen extends Component {
   constructor(props) {
     super(props);
 
-    const { initNewGame, clearGame, push, history } = this.props;
+    const { push, history } = this.props;
 
     if (history.action === "POP") {
-      push("/");
-    } else {
-      // clear all jarvig state (set defaults)
-      clearGame();
-      // init new jarvig;
-      initNewGame();
+      push(Routes.Home);
     }
   }
 
   componentDidMount() {
-    const { resetSidebars } = this.props;
+    const { initNewGame, resetSidebars } = this.props;
+    // init new jarvig;
+    initNewGame();
+
     resetSidebars();
   }
 
@@ -71,11 +70,19 @@ class PlayScreen extends Component {
           callRequest();
         }
       } else {
-        console.info("Game Over.");
         // Quizz is over: end game and redirect to results page
         endGame();
-        push("/result");
+        push(Routes.Results);
       }
+    }
+  }
+
+  componentWillUnmount() {
+    const { history, clearGame } = this.props;
+
+    if (history.location.pathname !== Routes.Results) {
+      // clear all jarvig state (set defaults)
+      clearGame();
     }
   }
 

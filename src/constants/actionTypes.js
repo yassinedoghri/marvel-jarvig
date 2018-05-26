@@ -15,6 +15,7 @@ export const NEXT_QUESTION = "NEXT_QUESTION";
 export const SELECT_CHARACTER = "SELECT_CHARACTER";
 export const CLEAR_GAME = "CLEAR_GAME";
 export const END_GAME = "END_GAME";
+export const SAVE_GAME_TIME = "SAVE_GAME_TIME";
 
 export const API_CALL_REQUEST = "API_CALL_REQUEST";
 export const API_CALL_SUCCESS = "API_CALL_SUCCESS";

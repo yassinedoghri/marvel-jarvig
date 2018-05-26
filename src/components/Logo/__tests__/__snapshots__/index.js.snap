@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Logo Block adds mobileIcon modifier 1`] = `
+exports[`Logo Block adds mobileicon modifier 1`] = `
 <a
   className="sc-bxivhb cZFXvN"
   href="/"
-  mobileIcon="true"
+  mobileicon="true"
   onClick={[Function]}
 >
   <img
