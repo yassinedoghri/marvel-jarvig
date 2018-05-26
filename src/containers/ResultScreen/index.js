@@ -1,5 +1,6 @@
 import { clearGame } from "actions/GameActions";
 import { Card, FlexSection } from "components";
+import Routes from "constants/routes";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import CountUp from "react-countup";
@@ -19,7 +20,7 @@ class ResultScreen extends Component {
     const { push, history } = this.props;
 
     if (history.action === "POP") {
-      push("/");
+      push(Routes.Home);
     }
   }
 

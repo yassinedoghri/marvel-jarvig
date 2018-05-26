@@ -16,6 +16,7 @@ import {
   Loader,
   PlaySection
 } from "components";
+import Routes from "constants/routes";
 
 import CharactersGrid from "containers/PlayScreen/CharactersGrid";
 import ErrorCard from "containers/PlayScreen/ErrorCard";
@@ -33,7 +34,7 @@ class PlayScreen extends Component {
     const { push, history } = this.props;
 
     if (history.action === "POP") {
-      push("/");
+      push(Routes.Home);
     }
   }
 
@@ -72,7 +73,7 @@ class PlayScreen extends Component {
         console.info("Game Over.");
         // Quizz is over: end game and redirect to results page
         endGame();
-        push("/result");
+        push(Routes.Results);
       }
     }
   }
@@ -80,7 +81,7 @@ class PlayScreen extends Component {
   componentWillUnmount() {
     const { history, clearGame } = this.props;
 
-    if (history.location.pathname !== "/result") {
+    if (history.location.pathname !== Routes.Results) {
       // clear all jarvig state (set defaults)
       clearGame();
     }

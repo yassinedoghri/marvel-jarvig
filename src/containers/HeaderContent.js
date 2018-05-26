@@ -1,6 +1,7 @@
 import { endGame } from "actions/GameActions";
 
 import { GameUI, Header, Logo } from "components/index";
+import Routes from "constants/routes";
 import Countdown from "containers/Countdown";
 import logo from "containers/MarvelLogo.svg";
 import iconJarvig from "containers/icon-jarvig.svg";
@@ -21,14 +22,14 @@ class HeaderContent extends Component {
     const { endGame, push } = this.props;
 
     endGame();
-    push("/result");
+    push(Routes.Results);
   }
 
   render() {
     const { location, time, game, isLoading, error } = this.props;
 
     return (
-      location.pathname !== "/" && (
+      location.pathname !== Routes.Home && (
         <Header>
           <Logo inline="true" mobileicon="true" to="/" title="Go Home">
             <TiChevronLeft />
