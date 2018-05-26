@@ -33,10 +33,6 @@ const store = createStore(
   applyMiddleware(routeMiddleware)
 );
 
-store.subscribe(() => {
-  console.info("Store changed", store.getState());
-});
-
 sagaMiddleware.run(watcherSaga);
 
 const render = () => {
