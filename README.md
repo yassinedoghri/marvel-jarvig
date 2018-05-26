@@ -77,7 +77,7 @@ $ yarn start
 │  │  ...
 │  ├── components/      # UI styled-components
 │  ├── config/          # config files
-│  ├── constants/       # constants (eg. actionType names)
+│  ├── constants/       # constants (eg. actionType names, routes)
 │  ├── containers/      # game containers
 │  │  ├── HomeScreen/
 │  │  ├── PlayScreen/

@@ -70,7 +70,6 @@ class PlayScreen extends Component {
           callRequest();
         }
       } else {
-        console.info("Game Over.");
         // Quizz is over: end game and redirect to results page
         endGame();
         push(Routes.Results);
