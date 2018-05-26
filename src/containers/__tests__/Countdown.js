@@ -4,13 +4,14 @@ import { renderInContext } from "utils/testHelpers";
 
 describe("Countdown container", () => {
   it("renders without crashing", () => {
-    renderInContext(
+    const tree = renderInContext(
       <Countdown
-        result={[]}
-        from={2}
-        onCountdownEnd={() => console.info("test")}
-        isGamePaused={false}
+        from={2 * 60}
+        isPaused={false}
+        onCountdownPaused={jest.fn()}
+        onCountdownEnd={jest.fn()}
       />
     );
+    expect(tree).toMatchSnapshot();
   });
 });

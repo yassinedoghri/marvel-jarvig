@@ -8,6 +8,7 @@ import {
   INIT_NEW_GAME,
   NEXT_QUESTION,
   PASS_QUESTION,
+  SAVE_GAME_TIME,
   SELECT_CHARACTER,
   SET_DIFFICULTY,
   UPDATE_SETTINGS
@@ -58,7 +59,8 @@ export const gameDefaults = {
   result: [],
   remainingLives: 0,
   checked: false,
-  over: false
+  over: false,
+  timer: null
 };
 
 // Black listed characters (eg. they don't have an image)
@@ -172,6 +174,15 @@ export default (state = initialState, action) => {
         game: {
           ...state.game,
           over: true
+        }
+      };
+    }
+    case SAVE_GAME_TIME: {
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          time: action.payload
         }
       };
     }

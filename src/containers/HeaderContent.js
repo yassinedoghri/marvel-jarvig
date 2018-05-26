@@ -1,32 +1,44 @@
-import { endGame } from "actions/GameActions";
+import { endGame, saveGameTime } from "actions/GameActions";
 
 import { GameUI, Header, Logo } from "components/index";
 import Routes from "constants/routes";
 import Countdown from "containers/Countdown";
-import logo from "containers/MarvelLogo.svg";
 import iconJarvig from "containers/icon-jarvig.svg";
+import logo from "containers/MarvelLogo.svg";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import FaClock from "react-icons/lib/fa/clock-o";
 
 import FaHeart from "react-icons/lib/fa/heart";
+
+import TiChevronLeft from "react-icons/lib/ti/chevron-left";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { push } from "react-router-redux";
 import { bindActionCreators, compose } from "redux";
-
-import TiChevronLeft from "react-icons/lib/ti/chevron-left";
+import { formatTimer } from "utils/helpers";
 
 class HeaderContent extends Component {
-  handleCountdownEnd() {
-    const { endGame, push } = this.props;
+  handleCountdownPaused(time) {
+    const { game, saveGameTime } = this.props;
 
+    if (game.time !== time) {
+      saveGameTime(time);
+    }
+  }
+
+  handleCountdownEnd(time) {
+    const { endGame, push, saveGameTime } = this.props;
+
+    saveGameTime(time);
     endGame();
     push(Routes.Results);
   }
 
   render() {
     const { location, time, game, isLoading, error } = this.props;
+
+    const isGamePaused = isLoading || game.checked || game.over || error;
 
     return (
       location.pathname !== Routes.Home && (
@@ -44,12 +56,20 @@ class HeaderContent extends Component {
               <GameUI.Icon>
                 <FaClock />
               </GameUI.Icon>
-              <Countdown
-                from={time * 60}
-                isGamePaused={isLoading || game.checked || game.over || error}
-                onCountdownEnd={() => this.handleCountdownEnd()}
-                result={game.result}
-              />
+              <GameUI.Label blink={isGamePaused}>
+                {!game.over ? (
+                  <Countdown
+                    from={time * 60}
+                    isPaused={isGamePaused}
+                    onCountdownPaused={time => this.handleCountdownPaused(time)}
+                    onCountdownEnd={time => this.handleCountdownEnd(time)}
+                  />
+                ) : (
+                  <React.Fragment>
+                    {game.time ? formatTimer(game.time) : 0}
+                  </React.Fragment>
+                )}
+              </GameUI.Label>
             </GameUI.Item>
             <GameUI.Item>
               <GameUI.Icon animated>
@@ -79,6 +99,7 @@ HeaderContent.propTypes = {
     message: PropTypes.string
   }),
   endGame: PropTypes.func.isRequired,
+  saveGameTime: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired
 };
 
@@ -97,7 +118,8 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       push,
-      endGame
+      endGame,
+      saveGameTime
     },
     dispatch
   );
