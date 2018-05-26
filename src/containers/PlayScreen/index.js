@@ -30,20 +30,18 @@ class PlayScreen extends Component {
   constructor(props) {
     super(props);
 
-    const { initNewGame, clearGame, push, history } = this.props;
+    const { push, history } = this.props;
 
     if (history.action === "POP") {
       push("/");
-    } else {
-      // clear all jarvig state (set defaults)
-      clearGame();
-      // init new jarvig;
-      initNewGame();
     }
   }
 
   componentDidMount() {
-    const { resetSidebars } = this.props;
+    const { initNewGame, resetSidebars } = this.props;
+    // init new jarvig;
+    initNewGame();
+
     resetSidebars();
   }
 
@@ -76,6 +74,15 @@ class PlayScreen extends Component {
         endGame();
         push("/result");
       }
+    }
+  }
+
+  componentWillUnmount() {
+    const { history, clearGame } = this.props;
+
+    if (history.location.pathname !== "/result") {
+      // clear all jarvig state (set defaults)
+      clearGame();
     }
   }
 

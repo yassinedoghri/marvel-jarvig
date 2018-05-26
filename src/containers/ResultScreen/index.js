@@ -1,3 +1,4 @@
+import { clearGame } from "actions/GameActions";
 import { Card, FlexSection } from "components";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -20,6 +21,12 @@ class ResultScreen extends Component {
     if (history.action === "POP") {
       push("/");
     }
+  }
+
+  componentWillUnmount() {
+    const { clearGame } = this.props;
+    // clear all jarvig state (set defaults)
+    clearGame();
   }
 
   render() {
@@ -94,6 +101,7 @@ ResultScreen.propTypes = {
   history: PropTypes.shape({
     action: PropTypes.string
   }).isRequired,
+  clearGame: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired
 };
 
@@ -106,6 +114,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      clearGame,
       push
     },
     dispatch

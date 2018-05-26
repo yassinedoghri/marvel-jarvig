@@ -32,11 +32,9 @@ class Countdown extends Component {
   }
 
   componentDidMount() {
-    const { result, isGamePaused } = this.props;
-    if (
-      (result.length === 0 && this.timer === 0) ||
-      (result.length === 0 && isGamePaused)
-    ) {
+    const { result } = this.props;
+
+    if (result.length === 0) {
       this.startTimer();
     }
   }
