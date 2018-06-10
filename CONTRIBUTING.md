@@ -1,4 +1,4 @@
-# Contributing to react-boilerplate
+# Contributing to marvel-jarvig
 
 Love marvel-jarvig and want to help? Thanks so much, there's something to do for everybody!
 
@@ -79,47 +79,47 @@ included in the project:
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
-   ```bash
-   # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/marvel-jarvig.git
-   # Navigate to the newly cloned directory
-   cd marvel-jarvig
-   # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/yassinedoghri/marvel-jarvig.git
-   ```
+```bash
+# Clone your fork of the repo into the current directory
+git clone https://github.com/<your-username>/marvel-jarvig.git
+# Navigate to the newly cloned directory
+cd marvel-jarvig
+# Assign the original repo to a remote called "upstream"
+git remote add upstream https://github.com/yassinedoghri/marvel-jarvig.git
+```
 
 2. If you cloned a while ago, get the latest changes from upstream:
 
-   ```bash
-   git checkout dev
-   git pull upstream dev
-   ```
+```bash
+git checkout development
+git pull upstream development
+```
 
 3. Create a new topic branch (off the `development` branch) to contain your feature, change, or fix:
 
-   ```bash
-   git checkout -b <topic-branch-name>
-   ```
+```bash
+git checkout -b <topic-branch-name>
+```
 
-4. Commit your changes in logical chunks. Please adhere to these [git commit message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) or your code is unlikely be merged into the main project. Use Git's [interactive rebase](https://help.github.com/articles/about-git-rebase/) feature to tidy up your commits before making them public.
+4. Commit your changes in logical chunks. Please adhere to these [git commit message guidelines](https://conventionalcommits.org/) or your code is unlikely be merged into the main project. Use Git's [interactive rebase](https://help.github.com/articles/about-git-rebase/) feature to tidy up your commits before making them public.
 
 5. Locally merge (or rebase) the upstream dev branch into your topic branch:
 
-   ```bash
-   git pull [--rebase] upstream dev
-   ```
+```bash
+git pull [--rebase] upstream development
+```
 
 6. Push your topic branch up to your fork:
 
-   ```bash
-   git push origin <topic-branch-name>
-   ```
+```bash
+git push origin <topic-branch-name>
+```
 
 7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
     with a clear title and description.
 
 **IMPORTANT**: By submitting a patch, you agree to allow the project
-owners to license your work under the terms of the [MIT License](https://github.com/react-boilerplate/react-boilerplate/blob/master/LICENSE.md).
+owners to license your work under the terms of the [MIT License](https://github.com/yassinedoghri/marvel-jarvig/blob/master/LICENSE.md).
 
 # Collaborating guidelines
 
