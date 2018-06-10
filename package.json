@@ -51,7 +51,8 @@
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.js'",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "precommit": "lint-staged && cross-env CI=true react-scripts test --env=jsdom"
+    "precommit": "lint-staged && cross-env CI=true react-scripts test --env=jsdom",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
@@ -71,6 +72,7 @@
     "prettier": "1.12.1",
     "react-test-renderer": "^16.3.2",
     "redux-devtools-extension": "^2.13.2",
+    "standard-version": "^4.4.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-config-styled-components": "^0.1.1",
