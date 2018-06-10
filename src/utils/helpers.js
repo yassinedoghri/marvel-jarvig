@@ -48,6 +48,3 @@ export const generateAnswers = (
     answer
   };
 };
-
-export const formatTimer = time =>
-  time.m === 0 ? time.s : `${time.m}:${time.s < 10 ? `0${time.s}` : time.s}`;
