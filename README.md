@@ -42,25 +42,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setting up the development environment
 
-1. Install [Node.js and npm](https://nodejs.org/en/)
+1. Install [Node.js](https://nodejs.org/en/)
 
-2. Install project's dependencies using npm or yarn:
+2. Install [yarn](https://yarnpkg.com/lang/en/docs/install)
+
+3. Install project's dependencies using yarn:
 
 ```bash
-$ npm install
-# or
-$ yarn install
+yarn
 ```
 
-3.   :warning: Create a config file using the sample file `src/config/index.js.dist`.
+4. :warning: Create a config file using the sample file `src/config/index.js.dist`.
+
 > Remove the .dist extension and replace the Marvel API public and private keys with your own.
+> You can get the those keys on the [Marvel developer portal](https://developer.marvel.com)
 
 ## Run the game
 
 ```bash
-$ npm start
-# or
-$ yarn start
+yarn start
 ```
 
 :heavy_check_mark: You're all set! You can now view Marvel JARVIG on [http://localhost:3000](http://localhost:3000).
@@ -104,9 +104,7 @@ Test files have a `.test.js` suffix or `.js` suffix in `__tests__` folder.
 **Run tests in interactive mode:**
 
 ```bash
-$ npm test
-# or
-$ yarn test
+yarn test
 ```
 You will be able to visualise tests and update snapshots. [Read more about tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
 
@@ -115,9 +113,7 @@ You will be able to visualise tests and update snapshots. [Read more about tests
 Build the app for production to the `build` folder:
 
 ```bash
-$ npm run build
-# or
-$ yarn build
+yarn build
 ```
 
 ## Contributing

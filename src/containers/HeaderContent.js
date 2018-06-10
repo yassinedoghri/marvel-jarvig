@@ -1,12 +1,13 @@
-import { endGame, saveGameTime } from "actions/GameActions";
-
-import { GameUI, Header, Logo } from "components/index";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Routes from "constants/routes";
-import Countdown from "containers/Countdown";
+
+import TimerMachine from "react-timer-machine";
+
+import { endGame, saveGameTime } from "actions/GameActions";
+import { GameUI, Header, Logo } from "components/index";
 import iconJarvig from "containers/icon-jarvig.svg";
 import logo from "containers/MarvelLogo.svg";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
 import FaClock from "react-icons/lib/fa/clock-o";
 
 import FaHeart from "react-icons/lib/fa/heart";
@@ -16,10 +17,14 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { push } from "react-router-redux";
 import { bindActionCreators, compose } from "redux";
-import { formatTimer } from "utils/helpers";
+
+import moment from "moment";
+import momentDurationFormatSetup from "moment-duration-format";
+
+momentDurationFormatSetup(moment);
 
 class HeaderContent extends Component {
-  handleCountdownPaused(time) {
+  handleTimerPaused(time) {
     const { game, saveGameTime } = this.props;
 
     if (game.time !== time) {
@@ -27,18 +32,23 @@ class HeaderContent extends Component {
     }
   }
 
-  handleCountdownEnd(time) {
+  handleTimerEnd(time) {
     const { endGame, push, saveGameTime } = this.props;
 
-    saveGameTime(time);
     endGame();
+    saveGameTime(time);
     push(Routes.Results);
   }
 
   render() {
     const { location, time, game, isLoading, error } = this.props;
 
-    const isGamePaused = isLoading || game.checked || game.over || error;
+    const isGamePaused =
+      isLoading || // if game is loading
+      game.answer === null || // if the question didn't load
+      game.checked || // if the player checked his answer
+      game.over || // if the game is over
+      Boolean(error); // if an error occurred
 
     return (
       location.pathname !== Routes.Home && (
@@ -57,18 +67,17 @@ class HeaderContent extends Component {
                 <FaClock />
               </GameUI.Icon>
               <GameUI.Label blink={isGamePaused}>
-                {!game.over ? (
-                  <Countdown
-                    from={time * 60}
-                    isPaused={isGamePaused}
-                    onCountdownPaused={time => this.handleCountdownPaused(time)}
-                    onCountdownEnd={time => this.handleCountdownEnd(time)}
-                  />
-                ) : (
-                  <React.Fragment>
-                    {game.time ? formatTimer(game.time) : 0}
-                  </React.Fragment>
-                )}
+                <TimerMachine
+                  countdown
+                  started={!game.over}
+                  timeStart={time * 60 * 1000}
+                  formatTimer={(time, ms) =>
+                    moment.duration(ms, "milliseconds").format("h:mm:ss")
+                  }
+                  paused={isGamePaused}
+                  onPause={time => this.handleTimerPaused(time)}
+                  onComplete={time => this.handleTimerEnd(time)}
+                />
               </GameUI.Label>
             </GameUI.Item>
             <GameUI.Item>
@@ -89,6 +98,7 @@ HeaderContent.propTypes = {
     pathname: PropTypes.string
   }).isRequired,
   game: PropTypes.shape({
+    answer: PropTypes.object,
     checked: PropTypes.bool,
     over: PropTypes.bool,
     result: PropTypes.arrayOf(PropTypes.string)
