@@ -72,8 +72,6 @@ module.exports = {
     // https://stackoverflow.com/a/35637900
     "no-param-reassign": [2, { props: false }],
 
-    "linebreak-style": ["error", "windows"],
-
     // work-around on conflicting peer dep for eslint-plugin-jsx-ally
     "jsx-a11y/href-no-hash": "off"
   },

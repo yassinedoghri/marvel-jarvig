@@ -7,7 +7,6 @@ import ResultScreen from "containers/ResultScreen";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
-import withTracker from "utils/withTracker";
 
 class MainContent extends Component {
   render() {
@@ -15,13 +14,9 @@ class MainContent extends Component {
     return (
       <Main isHome={location.pathname === Routes.Home}>
         <Switch>
-          <Route exact path={Routes.Home} component={withTracker(HomeScreen)} />
-          <Route exact path={Routes.Play} component={withTracker(PlayScreen)} />
-          <Route
-            exact
-            path={Routes.Results}
-            component={withTracker(ResultScreen)}
-          />
+          <Route exact path={Routes.Home} component={HomeScreen} />
+          <Route exact path={Routes.Play} component={PlayScreen} />
+          <Route exact path={Routes.Results} component={ResultScreen} />
           {/* 404: redirects to homepage */}
           <Redirect to={Routes.Home} />
         </Switch>

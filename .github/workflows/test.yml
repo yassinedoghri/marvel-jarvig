@@ -1,0 +1,44 @@
+name: marvel-jarvig-test-suite
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup node ⚙️
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies 📥
+        run: |
+          yarn install --frozen-lockfile
+          yarn test
+
+  run-with-coverage:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup node ⚙️
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies 📥
+        run: yarn install --frozen-lockfile
+
+      - name: Test & publish code coverage 🛠️
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: 4905cc2442f5296430f005151b969cb62898ef3f51f03ddbddbabb44540994db
+        with:
+          coverageCommand: yarn test --coverage
+          debug: true

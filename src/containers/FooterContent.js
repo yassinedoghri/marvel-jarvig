@@ -36,7 +36,7 @@ class FooterContent extends Component {
         >
           {`Created by `}
           <a
-            href="https://yassine.doghri.fr/"
+            href="https://yassinedoghri.com/"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -16,9 +16,6 @@ const config = {
     publicKey: "YOUR_PUBLIC_API_KEY",
     privateKey: "YOUR_PRIVATE_API_KEY",
     baseUrl: `${window.location.protocol || "http:"}//gateway.marvel.com/`
-  },
-  google: {
-    trackingId: "UA-0000000-0"
   }
 };
 

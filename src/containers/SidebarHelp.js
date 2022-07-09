@@ -25,10 +25,10 @@ class SidebarHelp extends Component {
           </Paragraph>
           <HR color="contrastDark" tint="secondary" />
           <Paragraph size="sm" color="contrastDark" anchorColor="accent">
-            {`JARVIG v${version} is an Open Source project, source code can be found here: `}
+            {`Marvel JARVIG v${version} is an Open Source project, source code can be found in the `}
             <a href={repository.url} target="_blank" rel="noopener noreferrer">
               Github Repository
-            </a>
+            </a>.
           </Paragraph>
         </Sidebar.Content>
       </Sidebar>

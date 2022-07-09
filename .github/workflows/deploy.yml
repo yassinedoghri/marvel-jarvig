@@ -1,0 +1,28 @@
+name: marvel-jarvig-deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
+        run: |
+          mv src/config/index.js.dist src/config/index.js
+          sed -i -e "s/YOUR_PUBLIC_API_KEY/$MARVEL_API_PUBLIC_KEY/" src/config/index.js
+          sed -i -e "s/YOUR_PRIVATE_API_KEY/$MARVEL_API_PRIVATE_KEY/" src/config/index.js
+          yarn install --frozen-lockfile
+          yarn build
+        env:
+          MARVEL_API_PUBLIC_KEY: ${{ secrets.MARVEL_API_PUBLIC_KEY }}
+          MARVEL_API_PRIVATE_KEY: ${{ secrets.MARVEL_API_PRIVATE_KEY }}
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: build
